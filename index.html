@@ -17,6 +17,7 @@
     --text-faint:#9b9a97;
     --blue-bg:#d3e5ef; --blue-fg:#0b6e99;
     --green-bg:#dbeddb; --green-fg:#2b7a4b;
+    --purple-bg:#e8deee; --purple-fg:#6b46c1;
     --gray-bg:#ebeced; --gray-fg:#5f5e5b;
     --primary:#37352f;
     --danger:#c4554d;
@@ -34,7 +35,6 @@
   }
   ::selection{ background:var(--blue-bg); }
 
-  /* ---------- header ---------- */
   header{
     position:sticky; top:0; z-index:40;
     display:flex; align-items:center; justify-content:space-between;
@@ -44,151 +44,79 @@
     border-bottom:1px solid var(--border);
   }
   .brand{ display:flex; align-items:center; gap:10px; cursor:pointer; }
-  .avatar{
-    width:32px; height:32px; border-radius:7px; object-fit:cover;
-    border:1px solid var(--border); background:var(--bg-soft);
-  }
-  .avatar-fallback{
-    width:32px; height:32px; border-radius:7px;
-    background:var(--bg-soft); border:1px solid var(--border);
-    display:flex; align-items:center; justify-content:center; font-size:16px;
-  }
+  .avatar{ width:32px; height:32px; border-radius:7px; object-fit:cover; border:1px solid var(--border); background:var(--bg-soft); }
+  .avatar-fallback{ width:32px; height:32px; border-radius:7px; background:var(--bg-soft); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:16px; }
   .brand-text b{ font-size:14.5px; font-weight:600; }
   .brand-text div.sub{ font-size:11.5px; color:var(--text-faint); margin-top:1px; }
-  .icon-btn{
-    width:34px; height:34px; border-radius:7px;
-    display:flex; align-items:center; justify-content:center;
-    background:transparent; border:1px solid transparent;
-    color:var(--text-muted); cursor:pointer; flex-shrink:0; font-size:16px;
-  }
+  .icon-btn{ width:34px; height:34px; border-radius:7px; display:flex; align-items:center; justify-content:center; background:transparent; border:1px solid transparent; color:var(--text-muted); cursor:pointer; flex-shrink:0; font-size:16px; }
   .icon-btn:active{ background:var(--bg-soft); }
 
-  /* ---------- filter bar ---------- */
   .filterWrap{ padding:12px 16px 2px; }
   .filterLabel{ font-size:11px; color:var(--text-faint); font-weight:600; letter-spacing:0.03em; margin-bottom:7px; text-transform:uppercase; }
   .filterScroll{ display:flex; gap:7px; overflow-x:auto; padding-bottom:10px; scrollbar-width:none; }
   .filterScroll::-webkit-scrollbar{ display:none; }
-  .chip{
-    flex-shrink:0; padding:5px 12px; border-radius:6px;
-    font-size:12.5px; font-weight:500;
-    border:1px solid var(--border);
-    background:var(--surface); color:var(--text-muted);
-    cursor:pointer; white-space:nowrap;
-  }
-  .chip.active.cat-appearance{ background:var(--blue-bg); color:var(--blue-fg); border-color:transparent; }
-  .chip.active.cat-outfit{ background:var(--green-bg); color:var(--green-fg); border-color:transparent; }
+  .chip{ flex-shrink:0; padding:5px 12px; border-radius:6px; font-size:12.5px; font-weight:500; border:1px solid var(--border); background:var(--surface); color:var(--text-muted); cursor:pointer; white-space:nowrap; }
+  .chip.active{ background:var(--purple-bg); color:var(--purple-fg); border-color:transparent; }
   .emptyHint{ color:var(--text-faint); font-size:13px; padding:20px 4px; text-align:center; }
+  .noCatHint{ color:var(--text-faint); font-size:12px; padding:2px 2px 8px; }
 
-  /* ---------- gallery (Notion gallery-view style) ---------- */
-  #gallery{
-    padding:6px 14px 40px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-  }
+  #gallery{ padding:6px 14px 40px; display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
   @media(min-width:640px){ #gallery{ grid-template-columns:repeat(3,1fr);} }
   @media(min-width:960px){ #gallery{ grid-template-columns:repeat(4,1fr);} }
 
-  .card{
-    border-radius:var(--radius);
-    overflow:hidden;
-    background:var(--surface);
-    border:1px solid var(--border);
-    cursor:pointer;
-    box-shadow:0 1px 2px rgba(15,15,15,0.04);
-  }
+  .card{ border-radius:var(--radius); overflow:hidden; background:var(--surface); border:1px solid var(--border); cursor:pointer; box-shadow:0 1px 2px rgba(15,15,15,0.04); }
   .card:active{ background:var(--bg-soft); }
   .card-thumb{ position:relative; aspect-ratio:1/1; background:var(--bg-soft); }
   .card-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .card-thumb .ph{
-    width:100%; height:100%;
-    background:linear-gradient(100deg, var(--bg-soft) 30%, #efeeea 50%, var(--bg-soft) 70%);
-    background-size:200% 100%; animation:shimmer 1.4s infinite;
-  }
+  .card-thumb .ph{ width:100%; height:100%; background:linear-gradient(100deg, var(--bg-soft) 30%, #efeeea 50%, var(--bg-soft) 70%); background-size:200% 100%; animation:shimmer 1.4s infinite; }
   @keyframes shimmer{ 0%{background-position:200% 0;} 100%{background-position:-200% 0;} }
   .card-cap{ padding:9px 10px 10px; border-top:1px solid var(--border); }
-  .card-title{ font-size:13px; font-weight:600; line-height:1.3; margin-bottom:3px;
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .card-sub{ font-size:11.5px; color:var(--text-faint); line-height:1.35;
-    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:15px; }
+  .card-title{ font-size:13px; font-weight:600; line-height:1.3; margin-bottom:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .card-sub{ font-size:11.5px; color:var(--text-faint); line-height:1.35; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:15px; }
   .card-pills{ display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
   .pill{ font-size:10.5px; font-weight:500; padding:2px 7px; border-radius:4px; white-space:nowrap; }
   .pill.appearance{ background:var(--blue-bg); color:var(--blue-fg); }
   .pill.outfit{ background:var(--green-bg); color:var(--green-fg); }
+  .pill.category{ background:var(--purple-bg); color:var(--purple-fg); }
   .pill.more{ background:var(--gray-bg); color:var(--gray-fg); }
 
-  /* ---------- FAB ---------- */
-  .fab{
-    position:fixed; right:18px; bottom:22px; z-index:50;
-    padding:0 20px; height:50px; border-radius:25px;
-    background:var(--primary); color:#fff;
-    display:flex; align-items:center; gap:6px;
-    font-size:14.5px; font-weight:600; border:none; cursor:pointer;
-    box-shadow:0 6px 18px rgba(0,0,0,0.25);
-  }
+  .fab{ position:fixed; right:18px; bottom:22px; z-index:50; padding:0 20px; height:50px; border-radius:25px; background:var(--primary); color:#fff; display:flex; align-items:center; gap:6px; font-size:14.5px; font-weight:600; border:none; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25); }
   .fab:active{ transform:scale(0.96); }
 
-  /* ---------- modal ---------- */
-  .modalBg{
-    position:fixed; inset:0; z-index:100;
-    background:rgba(15,15,15,0.45);
-    display:none; align-items:flex-end; justify-content:center;
-  }
+  .modalBg{ position:fixed; inset:0; z-index:100; background:rgba(15,15,15,0.45); display:none; align-items:flex-end; justify-content:center; }
   .modalBg.show{ display:flex; }
   @media(min-width:640px){ .modalBg{ align-items:center; } }
-  .modal{
-    position:relative;
-    width:100%; max-width:520px;
-    max-height:90vh; overflow-y:auto;
-    background:var(--surface);
-    border-radius:16px 16px 0 0;
-    padding:20px 20px 26px;
-  }
+  .modal{ position:relative; width:100%; max-width:520px; max-height:90vh; overflow-y:auto; background:var(--surface); border-radius:16px 16px 0 0; padding:20px 20px 26px; }
   @media(min-width:640px){ .modal{ border-radius:12px; } }
   .modal h2{ font-size:18px; margin:0 0 3px; font-weight:700; }
   .modal .sub{ color:var(--text-faint); font-size:12.5px; margin-bottom:18px; line-height:1.5; }
   .closeX{ position:absolute; top:14px; right:16px; color:var(--text-faint); font-size:19px; cursor:pointer; background:none; border:none; }
 
-  /* property-row style form */
   .prop{ display:flex; align-items:flex-start; gap:12px; padding:9px 0; border-bottom:1px solid var(--border); }
   .prop:last-of-type{ border-bottom:none; }
   .prop-label{ width:78px; flex-shrink:0; padding-top:8px; color:var(--text-faint); font-size:12.5px; font-weight:500; display:flex; align-items:center; gap:5px; }
   .prop-label .dot{ width:7px; height:7px; border-radius:2px; flex-shrink:0; }
   .prop-body{ flex:1; min-width:0; }
+  .sectionLabel{ font-size:12px; color:var(--text-faint); font-weight:600; margin:16px 0 7px; }
 
-  input[type=text], input[type=password], textarea{
-    width:100%; padding:8px 0; border:none; border-bottom:1px solid transparent;
-    background:transparent; color:var(--text); font-size:14px; font-family:inherit;
-    outline:none;
-  }
+  input[type=text], input[type=password], textarea{ width:100%; padding:8px 0; border:none; border-bottom:1px solid transparent; background:transparent; color:var(--text); font-size:14px; font-family:inherit; outline:none; }
   input[type=text]:focus, input[type=password]:focus, textarea:focus{ border-bottom-color:var(--text-faint); }
-  .boxed input[type=text], .boxed input[type=password], .boxed textarea{
-    padding:9px 11px; border-radius:7px; background:var(--bg-soft); border:1px solid var(--border);
-  }
+  .boxed input[type=text], .boxed input[type=password], .boxed textarea{ padding:9px 11px; border-radius:7px; background:var(--bg-soft); border:1px solid var(--border); }
   .boxed input:focus, .boxed textarea:focus{ border-color:#b7b6b3; }
   textarea{ resize:vertical; min-height:56px; line-height:1.5; }
 
-  .combinedBox{
-    background:var(--bg-soft); border:1px solid var(--border); border-radius:7px;
-    padding:10px 11px; font-size:13px; line-height:1.6; color:var(--text-muted);
-    min-height:22px; word-break:break-word;
-  }
+  .combinedBox{ background:var(--bg-soft); border:1px solid var(--border); border-radius:7px; padding:10px 11px; font-size:13px; line-height:1.6; color:var(--text-muted); min-height:22px; word-break:break-word; }
   .combinedBox.empty{ color:var(--text-faint); font-style:italic; }
-  .copyBtn{
-    display:inline-flex; align-items:center; gap:5px;
-    margin-top:7px; padding:6px 12px; border-radius:6px;
-    background:var(--gray-bg); color:var(--text); border:none;
-    font-size:12px; font-weight:600; cursor:pointer;
-  }
+  .copyBtn{ display:inline-flex; align-items:center; gap:5px; margin-top:7px; padding:6px 12px; border-radius:6px; background:var(--gray-bg); color:var(--text); border:none; font-size:12px; font-weight:600; cursor:pointer; }
   .copyBtn:active{ background:#dcdbd8; }
 
-  .filePick{
-    display:flex; align-items:center; gap:12px;
-    padding:10px; border-radius:7px;
-    border:1.5px dashed var(--border);
-    cursor:pointer; color:var(--text-muted); font-size:12.5px;
-  }
+  .filePick{ display:flex; align-items:center; gap:12px; padding:10px; border-radius:7px; border:1.5px dashed var(--border); cursor:pointer; color:var(--text-muted); font-size:12.5px; }
   .filePick img{ width:46px; height:46px; object-fit:cover; border-radius:6px; }
+
+  .extraThumbBox{ position:relative; width:56px; height:56px; flex-shrink:0; }
+  .extraThumbBox img{ width:100%; height:100%; object-fit:cover; border-radius:6px; border:1px solid var(--border); background:var(--bg-soft); }
+  .extraThumbBox .rmBtn{ position:absolute; top:-6px; right:-6px; width:18px; height:18px; border-radius:50%; background:var(--primary); color:#fff; border:none; font-size:10px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  #extraImagesList{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px; }
 
   .btnRow{ display:flex; gap:10px; margin-top:20px; }
   .btn{ flex:1; padding:12px; border-radius:8px; border:none; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; }
@@ -197,19 +125,19 @@
   .btn-danger{ background:#fbe9e7; color:var(--danger); }
   .btn:disabled{ opacity:0.5; }
 
-  /* detail modal */
   #detailImgWrap{ border-radius:9px; overflow:hidden; margin-bottom:14px; background:var(--bg-soft); border:1px solid var(--border); }
   #detailImgWrap img{ width:100%; display:block; max-height:56vh; object-fit:contain; }
-  #detailTitle{ font-size:19px; font-weight:700; margin-bottom:12px; word-break:break-word; }
+  #detailTitle{ font-size:19px; font-weight:700; margin-bottom:2px; word-break:break-word; }
+  #detailSubtitle{ font-size:13px; color:var(--text-faint); margin-bottom:12px; }
   .tagList{ display:flex; flex-wrap:wrap; gap:6px; }
+  #detailExtraWrap{ display:flex; gap:8px; overflow-x:auto; padding-bottom:4px; }
+  #detailExtraWrap img{ width:64px; height:64px; object-fit:cover; border-radius:8px; border:1px solid var(--border); flex-shrink:0; cursor:pointer; background:var(--bg-soft); }
 
-  #toast{
-    position:fixed; left:50%; bottom:100px; transform:translateX(-50%) translateY(20px);
-    background:#37352f; color:#fff; padding:10px 18px;
-    border-radius:8px; font-size:13px; z-index:200;
-    opacity:0; pointer-events:none; transition:all .22s;
-    white-space:nowrap;
-  }
+  #lightboxModal img{ width:100%; max-height:80vh; object-fit:contain; border-radius:10px; }
+  #lightboxModal .modal{ background:transparent; box-shadow:none; padding:0; max-width:640px; }
+  #lightboxModal .closeX{ background:rgba(0,0,0,0.5); color:#fff; border-radius:50%; width:30px; height:30px; top:10px; right:10px; }
+
+  #toast{ position:fixed; left:50%; bottom:100px; transform:translateX(-50%) translateY(20px); background:#37352f; color:#fff; padding:10px 18px; border-radius:8px; font-size:13px; z-index:200; opacity:0; pointer-events:none; transition:all .22s; white-space:nowrap; }
   #toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
 
   .lockScreen{ min-height:100vh; display:flex; align-items:center; justify-content:center; padding:30px; }
@@ -247,20 +175,21 @@
   <div class="filterWrap">
     <div class="filterLabel">태그로 보기</div>
     <div id="filterScroll" class="filterScroll"></div>
+    <div id="noCatHint" class="noCatHint hidden">'분류' 태그를 입력한 이미지가 있으면 여기에 필터가 나와요.</div>
   </div>
 
   <div id="gallery"></div>
   <div id="emptyHint" class="emptyHint hidden">아직 백업된 이미지가 없어요.<br>오른쪽 아래 버튼으로 첫 이미지를 추가해보세요.</div>
 </div>
 
-<button class="fab hidden" id="fabBtn" onclick="openUpload()">＋ 추가</button>
+<button class="fab hidden" id="fabBtn" onclick="openEntryForm(null)">＋ 추가</button>
 
 <!-- 설정 모달 -->
 <div class="modalBg" id="settingsModal">
   <div class="modal">
     <button class="closeX" onclick="closeModal('settingsModal')">✕</button>
     <h2>깃허브 연결</h2>
-    <div class="sub">이미지와 태그는 이 저장소의 <b>images/</b> 폴더와 <b>db.json</b> 파일에 저장돼요. 개인용 <b>Private 저장소</b>를 추천해요.</div>
+    <div class="sub">이미지와 태그는 이 저장소의 <b>images/</b> 폴더와 <b>db.json</b> 파일에 저장돼요.</div>
     <div class="boxed">
       <div class="prop"><div class="prop-label">소유자</div><div class="prop-body"><input type="text" id="inOwner" placeholder="예: myGithubId"></div></div>
       <div class="prop"><div class="prop-label">저장소</div><div class="prop-body"><input type="text" id="inRepo" placeholder="예: my-image-archive"></div></div>
@@ -293,11 +222,11 @@
   </div>
 </div>
 
-<!-- 업로드 모달 -->
+<!-- 추가/수정 모달 -->
 <div class="modalBg" id="uploadModal">
   <div class="modal">
     <button class="closeX" onclick="closeModal('uploadModal')">✕</button>
-    <h2>이미지 추가</h2>
+    <h2 id="uploadModalTitle">이미지 추가</h2>
     <div class="sub">이미지와 정보를 입력하면 깃허브에 바로 백업돼요.</div>
     <div class="field" style="margin-bottom:14px;">
       <div class="filePick" onclick="document.getElementById('uploadFileInput').click()">
@@ -313,6 +242,14 @@
         <div class="prop-body"><input type="text" id="upTitle" placeholder="예: 여름 교복 미쿠"></div>
       </div>
       <div class="prop">
+        <div class="prop-label">부제목</div>
+        <div class="prop-body"><input type="text" id="upSubtitle" placeholder="예: 페어 캐릭터: OO / 짧은 설명"></div>
+      </div>
+      <div class="prop">
+        <div class="prop-label"><span class="dot" style="background:var(--purple-fg)"></span>분류</div>
+        <div class="prop-body"><input type="text" id="upCategory" placeholder="예: 내캐, 페어, 여름"></div>
+      </div>
+      <div class="prop">
         <div class="prop-label"><span class="dot" style="background:var(--blue-fg)"></span>외형</div>
         <div class="prop-body"><input type="text" id="upAppearance" oninput="updateCombinedPreview()" placeholder="예: blue eyes, long hair, twintails"></div>
       </div>
@@ -322,7 +259,7 @@
       </div>
       <div class="prop">
         <div class="prop-label">메모</div>
-        <div class="prop-body"><textarea id="upMemo" placeholder="짧은 메모나 프롬프트, 시드값 등"></textarea></div>
+        <div class="prop-body"><textarea id="upMemo" placeholder="프롬프트, 시드값 등"></textarea></div>
       </div>
     </div>
 
@@ -332,8 +269,15 @@
       <button class="copyBtn" onclick="copyText(document.getElementById('uploadCombined').textContent)">⧉ 복사</button>
     </div>
 
+    <div class="sectionLabel">연관 이미지 (페어 캐릭터 등, 여러 장 가능 · 같은 게시물 안에 함께 저장돼요)</div>
+    <div id="extraImagesList"></div>
+    <div class="filePick" onclick="document.getElementById('extraFileInput').click()">
+      <span>탭해서 이미지 추가 (여러 장 선택 가능)</span>
+    </div>
+    <input type="file" id="extraFileInput" accept="image/*" multiple class="hidden" onchange="onExtraFiles(event)">
+
     <div class="btnRow">
-      <button class="btn btn-primary" id="uploadSaveBtn" onclick="submitUpload()">저장하기</button>
+      <button class="btn btn-primary" id="uploadSaveBtn" onclick="submitEntry()">저장하기</button>
     </div>
   </div>
 </div>
@@ -344,7 +288,12 @@
     <button class="closeX" onclick="closeModal('detailModal')">✕</button>
     <div id="detailImgWrap"><img id="detailImg"></div>
     <div id="detailTitle"></div>
+    <div id="detailSubtitle"></div>
 
+    <div class="prop" id="detailCategoryRow">
+      <div class="prop-label"><span class="dot" style="background:var(--purple-fg)"></span>분류</div>
+      <div class="prop-body"><div class="tagList" id="detailCategory"></div></div>
+    </div>
     <div class="prop">
       <div class="prop-label"><span class="dot" style="background:var(--blue-fg)"></span>외형</div>
       <div class="prop-body"><div class="tagList" id="detailAppearance"></div></div>
@@ -360,12 +309,28 @@
       <button class="copyBtn" onclick="copyText(document.getElementById('detailCombined').textContent)">⧉ 복사</button>
     </div>
 
+    <div id="detailExtraSection" class="hidden" style="margin-top:16px;">
+      <div class="sectionLabel" style="margin-top:0;">연관 이미지</div>
+      <div id="detailExtraWrap"></div>
+    </div>
+
     <div id="detailMemoWrap" class="hidden" style="margin-top:14px;">
       <div class="prop-label" style="padding-top:0; margin-bottom:6px;">메모</div>
       <div id="detailMemo" style="font-size:13.5px; color:var(--text-muted); white-space:pre-wrap; line-height:1.6;"></div>
     </div>
 
-    <div class="btnRow"><button class="btn btn-danger" onclick="deleteCurrentImage()">이 이미지 삭제</button></div>
+    <div class="btnRow">
+      <button class="btn btn-ghost" onclick="openEntryForm(currentDetailId)">수정</button>
+      <button class="btn btn-danger" onclick="deleteCurrentImage()">삭제</button>
+    </div>
+  </div>
+</div>
+
+<!-- 라이트박스 (연관 이미지 크게보기) -->
+<div class="modalBg" id="lightboxModal">
+  <div class="modal">
+    <button class="closeX" onclick="closeModal('lightboxModal')">✕</button>
+    <img id="lightboxImg">
   </div>
 </div>
 
@@ -378,14 +343,11 @@ let db = null;
 let dbSha = null;
 let currentTagFilter = null;
 let currentDetailId = null;
+let isEditingId = null;
 let blobCache = {};
 let pendingUploadFile = null;
 let pendingProfileFile = null;
-
-const CATS = [
-  {key:'appearance', label:'외형', pillClass:'appearance', fg:'var(--blue-fg)'},
-  {key:'outfit', label:'의상', pillClass:'outfit', fg:'var(--green-fg)'}
-];
+let extraItems = []; // {type:'pending', file, previewUrl} | {type:'existing', path}
 
 function toast(msg){
   const t = document.getElementById('toast');
@@ -398,9 +360,7 @@ function copyText(str){
   if(!str){ toast('복사할 내용이 없어요'); return; }
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(str).then(()=>toast('복사됐어요')).catch(()=>fallbackCopy(str));
-  }else{
-    fallbackCopy(str);
-  }
+  }else{ fallbackCopy(str); }
 }
 function fallbackCopy(str){
   try{
@@ -466,6 +426,9 @@ async function loadDB(){
     if(!img.tags.appearance) img.tags.appearance = [];
     if(!img.tags.outfit) img.tags.outfit = [];
     if(!img.title) img.title = '';
+    if(!img.subtitle) img.subtitle = '';
+    if(!img.category) img.category = [];
+    if(!img.extraImages) img.extraImages = [];
   });
   dbSha = file.sha;
 }
@@ -546,7 +509,7 @@ async function saveProfile(){
     toast('저장 중...');
     if(pendingProfileFile){
       const b64 = await fileToBase64(pendingProfileFile);
-      const ext = (pendingProfileFile.name.split('.').pop()||'jpg').toLowerCase();
+      const ext = safeExt(pendingProfileFile.name);
       const path = `images/profile-avatar.${ext}`;
       await ghPutFile(path, b64, '프로필 이미지 업데이트');
       db.profile.avatarPath = path;
@@ -579,27 +542,8 @@ function renderProfile(){
   }
 }
 
-/* ============ 업로드 ============ */
-function openUpload(){
-  document.getElementById('uploadFileInput').value = '';
-  document.getElementById('uploadPreview').classList.add('hidden');
-  document.getElementById('uploadPickLabel').textContent = '탭해서 이미지 선택 (카메라/앨범)';
-  ['upTitle','upAppearance','upOutfit','upMemo'].forEach(id=>document.getElementById(id).value='');
-  pendingUploadFile = null;
-  updateCombinedPreview();
-  document.getElementById('uploadModal').classList.add('show');
-}
-function onUploadFile(e){
-  const file = e.target.files[0]; if(!file) return;
-  pendingUploadFile = file;
-  const reader = new FileReader();
-  reader.onload = ()=>{
-    const prev = document.getElementById('uploadPreview');
-    prev.src = reader.result; prev.classList.remove('hidden');
-    document.getElementById('uploadPickLabel').textContent = file.name;
-  };
-  reader.readAsDataURL(file);
-}
+/* ============ 추가/수정 폼 ============ */
+function safeExt(name){ return (name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'') || 'jpg'; }
 function fileToBase64(file){
   return new Promise((resolve,reject)=>{
     const reader = new FileReader();
@@ -617,56 +561,190 @@ function updateCombinedPreview(){
   if(combined){ box.textContent = combined; box.classList.remove('empty'); }
   else{ box.textContent = '태그를 입력하면 여기에 합쳐서 보여줘요'; box.classList.add('empty'); }
 }
-async function submitUpload(){
-  if(!pendingUploadFile){ toast('이미지를 선택해주세요'); return; }
+
+function openEntryForm(id){
+  isEditingId = id || null;
+  pendingUploadFile = null;
+  extraItems = [];
+  document.getElementById('uploadFileInput').value = '';
+  const titleEl = document.getElementById('uploadModalTitle');
+  const preview = document.getElementById('uploadPreview');
+  const pickLabel = document.getElementById('uploadPickLabel');
+
+  if(id){
+    const img = db.images.find(i=>i.id===id);
+    if(!img) return;
+    titleEl.textContent = '이미지 수정';
+    if(blobCache[img.path]){ preview.src = blobCache[img.path]; preview.classList.remove('hidden'); }
+    else{ preview.classList.add('hidden'); }
+    pickLabel.textContent = '이미지를 바꾸려면 탭하세요 (안 바꾸면 그대로 유지)';
+    document.getElementById('upTitle').value = img.title || '';
+    document.getElementById('upSubtitle').value = img.subtitle || '';
+    document.getElementById('upCategory').value = (img.category||[]).join(', ');
+    document.getElementById('upAppearance').value = (img.tags.appearance||[]).join(', ');
+    document.getElementById('upOutfit').value = (img.tags.outfit||[]).join(', ');
+    document.getElementById('upMemo').value = img.memo || '';
+    extraItems = (img.extraImages||[]).map(p=>({type:'existing', path:p}));
+    document.getElementById('uploadSaveBtn').textContent = '수정 저장';
+  }else{
+    titleEl.textContent = '이미지 추가';
+    preview.classList.add('hidden');
+    pickLabel.textContent = '탭해서 이미지 선택 (카메라/앨범)';
+    ['upTitle','upSubtitle','upCategory','upAppearance','upOutfit','upMemo'].forEach(fid=>document.getElementById(fid).value='');
+    document.getElementById('uploadSaveBtn').textContent = '저장하기';
+  }
+  updateCombinedPreview();
+  renderExtraImagesList();
+  document.getElementById('uploadModal').classList.add('show');
+}
+function onUploadFile(e){
+  const file = e.target.files[0]; if(!file) return;
+  pendingUploadFile = file;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    const prev = document.getElementById('uploadPreview');
+    prev.src = reader.result; prev.classList.remove('hidden');
+    document.getElementById('uploadPickLabel').textContent = file.name;
+  };
+  reader.readAsDataURL(file);
+}
+function onExtraFiles(e){
+  const files = Array.from(e.target.files || []);
+  files.forEach(file=>{
+    const reader = new FileReader();
+    reader.onload = ()=>{
+      extraItems.push({type:'pending', file, previewUrl:reader.result});
+      renderExtraImagesList();
+    };
+    reader.readAsDataURL(file);
+  });
+  e.target.value = '';
+}
+function renderExtraImagesList(){
+  const wrap = document.getElementById('extraImagesList');
+  wrap.innerHTML = '';
+  extraItems.forEach((item, idx)=>{
+    const box = document.createElement('div');
+    box.className = 'extraThumbBox';
+    const img = document.createElement('img');
+    if(item.type === 'pending'){
+      img.src = item.previewUrl;
+    }else{
+      if(blobCache[item.path]) img.src = blobCache[item.path];
+      else{
+        ghGetFile(item.path).then(f=>{
+          if(!f) return;
+          const url = base64ToBlobUrl(f.content, guessMime(item.path));
+          blobCache[item.path] = url; img.src = url;
+        }).catch(()=>{});
+      }
+    }
+    const rm = document.createElement('button');
+    rm.className = 'rmBtn';
+    rm.textContent = '✕';
+    rm.onclick = (ev)=>{ ev.stopPropagation(); extraItems.splice(idx,1); renderExtraImagesList(); };
+    box.appendChild(img); box.appendChild(rm);
+    wrap.appendChild(box);
+  });
+}
+
+async function submitEntry(){
+  if(!isEditingId && !pendingUploadFile){ toast('이미지를 선택해주세요'); return; }
   const btn = document.getElementById('uploadSaveBtn');
   btn.disabled = true;
   try{
-    toast('업로드 중...');
-    const b64 = await fileToBase64(pendingUploadFile);
-    const ext = (pendingUploadFile.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'') || 'jpg';
-    const id = Date.now().toString(36) + Math.random().toString(36).slice(2,7);
-    const path = `images/${id}.${ext}`;
-    await ghPutFile(path, b64, `이미지 추가: ${id}`);
+    toast(isEditingId ? '수정 저장 중...' : '업로드 중...');
+    let id = isEditingId;
+    let mainPath;
+    let createdAt = new Date().toISOString();
 
-    const entry = {
-      id, path,
+    if(isEditingId){
+      const existing = db.images.find(i=>i.id===isEditingId);
+      mainPath = existing.path;
+      createdAt = existing.createdAt || createdAt;
+      if(pendingUploadFile){
+        const b64 = await fileToBase64(pendingUploadFile);
+        const ext = safeExt(pendingUploadFile.name);
+        mainPath = `images/${id}-${Date.now().toString(36)}.${ext}`;
+        await ghPutFile(mainPath, b64, `메인 이미지 교체: ${id}`);
+        blobCache[mainPath] = URL.createObjectURL(pendingUploadFile);
+      }
+    }else{
+      id = Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+      const b64 = await fileToBase64(pendingUploadFile);
+      const ext = safeExt(pendingUploadFile.name);
+      mainPath = `images/${id}.${ext}`;
+      await ghPutFile(mainPath, b64, `이미지 추가: ${id}`);
+      blobCache[mainPath] = URL.createObjectURL(pendingUploadFile);
+    }
+
+    const finalExtra = [];
+    for(let i=0;i<extraItems.length;i++){
+      const item = extraItems[i];
+      if(item.type === 'existing'){
+        finalExtra.push(item.path);
+      }else{
+        const b64 = await fileToBase64(item.file);
+        const ext = safeExt(item.file.name);
+        const p = `images/${id}-extra-${Date.now().toString(36)}${i}.${ext}`;
+        await ghPutFile(p, b64, `연관 이미지 추가: ${id}`);
+        blobCache[p] = item.previewUrl;
+        finalExtra.push(p);
+      }
+    }
+
+    const entryData = {
+      id,
+      path: mainPath,
       title: document.getElementById('upTitle').value.trim(),
-      tags:{ appearance: splitTags(document.getElementById('upAppearance').value), outfit: splitTags(document.getElementById('upOutfit').value) },
+      subtitle: document.getElementById('upSubtitle').value.trim(),
+      category: splitTags(document.getElementById('upCategory').value),
+      tags:{
+        appearance: splitTags(document.getElementById('upAppearance').value),
+        outfit: splitTags(document.getElementById('upOutfit').value)
+      },
       memo: document.getElementById('upMemo').value.trim(),
-      createdAt: new Date().toISOString()
+      extraImages: finalExtra,
+      createdAt
     };
-    db.images.unshift(entry);
-    await saveDB(`db 업데이트: ${id} 추가`);
-    blobCache[path] = URL.createObjectURL(pendingUploadFile);
 
+    if(isEditingId){
+      const idx = db.images.findIndex(i=>i.id===id);
+      db.images[idx] = entryData;
+    }else{
+      db.images.unshift(entryData);
+    }
+    await saveDB(`db 업데이트: ${id} ${isEditingId ? '수정' : '추가'}`);
+
+    const wasEditing = !!isEditingId;
     closeModal('uploadModal');
+    if(wasEditing) closeModal('detailModal');
     renderFilters(); renderGallery();
-    toast('백업 완료');
-  }catch(e){ toast(e.message || '업로드 실패'); }
-  finally{ btn.disabled = false; }
+    toast(wasEditing ? '수정됐어요' : '백업 완료');
+  }catch(e){ toast(e.message || '저장 실패'); }
+  finally{ btn.disabled = false; isEditingId = null; }
 }
 
-/* ============ 필터 ============ */
-function allTagsByCat(catKey){
+/* ============ 필터 (분류 태그 전용) ============ */
+function allCategoryTags(){
   const set = new Set();
-  db.images.forEach(img=> (img.tags[catKey]||[]).forEach(t=>set.add(t)));
+  db.images.forEach(img=> (img.category||[]).forEach(t=>set.add(t)));
   return [...set];
 }
 function renderFilters(){
   const wrap = document.getElementById('filterScroll');
   wrap.innerHTML = '';
-  CATS.forEach(cat=>{
-    allTagsByCat(cat.key).forEach(tag=>{
-      const chip = document.createElement('div');
-      chip.className = 'chip cat-'+cat.key + (currentTagFilter && currentTagFilter.cat===cat.key && currentTagFilter.tag===tag ? ' active':'');
-      chip.textContent = tag;
-      chip.onclick = ()=>{
-        currentTagFilter = (currentTagFilter && currentTagFilter.cat===cat.key && currentTagFilter.tag===tag) ? null : {cat:cat.key, tag};
-        renderFilters(); renderGallery();
-      };
-      wrap.appendChild(chip);
-    });
+  const tags = allCategoryTags();
+  document.getElementById('noCatHint').classList.toggle('hidden', tags.length>0 || db.images.length===0);
+  tags.forEach(tag=>{
+    const chip = document.createElement('div');
+    chip.className = 'chip' + (currentTagFilter === tag ? ' active' : '');
+    chip.textContent = tag;
+    chip.onclick = ()=>{
+      currentTagFilter = (currentTagFilter === tag) ? null : tag;
+      renderFilters(); renderGallery();
+    };
+    wrap.appendChild(chip);
   });
 }
 
@@ -684,17 +762,12 @@ function base64ToBlobUrl(base64, mime){
   for(let i=0;i<byteChars.length;i++) arr[i] = byteChars.charCodeAt(i);
   return URL.createObjectURL(new Blob([arr], {type:mime}));
 }
-function shortSub(img){
-  if(img.memo) return img.memo;
-  const all = [...img.tags.appearance, ...img.tags.outfit];
-  return all.length ? all.join(', ') : '';
-}
 let observer = null;
 function renderGallery(){
   const grid = document.getElementById('gallery');
   grid.innerHTML = '';
   let list = db.images;
-  if(currentTagFilter) list = list.filter(img => (img.tags[currentTagFilter.cat]||[]).includes(currentTagFilter.tag));
+  if(currentTagFilter) list = list.filter(img => (img.category||[]).includes(currentTagFilter));
   document.getElementById('emptyHint').classList.toggle('hidden', db.images.length>0);
 
   if(observer) observer.disconnect();
@@ -722,23 +795,23 @@ function renderGallery(){
     cap.appendChild(title);
     const sub = document.createElement('div');
     sub.className = 'card-sub';
-    sub.textContent = shortSub(img);
+    sub.textContent = img.subtitle || '';
     cap.appendChild(sub);
 
-    const allTags = [...img.tags.appearance.map(t=>({t,c:'appearance'})), ...img.tags.outfit.map(t=>({t,c:'outfit'}))];
-    if(allTags.length){
+    const cats = img.category || [];
+    if(cats.length){
       const pillsWrap = document.createElement('div');
       pillsWrap.className = 'card-pills';
-      allTags.slice(0,3).forEach(item=>{
+      cats.slice(0,3).forEach(t=>{
         const p = document.createElement('span');
-        p.className = 'pill ' + item.c;
-        p.textContent = item.t;
+        p.className = 'pill category';
+        p.textContent = t;
         pillsWrap.appendChild(p);
       });
-      if(allTags.length > 3){
+      if(cats.length > 3){
         const more = document.createElement('span');
         more.className = 'pill more';
-        more.textContent = '+' + (allTags.length - 3);
+        more.textContent = '+' + (cats.length - 3);
         pillsWrap.appendChild(more);
       }
       cap.appendChild(pillsWrap);
@@ -778,11 +851,46 @@ function renderTagPills(containerId, tags, catClass){
     wrap.appendChild(span);
   });
 }
+function openLightbox(path){
+  const img = document.getElementById('lightboxImg');
+  if(blobCache[path]) img.src = blobCache[path];
+  else{
+    ghGetFile(path).then(f=>{
+      if(!f) return;
+      const url = base64ToBlobUrl(f.content, guessMime(path));
+      blobCache[path] = url; img.src = url;
+    });
+  }
+  document.getElementById('lightboxModal').classList.add('show');
+}
+function renderDetailExtraImages(list){
+  const section = document.getElementById('detailExtraSection');
+  const wrap = document.getElementById('detailExtraWrap');
+  wrap.innerHTML = '';
+  if(!list || !list.length){ section.classList.add('hidden'); return; }
+  section.classList.remove('hidden');
+  list.forEach(path=>{
+    const thumb = document.createElement('img');
+    thumb.onclick = ()=> openLightbox(path);
+    if(blobCache[path]) thumb.src = blobCache[path];
+    else{
+      ghGetFile(path).then(f=>{
+        if(!f) return;
+        const url = base64ToBlobUrl(f.content, guessMime(path));
+        blobCache[path] = url; thumb.src = url;
+      }).catch(()=>{});
+    }
+    wrap.appendChild(thumb);
+  });
+}
 async function openDetail(id){
   const img = db.images.find(i=>i.id===id);
   if(!img) return;
   currentDetailId = id;
   document.getElementById('detailTitle').textContent = img.title || '(제목 없음)';
+  document.getElementById('detailSubtitle').textContent = img.subtitle || '';
+  document.getElementById('detailSubtitle').classList.toggle('hidden', !img.subtitle);
+
   const detailImg = document.getElementById('detailImg');
   detailImg.src = blobCache[img.path] || '';
   if(!blobCache[img.path]){
@@ -792,11 +900,14 @@ async function openDetail(id){
       blobCache[img.path] = url; detailImg.src = url;
     });
   }
+  renderTagPills('detailCategory', img.category || [], 'category');
   renderTagPills('detailAppearance', img.tags.appearance, 'appearance');
   renderTagPills('detailOutfit', img.tags.outfit, 'outfit');
 
   const combined = [...img.tags.appearance, ...img.tags.outfit].join(', ');
   document.getElementById('detailCombined').textContent = combined || '(태그 없음)';
+
+  renderDetailExtraImages(img.extraImages);
 
   const memoWrap = document.getElementById('detailMemoWrap');
   if(img.memo){ memoWrap.classList.remove('hidden'); document.getElementById('detailMemo').textContent = img.memo; }
@@ -813,6 +924,12 @@ async function deleteCurrentImage(){
     toast('삭제 중...');
     const file = await ghGetFile(img.path);
     if(file) await ghDeleteFile(img.path, `이미지 삭제: ${img.id}`, file.sha);
+    for(const extraPath of (img.extraImages||[])){
+      try{
+        const ef = await ghGetFile(extraPath);
+        if(ef) await ghDeleteFile(extraPath, `연관 이미지 삭제: ${img.id}`, ef.sha);
+      }catch(e){ /* 개별 파일 삭제 실패는 무시하고 계속 진행 */ }
+    }
     db.images = db.images.filter(i=>i.id!==currentDetailId);
     await saveDB(`db 업데이트: ${img.id} 삭제`);
     closeModal('detailModal');
