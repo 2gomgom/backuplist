@@ -4,49 +4,5 @@
     "bio": "",
     "avatarPath": ""
   },
-  "images": [
-    {
-      "id": "mrhwiqiwvjwo2",
-      "path": "images/mrhwiqiwvjwo2.png",
-      "title": "가오가오",
-      "tags": {
-        "appearance": [
-          "aged up",
-          "0.3::mature male::",
-          "white skin",
-          "slender",
-          "1.7::short hair",
-          "mullet",
-          "hair intakes::",
-          "white hair",
-          "long bangs",
-          "hair over eyes",
-          "eyes visible through hair",
-          "wavy hair",
-          "hair between eyes",
-          "Melting White Halo with blood",
-          "1.5::red pupils",
-          "light gray eyes::",
-          "colored eyelashes",
-          "empty eyes",
-          "tareme",
-          "bags under eyes"
-        ],
-        "outfit": [
-          "1.2::torn clothes",
-          "Many blood stains on the clothes::",
-          "white oversized straitjacket",
-          "crop jacket",
-          "sleeves past wrists",
-          "popped collar",
-          "white straps on jacket",
-          "bandage on face",
-          "gauze on cheek",
-          "white pants"
-        ]
-      },
-      "memo": "",
-      "createdAt": "2026-07-12T14:41:24.973Z"
-    }
-  ]
+  "images": []
 }
