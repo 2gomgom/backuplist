@@ -3,8 +3,8 @@
     "name": "",
     "bio": "",
     "avatarPath": "",
-    "bgColor": "",
-    "headerImagePath": ""
+    "bgColor": "#ffffff",
+    "headerImagePath": "images/profile-header.jpg"
   },
   "images": [
     {
