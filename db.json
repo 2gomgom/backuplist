@@ -20,6 +20,24 @@
   },
   "images": [
     {
+      "id": "mrj65okmmethk",
+      "path": "images/mrj65okmmethk.png",
+      "title": "",
+      "subtitle": "",
+      "ddayDate": "",
+      "heartColor": "#c9184a",
+      "category": [],
+      "tags": {
+        "appearance": [],
+        "outfit": []
+      },
+      "memo": "",
+      "profile": "",
+      "bannerImagePath": "",
+      "extraImages": [],
+      "createdAt": "2026-07-13T11:58:53.350Z"
+    },
+    {
       "id": "mrj2tg533opv2",
       "path": "images/mrj2tg533opv2-mrj36t58.png",
       "title": "염사하",
