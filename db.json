@@ -9,7 +9,7 @@
     "bgPattern": "wing",
     "bgImagePath": "",
     "heartColor": "#c9184a",
-    "bgColorMode": "solid",
+    "bgColorMode": "gradient",
     "bgColor2": "#f0e9ff",
     "bgGradientAngle": 135,
     "bgImageBrightness": 100,
