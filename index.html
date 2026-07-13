@@ -26,6 +26,8 @@
   }
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; }
+  /* 이미지 저장/드래그 방지 (우클릭 저장, 롱프레스 저장, 드래그 저장 차단) */
+  img{ -webkit-user-drag:none; -webkit-touch-callout:none; -webkit-user-select:none; -moz-user-select:none; user-select:none; }
   body{
     background:var(--bg);
     color:var(--text);
@@ -143,6 +145,20 @@
   .colorPickRow{ display:flex; align-items:center; gap:8px; }
   .colorPickRow input[type=color]{ width:44px; flex-shrink:0; }
   .hexInput{ flex:1; min-width:0; padding:8px 10px !important; border-radius:7px; background:var(--bg-soft); border:1px solid var(--border) !important; font-size:13px !important; font-family:'Inter',monospace !important; text-transform:uppercase; }
+  .colorSwatchRow{ display:flex; align-items:center; gap:10px; }
+  .colorSwatch{ width:28px; height:28px; border-radius:50%; cursor:pointer; border:2px solid transparent; box-shadow:inset 0 0 0 1px rgba(0,0,0,0.08); }
+  .colorSwatch.active{ border-color:var(--text); box-shadow:0 0 0 2px var(--surface), 0 0 0 4px var(--text); }
+  .colorSwatch.catPurple{ background:var(--purple-fg); }
+  .colorSwatch.catBlue{ background:var(--blue-fg); }
+  .colorSwatch.catGreen{ background:var(--green-fg); }
+  .catColorList{ display:flex; flex-direction:column; gap:8px; }
+  .catColorRow{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:7px 10px; background:var(--bg-soft); border-radius:7px; }
+  .catColorRow .catColorTagName{ font-size:12.5px; font-weight:600; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .catColorRow .colorSwatchRow{ flex-shrink:0; gap:7px; }
+  .catColorRow .colorSwatch{ width:20px; height:20px; }
+  .pill.catPurple{ background:var(--purple-bg); color:var(--purple-fg); }
+  .pill.catBlue{ background:var(--blue-bg); color:var(--blue-fg); }
+  .pill.catGreen{ background:var(--green-bg); color:var(--green-fg); }
   .bgModeToggle{ display:flex; gap:6px; margin-bottom:10px; }
   .bgModeToggle .chip{ flex:1; text-align:center; }
   .gradientRow{ display:flex; gap:8px; margin-top:8px; }
@@ -396,7 +412,12 @@
     <div class="boxed">
       <div class="prop">
         <div class="prop-label">하트 색상</div>
-        <div class="prop-body"><input type="color" id="inHeartColor" value="#c9184a"></div>
+        <div class="prop-body">
+          <div class="colorPickRow">
+            <input type="color" id="inHeartColor" value="#c9184a" oninput="syncHexFromPicker('inHeartColor','inHeartColorHex')">
+            <input type="text" class="hexInput" id="inHeartColorHex" placeholder="#C9184A" maxlength="7" oninput="syncPickerFromHex('inHeartColorHex','inHeartColor')">
+          </div>
+        </div>
       </div>
       <div class="prop">
         <div class="prop-label">배경 종류</div>
@@ -540,13 +561,35 @@
       <div class="prop">
         <div class="prop-label"><span class="heart-icon" id="upHeartColorLabel">❤︎</span> 색상</div>
         <div class="prop-body">
-          <input type="color" id="upHeartColor" value="#c9184a" oninput="document.getElementById('upMemoHeartIcon').style.color=this.value; document.getElementById('upHeartColorLabel').style.color=this.value;">
+          <div class="colorPickRow">
+            <input type="color" id="upHeartColor" value="#c9184a" oninput="document.getElementById('upMemoHeartIcon').style.color=this.value; document.getElementById('upHeartColorLabel').style.color=this.value; syncHexFromPicker('upHeartColor','upHeartColorHex');">
+            <input type="text" class="hexInput" id="upHeartColorHex" placeholder="#C9184A" maxlength="7" oninput="syncPickerFromHex('upHeartColorHex','upHeartColor'); document.getElementById('upMemoHeartIcon').style.color=document.getElementById('upHeartColor').value; document.getElementById('upHeartColorLabel').style.color=document.getElementById('upHeartColor').value;">
+          </div>
           <div class="miniHint">이 게시글의 디데이 · 하트 색상이에요</div>
         </div>
       </div>
       <div class="prop">
+        <div class="prop-label">캐치프레이즈</div>
+        <div class="prop-body">
+          <div class="bgModeToggle" id="catchphraseEnableChips">
+            <div class="chip" data-val="on">표시</div>
+            <div class="chip" data-val="off">숨김</div>
+          </div>
+          <input type="text" id="upCatchphrase" placeholder="예: 여름 바다를 닮은 아이" style="margin-top:8px;">
+          <div class="bgModeToggle" id="catchphraseStyleChips" style="margin-top:8px;">
+            <div class="chip" data-val="normal">기본체</div>
+            <div class="chip" data-val="italic">기울임체</div>
+          </div>
+          <div class="miniHint">상세보기에서 분류 위쪽에 한 줄 소개로 표시돼요. 게시글 목록 미리보기에는 나오지 않아요.</div>
+        </div>
+      </div>
+      <div class="prop">
         <div class="prop-label"><span class="dot" style="background:var(--purple-fg)"></span>분류</div>
-        <div class="prop-body"><input type="text" id="upCategory" placeholder="예: 내캐, 페어, 여름"></div>
+        <div class="prop-body">
+          <input type="text" id="upCategory" oninput="renderCategoryColorPicker()" placeholder="예: 내캐, 페어, 여름">
+          <div class="catColorList" id="upCategoryColorList" style="margin-top:8px;"></div>
+          <div class="miniHint">태그를 입력하면 아래에서 태그별로 색상을 따로 지정할 수 있어요</div>
+        </div>
       </div>
       <div class="prop">
         <div class="prop-label"><span class="dot" style="background:var(--blue-fg)"></span>외형</div>
@@ -628,6 +671,9 @@
     </div>
     <div id="detailSubtitleTags"></div>
 
+    <div class="hidden" id="detailCatchphraseWrap" style="margin-top:10px;">
+      <div id="detailCatchphrase" style="font-size:14px; color:var(--text-muted); line-height:1.5;"></div>
+    </div>
     <div class="prop" style="margin-top:8px;">
       <div class="prop-label"><span class="dot" style="background:var(--purple-fg)"></span>분류</div>
       <div class="prop-body"><div class="tagList" id="detailCategory"></div></div>
@@ -971,10 +1017,15 @@ async function loadDB(){
     if(!img.title) img.title = '';
     if(!img.subtitle) img.subtitle = '';
     if(!img.category) img.category = [];
+    if(img.categoryColor === undefined) img.categoryColor = 'catPurple';
+    if(img.categoryColors === undefined) img.categoryColors = {};
     if(img.ddayDate === undefined) img.ddayDate = '';
     if(img.heartColor === undefined) img.heartColor = '';
     if(img.profile === undefined) img.profile = '';
     if(img.bannerImagePath === undefined) img.bannerImagePath = '';
+    if(img.catchphrase === undefined) img.catchphrase = '';
+    if(img.catchphraseEnabled === undefined) img.catchphraseEnabled = false;
+    if(img.catchphraseItalic === undefined) img.catchphraseItalic = false;
     if(img.pinned === undefined) img.pinned = false;
     if(!img.extraImages) img.extraImages = [];
     img.extraImages = img.extraImages.map(e => (typeof e === 'string') ? {path:e, prompt:''} : {path:e.path, prompt:e.prompt||''});
@@ -1063,6 +1114,7 @@ function openProfile(){
   document.getElementById('inBgPosY').value = db?.profile?.bgImagePosY ?? 50;
   document.getElementById('bgPosYVal').textContent = (db?.profile?.bgImagePosY ?? 50) + '%';
   document.getElementById('inHeartColor').value = db?.profile?.heartColor || '#c9184a';
+  document.getElementById('inHeartColorHex').value = (db?.profile?.heartColor || '#c9184a').toUpperCase();
   selectedBgColorMode = db?.profile?.bgColorMode || 'solid';
   document.querySelectorAll('#bgColorModeChips .chip').forEach(c=>c.classList.toggle('active', c.dataset.val===selectedBgColorMode));
   document.getElementById('bgGradientExtra').classList.toggle('hidden', selectedBgColorMode!=='gradient');
@@ -1140,6 +1192,63 @@ function setupBgTypeChips(){
     };
   });
 }
+let selectedCatchphraseEnabled = 'off';
+let selectedCatchphraseStyle = 'normal';
+function setupCatchphraseChips(){
+  document.querySelectorAll('#catchphraseEnableChips .chip').forEach(chip=>{
+    chip.onclick = ()=>{
+      selectedCatchphraseEnabled = chip.dataset.val;
+      document.querySelectorAll('#catchphraseEnableChips .chip').forEach(c=>c.classList.toggle('active', c===chip));
+    };
+  });
+  document.querySelectorAll('#catchphraseStyleChips .chip').forEach(chip=>{
+    chip.onclick = ()=>{
+      selectedCatchphraseStyle = chip.dataset.val;
+      document.querySelectorAll('#catchphraseStyleChips .chip').forEach(c=>c.classList.toggle('active', c===chip));
+    };
+  });
+}
+function updateCatchphraseChipsUI(){
+  document.querySelectorAll('#catchphraseEnableChips .chip').forEach(c=>c.classList.toggle('active', c.dataset.val===selectedCatchphraseEnabled));
+  document.querySelectorAll('#catchphraseStyleChips .chip').forEach(c=>c.classList.toggle('active', c.dataset.val===selectedCatchphraseStyle));
+}
+let selectedCategoryColors = {}; // { tagName: 'catPurple' | 'catBlue' | 'catGreen' }
+const CATEGORY_COLOR_OPTIONS = [
+  {val:'catPurple', title:'보라'},
+  {val:'catBlue', title:'파랑'},
+  {val:'catGreen', title:'초록'}
+];
+function setupCategoryColorChips(){
+  renderCategoryColorPicker();
+}
+function renderCategoryColorPicker(){
+  const list = document.getElementById('upCategoryColorList');
+  const tags = splitTags(document.getElementById('upCategory').value);
+  list.innerHTML = '';
+  tags.forEach(tag=>{
+    if(!selectedCategoryColors[tag]) selectedCategoryColors[tag] = 'catPurple';
+    const row = document.createElement('div');
+    row.className = 'catColorRow';
+    const name = document.createElement('div');
+    name.className = 'catColorTagName';
+    name.textContent = tag;
+    row.appendChild(name);
+    const swatchRow = document.createElement('div');
+    swatchRow.className = 'colorSwatchRow';
+    CATEGORY_COLOR_OPTIONS.forEach(opt=>{
+      const sw = document.createElement('div');
+      sw.className = 'colorSwatch ' + opt.val + (selectedCategoryColors[tag]===opt.val ? ' active' : '');
+      sw.title = opt.title;
+      sw.onclick = ()=>{
+        selectedCategoryColors[tag] = opt.val;
+        renderCategoryColorPicker();
+      };
+      swatchRow.appendChild(sw);
+    });
+    row.appendChild(swatchRow);
+    list.appendChild(row);
+  });
+}
 function onProfileFile(e){
   const file = e.target.files[0]; if(!file) return;
   pendingProfileFile = file;
@@ -1173,28 +1282,26 @@ function removeHeaderImage(){
   document.getElementById('headerRemoveBtn').classList.add('hidden');
   toast('저장하면 헤더 이미지가 삭제돼요');
 }
-async function putProfileImage(file, path, message){
-  const b64 = await fileToBase64(file);
+async function putProfileImage(file, pathBase, message){
+  const { base64: b64, ext } = await prepareImageForUpload(file);
+  const path = `${pathBase}.${ext}`;
   let sha;
   try{ const existing = await ghGetFile(path); if(existing) sha = existing.sha; }catch(e){ /* 없으면 새로 생성 */ }
   await ghPutFile(path, b64, message, sha);
+  return path;
 }
 async function saveProfile(){
   if(!requireWriteAccess()) return;
   try{
     toast('저장 중...');
     if(pendingProfileFile){
-      const ext = safeExt(pendingProfileFile.name);
-      const path = `images/profile-avatar.${ext}`;
-      await putProfileImage(pendingProfileFile, path, '프로필 이미지 업데이트');
+      const path = await putProfileImage(pendingProfileFile, 'images/profile-avatar', '프로필 이미지 업데이트');
       db.profile.avatarPath = path;
       blobCache[path] = URL.createObjectURL(pendingProfileFile);
       pendingProfileFile = null;
     }
     if(pendingHeaderFile){
-      const ext = safeExt(pendingHeaderFile.name);
-      const path = `images/profile-header.${ext}`;
-      await putProfileImage(pendingHeaderFile, path, '헤더 이미지 업데이트');
+      const path = await putProfileImage(pendingHeaderFile, 'images/profile-header', '헤더 이미지 업데이트');
       db.profile.headerImagePath = path;
       blobCache[path] = URL.createObjectURL(pendingHeaderFile);
       pendingHeaderFile = null;
@@ -1208,9 +1315,7 @@ async function saveProfile(){
       pendingHeaderRemove = false;
     }
     if(pendingBgFile){
-      const ext = safeExt(pendingBgFile.name);
-      const path = `images/profile-bg.${ext}`;
-      await putProfileImage(pendingBgFile, path, '배경 이미지 업데이트');
+      const path = await putProfileImage(pendingBgFile, 'images/profile-bg', '배경 이미지 업데이트');
       db.profile.bgImagePath = path;
       blobCache[path] = URL.createObjectURL(pendingBgFile);
       pendingBgFile = null;
@@ -1348,23 +1453,16 @@ function loadImageFromFile(file){
     img.src = url;
   });
 }
-// 용량이 큰 이미지는 업로드 전에 살짝 압축(리사이즈/재인코딩)해서 로딩 실패 확률을 줄인다.
-// 화질 저하를 최소화하기 위해 일정 용량 이하이거나 이미 해상도가 작은 png는 원본 그대로 둔다.
+// 업로드하는 모든 이미지는 캔버스에 다시 그려서 저장한다.
+// 이 과정에서 EXIF 등 촬영기기/위치 정보 같은 메타데이터가 자동으로 제거되고,
+// 용량이 큰 이미지는 리사이즈까지 함께 처리돼서 로딩 실패 확률도 줄어든다.
 async function prepareImageForUpload(file){
-  const SIZE_THRESHOLD = 1.2 * 1024 * 1024; // 1.2MB 이하면 그대로 업로드
   const MAX_DIM = 1600; // 긴 변 기준 최대 해상도
   const QUALITY = 0.88;
-  if(file.size <= SIZE_THRESHOLD){
-    return { base64: await fileToBase64(file), ext: safeExt(file.name) };
-  }
   try{
     const img = await loadImageFromFile(file);
     const { width, height } = img;
     const isPng = file.type === 'image/png';
-    if(width <= MAX_DIM && height <= MAX_DIM && isPng){
-      // 이미 작은 해상도의 png는 재압축해도 크게 줄지 않으므로 원본 유지
-      return { base64: await fileToBase64(file), ext: safeExt(file.name) };
-    }
     const scale = Math.min(1, MAX_DIM / Math.max(width, height));
     const outW = Math.max(1, Math.round(width * scale));
     const outH = Math.max(1, Math.round(height * scale));
@@ -1376,7 +1474,7 @@ async function prepareImageForUpload(file){
     const dataUrl = canvas.toDataURL(outMime, QUALITY);
     return { base64: dataUrl.split(',')[1], ext: isPng ? 'png' : 'jpg' };
   }catch(e){
-    // 압축에 실패하면 원본 그대로 업로드
+    // 캔버스 처리에 실패한 경우에만 원본 그대로 업로드(메타데이터가 남을 수 있음)
     return { base64: await fileToBase64(file), ext: safeExt(file.name) };
   }
 }
@@ -1416,6 +1514,9 @@ function openEntryForm(id){
     document.getElementById('upTitle').value = img.title || '';
     document.getElementById('upSubtitle').value = img.subtitle || '';
     document.getElementById('upDday').value = img.ddayDate || '';
+    document.getElementById('upCatchphrase').value = img.catchphrase || '';
+    selectedCatchphraseEnabled = img.catchphraseEnabled ? 'on' : 'off';
+    selectedCatchphraseStyle = img.catchphraseItalic ? 'italic' : 'normal';
     document.getElementById('upCategory').value = (img.category||[]).join(', ');
     document.getElementById('upAppearance').value = (img.tags.appearance||[]).join(', ');
     document.getElementById('upOutfit').value = (img.tags.outfit||[]).join(', ');
@@ -1435,8 +1536,13 @@ function openEntryForm(id){
     document.getElementById('uploadSaveBtn').textContent = '수정 저장';
     const hc = img.heartColor || db?.profile?.heartColor || '#c9184a';
     document.getElementById('upHeartColor').value = hc;
+    document.getElementById('upHeartColorHex').value = hc.toUpperCase();
     document.getElementById('upMemoHeartIcon').style.color = hc;
     document.getElementById('upHeartColorLabel').style.color = hc;
+    selectedCategoryColors = {};
+    (img.category||[]).forEach(tag=>{
+      selectedCategoryColors[tag] = (img.categoryColors && img.categoryColors[tag]) || img.categoryColor || 'catPurple';
+    });
   }else{
     titleEl.textContent = '이미지 추가';
     preview.classList.add('hidden');
@@ -1444,14 +1550,20 @@ function openEntryForm(id){
     bannerPrev.classList.add('hidden');
     bannerPickLabel.textContent = '탭해서 배너 이미지 선택 (선택 사항)';
     bannerRemoveBtn.classList.add('hidden');
-    ['upTitle','upSubtitle','upDday','upCategory','upAppearance','upOutfit','upMemo','upProfile'].forEach(fid=>document.getElementById(fid).value='');
+    ['upTitle','upSubtitle','upDday','upCategory','upAppearance','upOutfit','upMemo','upProfile','upCatchphrase'].forEach(fid=>document.getElementById(fid).value='');
+    selectedCatchphraseEnabled = 'off';
+    selectedCatchphraseStyle = 'normal';
     document.getElementById('uploadSaveBtn').textContent = '저장하기';
     const hc = db?.profile?.heartColor || '#c9184a';
     document.getElementById('upHeartColor').value = hc;
+    document.getElementById('upHeartColorHex').value = hc.toUpperCase();
     document.getElementById('upMemoHeartIcon').style.color = hc;
     document.getElementById('upHeartColorLabel').style.color = hc;
+    selectedCategoryColors = {};
   }
   updateCombinedPreview();
+  updateCatchphraseChipsUI();
+  renderCategoryColorPicker();
   renderExtraImagesEditor();
   document.getElementById('uploadModal').classList.add('show');
 }
@@ -1676,7 +1788,16 @@ async function submitEntry(){
       subtitle: document.getElementById('upSubtitle').value.trim(),
       ddayDate: document.getElementById('upDday').value || '',
       heartColor: document.getElementById('upHeartColor').value || '',
+      catchphrase: document.getElementById('upCatchphrase').value.trim(),
+      catchphraseEnabled: selectedCatchphraseEnabled === 'on',
+      catchphraseItalic: selectedCatchphraseStyle === 'italic',
       category: splitTags(document.getElementById('upCategory').value),
+      categoryColors: (()=>{
+        const cats = splitTags(document.getElementById('upCategory').value);
+        const map = {};
+        cats.forEach(t=> map[t] = selectedCategoryColors[t] || 'catPurple');
+        return map;
+      })(),
       tags:{
         appearance: splitTags(document.getElementById('upAppearance').value),
         outfit: splitTags(document.getElementById('upOutfit').value)
@@ -1926,7 +2047,8 @@ function renderGallery(){
       pillsWrap.className = 'card-pills';
       cats.slice(0,3).forEach(t=>{
         const p = document.createElement('span');
-        p.className = 'pill category';
+        const catColorClass = (img.categoryColors && img.categoryColors[t]) || img.categoryColor || 'catPurple';
+        p.className = 'pill ' + catColorClass;
         p.textContent = t;
         pillsWrap.appendChild(p);
       });
@@ -1982,7 +2104,8 @@ function renderTagPills(containerId, tags, catClass){
   if(!tags.length){ wrap.innerHTML = '<span style="font-size:12.5px;color:var(--text-faint);">없음</span>'; return; }
   tags.forEach(t=>{
     const span = document.createElement('span');
-    span.className = 'pill ' + catClass;
+    const cls = (typeof catClass === 'function') ? catClass(t) : catClass;
+    span.className = 'pill ' + cls;
     span.textContent = t;
     wrap.appendChild(span);
   });
@@ -2088,7 +2211,16 @@ async function openDetail(id){
   detailImgWrap.appendChild(detailImg);
   if(blobCache[img.path]) detailImg.src = blobCache[img.path];
   loadImageIntoHolder(img.path, detailImgWrap, detailImg);
-  renderTagPills('detailCategory', img.category || [], 'category');
+  const cpWrap = document.getElementById('detailCatchphraseWrap');
+  if(img.catchphraseEnabled && img.catchphrase){
+    cpWrap.classList.remove('hidden');
+    const cpEl = document.getElementById('detailCatchphrase');
+    cpEl.textContent = img.catchphrase;
+    cpEl.style.fontStyle = img.catchphraseItalic ? 'italic' : 'normal';
+  }else{
+    cpWrap.classList.add('hidden');
+  }
+  renderTagPills('detailCategory', img.category || [], (t)=> (img.categoryColors && img.categoryColors[t]) || img.categoryColor || 'catPurple');
   renderTagPills('detailAppearance', img.tags.appearance, 'appearance');
   renderTagPills('detailOutfit', img.tags.outfit, 'outfit');
 
@@ -2150,7 +2282,13 @@ async function deleteCurrentImage(){
   }catch(e){ toast(e.message || '삭제 실패'); }
 }
 
+/* ============ 이미지 저장 방지 ============ */
+document.addEventListener('contextmenu', (e)=>{ if(e.target && e.target.tagName === 'IMG') e.preventDefault(); });
+document.addEventListener('dragstart', (e)=>{ if(e.target && e.target.tagName === 'IMG') e.preventDefault(); });
+
 setupBgTypeChips();
+setupCatchphraseChips();
+setupCategoryColorChips();
 init();
 </script>
 </body>
