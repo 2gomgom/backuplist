@@ -21,7 +21,7 @@
   "images": [
     {
       "id": "mrj2tg533opv2",
-      "path": "images/mrj2tg533opv2-mrj36t58.png",
+      "path": "images/mrj2tg533opv2-mrjdmee2.png",
       "title": "염사하",
       "subtitle": "페더",
       "ddayDate": "2026-05-07",
@@ -278,7 +278,8 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T12:44:34.618Z"
+      "createdAt": "2026-07-13T12:44:34.618Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrja6mkfpe0vq",
@@ -348,7 +349,8 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T13:51:35.871Z"
+      "createdAt": "2026-07-13T13:51:35.871Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrj65okmmethk",
@@ -492,7 +494,8 @@
       "bannerImagePath": "images/mrjbiv6y1ouvq-banner-mrjcbt8t.png",
       "extraImages": [],
       "pinned": false,
-      "createdAt": "2026-07-13T14:29:06.538Z"
+      "createdAt": "2026-07-13T14:29:06.538Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrjbvxh8457qz",
@@ -620,7 +623,8 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-13T14:05:58.866Z"
+      "createdAt": "2026-07-13T14:05:58.866Z",
+      "categoryColor": "catPurple"
     }
   ]
 }
