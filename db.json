@@ -205,7 +205,7 @@
           "1.5::tight clothes::"
         ]
       },
-      "memo": "",
+      "memo": "발레리오 테마곡:\nhttps://youtu.be/D4uB0JSFpno?si=j6XdIu7B99izBezD",
       "profile": "Valerio Visconti\n코드네임(미래): CALYPSO (칼립소)\n직급: S급 물 속성 가이드\n국적: 이탈리아\n나이: 25세\n키: 179cm",
       "bannerImagePath": "images/mrj7sfqyijh8u-banner-mrj7shz0.png",
       "extraImages": [
@@ -279,8 +279,7 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T12:44:34.618Z",
-      "categoryColor": "catPurple"
+      "createdAt": "2026-07-13T12:44:34.618Z"
     },
     {
       "id": "mrja6mkfpe0vq",
@@ -350,7 +349,8 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T13:51:35.871Z"
+      "createdAt": "2026-07-13T13:51:35.871Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrj65okmmethk",
@@ -423,7 +423,8 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T11:58:53.350Z"
+      "createdAt": "2026-07-13T11:58:53.350Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrjbiv6y1ouvq",
@@ -493,7 +494,8 @@
       "bannerImagePath": "",
       "extraImages": [],
       "pinned": false,
-      "createdAt": "2026-07-13T14:29:06.538Z"
+      "createdAt": "2026-07-13T14:29:06.538Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrjbvxh8457qz",
@@ -543,7 +545,8 @@
       "bannerImagePath": "images/mrjbvxh8457qz-banner-mrjbw16y.png",
       "extraImages": [],
       "pinned": false,
-      "createdAt": "2026-07-13T14:39:16.028Z"
+      "createdAt": "2026-07-13T14:39:16.028Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrjap4gin52dj",
