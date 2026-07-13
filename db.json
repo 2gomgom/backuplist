@@ -20,6 +20,99 @@
   },
   "images": [
     {
+      "id": "mrj7sfqyijh8u",
+      "path": "images/mrj7sfqyijh8u.png",
+      "title": "발레리오 비스콘티",
+      "subtitle": "산타",
+      "ddayDate": "2026-03-26",
+      "heartColor": "#795da1",
+      "category": [
+        "CAVEDUCK",
+        "ARCH"
+      ],
+      "tags": {
+        "appearance": [
+          "1boy",
+          "mature male",
+          "2::bishounen::",
+          "pale skin",
+          "toned male",
+          "2::black hair",
+          "hair between eyes",
+          "smail",
+          "messy hair",
+          "emo hair",
+          "2::wolf cut::",
+          "half-closed eyes",
+          "ice blue color eyes",
+          "narrowed eyes",
+          "jitome",
+          "= =",
+          "seductive smile",
+          "1.5::one big black snake tattoo(left neck)::",
+          "no accessory",
+          "slender"
+        ],
+        "outfit": [
+          "2::white military uniform",
+          "white pants",
+          "Partially unbuttoned",
+          "1.5::tight clothes::"
+        ]
+      },
+      "memo": "",
+      "profile": "Valerio Visconti\n코드네임(미래): CALYPSO (칼립소)\n직급: S급 물 가이드\n국적: 이탈리아\n나이: 25세\n키: 179cm",
+      "bannerImagePath": "images/mrj7sfqyijh8u-banner-mrj7shz0.png",
+      "extraImages": [
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7sjmm0.jpg",
+          "prompt": "SANTA (이태양)\n\n1boy, mature male, pale skin, 1.2::aged up::, 1.2::male dominated::,toned male, 2::short black hair, curtained bangs with asymmetric white streaks, 5:5parted bangs::, hair over eyes, hair strands, 2::mullet::, -2::blunt ends::, 2::tsurime, brown eyes::,\n\n2::buttoned white dress shirt, black traditional tie, gold epaulet, a black military uniform suit with gold trim, a black suit pants, a black military cape with gold trim::,2::smug::"
+        },
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7slac1.png",
+          "prompt": "©BG"
+        },
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7smy12.png",
+          "prompt": "©론"
+        },
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7sor03.jpg",
+          "prompt": "©Don"
+        },
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7sqce4.png",
+          "prompt": "©론"
+        },
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7ss5w5.png",
+          "prompt": "©가비"
+        },
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7subq6.png",
+          "prompt": "©가비"
+        },
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7swyd7.png",
+          "prompt": "©minnanoco"
+        },
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7szr68.png",
+          "prompt": "©깔롱"
+        },
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7t0yn9.png",
+          "prompt": "©깔롱"
+        },
+        {
+          "path": "images/mrj7sfqyijh8u-extra-mrj7t3j410.png",
+          "prompt": "©깔롱"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-13T12:44:34.618Z"
+    },
+    {
       "id": "mrj2tg533opv2",
       "path": "images/mrj2tg533opv2-mrj36t58.png",
       "title": "염사하",
