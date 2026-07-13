@@ -145,10 +145,11 @@
       },
       "memo": "복부 문신 안 나올 경우:\ngiant tattoo on stomach, tattoo on iliac crest, dark blue tattoo,\n\n염사하 테마곡:\nhttps://youtu.be/jQDtrMhJJh4?si=-zigVdR5XZo7vXRv",
       "profile": "코드네임: GEHENNA (게헤나)\n직급: S->A급 불 센티넬 (강등)\n나이: 26세\n키: 179cm",
+      "bannerImagePath": "",
       "extraImages": [
         {
           "path": "images/mrj2tg533opv2-extra-mrj36v6u0.jpg",
-          "prompt": "페더(박요한)\n\n1 boy, mature male, 2.3::bishounen::, toned male, parted hair, 1.7::gentle smile, soft smile::, pale skin, short hair, dark olive brown hair, dark ash brown hair, smooth hair, fine hair strands, short mullet, shaggy cut, turquoise blue eyes, eyelashes, -1.5::V-shaped eyebrows::, 2::tareme::,\n\n3::white buttoned military coat::, deep v-neck, 2::no inner::, visible collarbone, bare neck, white pants, white belt, white suit pants, black shoes, -2::cape::,"
+          "prompt": "FEATHER(박요한)\n\n1 boy, mature male, 2.3::bishounen::, toned male, parted hair, 1.7::gentle smile, soft smile::, pale skin, short hair, dark olive brown hair, dark ash brown hair, smooth hair, fine hair strands, short mullet, shaggy cut, turquoise blue eyes, eyelashes, -1.5::V-shaped eyebrows::, 2::tareme::,\n\n3::white buttoned military coat::, deep v-neck, 2::no inner::, visible collarbone, bare neck, white pants, white belt, white suit pants, black shoes, -2::cape::,"
         },
         {
           "path": "images/mrj2tg533opv2-extra-mrj37esr10.png",
@@ -207,8 +208,7 @@
           "prompt": "©만두걸"
         }
       ],
-      "createdAt": "2026-07-13T10:25:23.703Z",
-      "bannerImagePath": ""
+      "createdAt": "2026-07-13T10:25:23.703Z"
     }
   ]
 }
