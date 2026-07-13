@@ -66,14 +66,14 @@
 
   .filterWrap{ padding:12px 16px 2px; }
   .searchRow{ display:flex; align-items:center; gap:8px; margin-bottom:12px; }
-  .searchBar{ flex:1; min-width:0; display:flex; align-items:center; gap:7px; padding:9px 13px; border-radius:20px; background:var(--bg-soft); border:1px solid transparent; transition:background .15s, box-shadow .15s; }
-  .searchBar:focus-within{ background:var(--surface); box-shadow:0 0 0 1.5px var(--text-faint) inset; }
+  .searchBar{ flex:1; min-width:0; display:flex; align-items:center; gap:7px; padding:9px 13px; border-radius:20px; background:rgba(255,255,255,0.38); border:none; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); transition:background .15s; }
+  .searchBar:focus-within{ background:rgba(255,255,255,0.6); }
   .searchIcon{ color:var(--text-faint); font-size:14px; flex-shrink:0; }
   .searchBar input{ flex:1; min-width:0; border:none; background:transparent; padding:0; font-size:13.5px; outline:none; }
   .searchBar input:focus{ border:none; outline:none; }
-  .searchClearBtn{ flex-shrink:0; width:20px; height:20px; border-radius:50%; border:none; background:var(--border); color:var(--text-muted); font-size:10px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
-  .searchSortBtn{ flex-shrink:0; background:var(--bg-soft); border:1px solid transparent; }
-  .searchSortBtn:active{ background:var(--border); }
+  .searchClearBtn{ flex-shrink:0; width:20px; height:20px; border-radius:50%; border:none; background:rgba(0,0,0,0.12); color:var(--text-muted); font-size:10px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .searchSortBtn{ flex-shrink:0; background:rgba(255,255,255,0.38); border:none; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+  .searchSortBtn:active{ background:rgba(255,255,255,0.6); }
   .filterLabel{ font-size:11px; color:var(--text-faint); font-weight:600; letter-spacing:0.03em; margin-bottom:7px; text-transform:uppercase; }
   .filterScroll{ display:flex; gap:7px; overflow-x:auto; padding-bottom:10px; scrollbar-width:none; }
   .filterScroll::-webkit-scrollbar{ display:none; }
@@ -135,6 +135,17 @@
   .boxed input:focus, .boxed textarea:focus{ border-color:#b7b6b3; }
   textarea{ resize:vertical; min-height:56px; line-height:1.5; }
   input[type=color]{ width:100%; height:38px; border-radius:7px; border:1px solid var(--border); padding:2px; background:var(--bg-soft); cursor:pointer; }
+  .colorPickRow{ display:flex; align-items:center; gap:8px; }
+  .colorPickRow input[type=color]{ width:44px; flex-shrink:0; }
+  .hexInput{ flex:1; min-width:0; padding:8px 10px !important; border-radius:7px; background:var(--bg-soft); border:1px solid var(--border) !important; font-size:13px !important; font-family:'Inter',monospace !important; text-transform:uppercase; }
+  .bgModeToggle{ display:flex; gap:6px; margin-bottom:10px; }
+  .bgModeToggle .chip{ flex:1; text-align:center; }
+  .gradientRow{ display:flex; gap:8px; margin-top:8px; }
+  .gradientRow .colorPickRow{ flex:1; }
+  .rangeField{ margin-top:12px; }
+  .rangeField .rangeLabelRow{ display:flex; justify-content:space-between; font-size:11.5px; color:var(--text-muted); margin-bottom:4px; }
+  .rangeField input[type=range]{ width:100%; accent-color:var(--primary); }
+  .posGrid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px; }
 
   .combinedBox{ background:var(--bg-soft); border:1px solid var(--border); border-radius:7px; padding:10px 11px; font-size:13px; line-height:1.6; color:var(--text-muted); min-height:22px; word-break:break-word; white-space:pre-wrap; }
   .combinedBox.empty{ color:var(--text-faint); font-style:italic; }
@@ -170,6 +181,8 @@
   .btn:disabled{ opacity:0.5; }
 
   #detailImgWrap{ border-radius:9px; overflow:hidden; margin-bottom:14px; background:var(--bg-soft); border:1px solid var(--border); }
+  #detailBannerImgWrap{ border-radius:9px; overflow:hidden; background:var(--bg-soft); border:1px solid var(--border); }
+  #detailBannerImgWrap img{ width:100%; display:block; max-height:220px; object-fit:cover; }
   #detailImgWrap img{ width:100%; display:block; max-height:56vh; object-fit:contain; }
   #detailTitle{ font-size:19px; font-weight:700; word-break:break-word; }
   #detailSubtitleTags{ display:flex; flex-wrap:wrap; gap:5px; margin:6px 0 4px; }
@@ -219,8 +232,66 @@
     background-position:center, 20px 0;
     background-repeat:repeat, repeat;
   }
+  .bg-pattern-checker{
+    background-color:#fffdf9;
+    background-image:
+      linear-gradient(45deg, rgba(55,53,47,0.09) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(55,53,47,0.09) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(55,53,47,0.09) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(55,53,47,0.09) 75%);
+    background-size:30px 30px;
+    background-position:0 0, 0 15px, 15px -15px, -15px 0px;
+  }
+  .bg-pattern-gingham{
+    background-color:#fdf1ee;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(233,120,140,0.4) 0 11px, transparent 11px 22px),
+      repeating-linear-gradient(90deg, rgba(233,120,140,0.4) 0 11px, transparent 11px 22px);
+    background-blend-mode:multiply;
+  }
+  .bg-pattern-leopard{
+    background-color:#f5ead9;
+    background-image:
+      radial-gradient(ellipse 11px 8px at 22px 18px, rgba(120,72,38,0.55) 42%, transparent 44%),
+      radial-gradient(ellipse 9px 7px at 62px 46px, rgba(120,72,38,0.5) 42%, transparent 44%),
+      radial-gradient(ellipse 10px 7px at 12px 62px, rgba(120,72,38,0.5) 42%, transparent 44%),
+      radial-gradient(ellipse 8px 6px at 74px 12px, rgba(120,72,38,0.45) 42%, transparent 44%),
+      radial-gradient(ellipse 9px 6px at 45px 70px, rgba(120,72,38,0.48) 42%, transparent 44%);
+    background-size:90px 90px;
+  }
+  .bg-pattern-zigzag{
+    background-color:#fdfaf6;
+    background-image:
+      linear-gradient(135deg, rgba(55,53,47,0.09) 25%, transparent 25%),
+      linear-gradient(225deg, rgba(55,53,47,0.09) 25%, transparent 25%),
+      linear-gradient(45deg, rgba(55,53,47,0.09) 25%, transparent 25%),
+      linear-gradient(315deg, rgba(55,53,47,0.09) 25%, transparent 25%);
+    background-position:20px 0, 20px 0, 0 0, 0 0;
+    background-size:40px 40px;
+  }
+  .bg-pattern-confetti{
+    background-color:#fffdf9;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(255,99,132,0.55) 3px, transparent 4px),
+      radial-gradient(circle at 65% 10%, rgba(94,197,255,0.55) 3px, transparent 4px),
+      radial-gradient(circle at 40% 55%, rgba(255,205,86,0.6) 3px, transparent 4px),
+      radial-gradient(circle at 85% 65%, rgba(153,224,153,0.55) 3px, transparent 4px),
+      radial-gradient(circle at 25% 85%, rgba(201,148,255,0.55) 3px, transparent 4px),
+      radial-gradient(circle at 75% 90%, rgba(255,150,190,0.55) 3px, transparent 4px);
+    background-size:120px 120px;
+  }
+  .bg-pattern-mesh{
+    background-color:#f4f1ea;
+    background-image:
+      radial-gradient(at 20% 20%, rgba(255,183,197,0.55) 0px, transparent 50%),
+      radial-gradient(at 80% 15%, rgba(163,210,255,0.5) 0px, transparent 50%),
+      radial-gradient(at 15% 80%, rgba(255,224,153,0.5) 0px, transparent 50%),
+      radial-gradient(at 85% 85%, rgba(190,230,190,0.5) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(220,190,255,0.4) 0px, transparent 60%);
+  }
 
-  body.bg-pattern-dots, body.bg-pattern-grid, body.bg-pattern-diagonal, body.bg-pattern-blob, body.bg-pattern-sky, body.bg-pattern-feather, body.bg-pattern-wing{ background-attachment:fixed; }
+  #bgLayer{ position:fixed; inset:0; z-index:-2; background-size:cover; background-position:center; background-repeat:no-repeat; }
+  #bgVignette{ position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:0; }
 
   .lockScreen{ min-height:100vh; display:flex; align-items:center; justify-content:center; padding:30px; }
   .lockCard{ max-width:400px; width:100%; text-align:center; }
@@ -231,6 +302,9 @@
 </style>
 </head>
 <body>
+
+<div id="bgLayer"></div>
+<div id="bgVignette"></div>
 
 <div id="lockScreen" class="lockScreen">
   <div class="lockCard">
@@ -330,7 +404,28 @@
       </div>
       <div class="prop" id="bgColorRow">
         <div class="prop-label">배경색</div>
-        <div class="prop-body"><input type="color" id="inBgColor" value="#ffffff"></div>
+        <div class="prop-body">
+          <div class="bgModeToggle" id="bgColorModeChips">
+            <div class="chip" data-val="solid">단색</div>
+            <div class="chip" data-val="gradient">그라데이션</div>
+          </div>
+          <div class="colorPickRow">
+            <input type="color" id="inBgColor" value="#ffffff" oninput="syncHexFromPicker('inBgColor','inBgColorHex')">
+            <input type="text" class="hexInput" id="inBgColorHex" placeholder="#FFFFFF" maxlength="7" oninput="syncPickerFromHex('inBgColorHex','inBgColor')">
+          </div>
+          <div class="hidden" id="bgGradientExtra">
+            <div class="gradientRow">
+              <div class="colorPickRow">
+                <input type="color" id="inBgColor2" value="#f0e9ff" oninput="syncHexFromPicker('inBgColor2','inBgColor2Hex')">
+                <input type="text" class="hexInput" id="inBgColor2Hex" placeholder="#F0E9FF" maxlength="7" oninput="syncPickerFromHex('inBgColor2Hex','inBgColor2')">
+              </div>
+            </div>
+            <div class="rangeField">
+              <div class="rangeLabelRow"><span>그라데이션 각도</span><span id="bgAngleVal">135°</span></div>
+              <input type="range" id="inBgGradientAngle" min="0" max="360" value="135" oninput="document.getElementById('bgAngleVal').textContent=this.value+'°'">
+            </div>
+          </div>
+        </div>
       </div>
       <div class="prop hidden" id="bgImageRow">
         <div class="prop-label">배경 이미지</div>
@@ -340,6 +435,29 @@
             <span id="bgPickLabel">탭해서 배경 이미지 선택</span>
           </div>
           <input type="file" id="bgFileInput" accept="image/*" class="hidden" onchange="onBgFile(event)">
+          <div class="rangeField">
+            <div class="rangeLabelRow"><span>밝기</span><span id="bgBrightVal">100%</span></div>
+            <input type="range" id="inBgBrightness" min="30" max="150" value="100" oninput="document.getElementById('bgBrightVal').textContent=this.value+'%'">
+          </div>
+          <div class="rangeField">
+            <div class="rangeLabelRow"><span>비네팅(가장자리 음영)</span><span id="bgVignetteVal">0%</span></div>
+            <input type="range" id="inBgVignette" min="0" max="100" value="0" oninput="document.getElementById('bgVignetteVal').textContent=this.value+'%'">
+          </div>
+          <div class="rangeField">
+            <div class="rangeLabelRow"><span>이미지 크기</span><span id="bgSizeVal">100%</span></div>
+            <input type="range" id="inBgSize" min="50" max="250" value="100" oninput="document.getElementById('bgSizeVal').textContent=this.value+'%'">
+            <div class="miniHint">100%는 화면에 꽉 차게(cover), 그 이상은 확대돼요.</div>
+          </div>
+          <div class="posGrid">
+            <div class="rangeField" style="margin-top:0;">
+              <div class="rangeLabelRow"><span>가로 위치</span><span id="bgPosXVal">50%</span></div>
+              <input type="range" id="inBgPosX" min="0" max="100" value="50" oninput="document.getElementById('bgPosXVal').textContent=this.value+'%'">
+            </div>
+            <div class="rangeField" style="margin-top:0;">
+              <div class="rangeLabelRow"><span>세로 위치</span><span id="bgPosYVal">50%</span></div>
+              <input type="range" id="inBgPosY" min="0" max="100" value="50" oninput="document.getElementById('bgPosYVal').textContent=this.value+'%'">
+            </div>
+          </div>
         </div>
       </div>
       <div class="prop hidden" id="bgPatternRow">
@@ -353,6 +471,12 @@
             <div class="patternSwatch bg-pattern-sky" data-val="sky" title="하늘 그라데이션"></div>
             <div class="patternSwatch bg-pattern-feather" data-val="feather" title="깃털"></div>
             <div class="patternSwatch bg-pattern-wing" data-val="wing" title="날개"></div>
+            <div class="patternSwatch bg-pattern-checker" data-val="checker" title="체커보드"></div>
+            <div class="patternSwatch bg-pattern-gingham" data-val="gingham" title="깅엄 체크"></div>
+            <div class="patternSwatch bg-pattern-leopard" data-val="leopard" title="레오파드"></div>
+            <div class="patternSwatch bg-pattern-zigzag" data-val="zigzag" title="지그재그"></div>
+            <div class="patternSwatch bg-pattern-confetti" data-val="confetti" title="컨페티"></div>
+            <div class="patternSwatch bg-pattern-mesh" data-val="mesh" title="메쉬 그라데이션"></div>
           </div>
           <div class="miniHint">가독성 좋은 은은한 패턴이에요. 카드/텍스트와 잘 어울려요.</div>
         </div>
@@ -458,6 +582,21 @@
       </div>
     </div>
 
+    <div class="boxed" style="margin-top:10px;">
+      <div class="prop">
+        <div class="prop-label">배너 이미지</div>
+        <div class="prop-body">
+          <div class="filePick" onclick="document.getElementById('upBannerFileInput').click()">
+            <img id="upBannerPreview" class="hidden">
+            <span id="upBannerPickLabel">탭해서 배너 이미지 선택 (선택 사항)</span>
+          </div>
+          <input type="file" id="upBannerFileInput" accept="image/*" class="hidden" onchange="onUpBannerFile(event)">
+          <button type="button" class="copyBtn hidden" id="upBannerRemoveBtn" style="margin-top:7px;" onclick="removeUpBannerImage()">✕ 배너 이미지 삭제</button>
+          <div class="miniHint">Pair와 프로필 사이에 큰 배너 이미지로 표시돼요. 선택하지 않으면 표시되지 않아요.</div>
+        </div>
+      </div>
+    </div>
+
     <div class="sectionLabel">연관 이미지 (첫 장은 Pair, 그 다음부터는 갤러리로 표시돼요 · 같은 게시물 안에 함께 저장돼요)</div>
     <div class="miniHint" style="margin:-4px 0 8px;">썸네일 좌상단 ▲▼ 버튼으로 순서를 바꿀 수 있어요. 맨 앞으로 올리면 Pair가 돼요.</div>
     <div id="extraImagesList"></div>
@@ -520,6 +659,10 @@
       <div class="prop-body"><div id="detailProfile" style="font-size:13.5px; color:var(--text-muted); white-space:pre-wrap; line-height:1.6;"></div></div>
     </div>
 
+    <div class="hidden" id="detailBannerWrap" style="margin-top:16px;">
+      <div id="detailBannerImgWrap"><img id="detailBannerImg"></div>
+    </div>
+
     <div id="detailExtraSection" class="hidden" style="margin-top:16px;">
       <div id="detailExtraWrap"></div>
     </div>
@@ -547,7 +690,20 @@ let settings = null;
 /* ============ 공개 열람 모드 설정 ============
    방문자는 토큰 없이도 이 저장소의 공개 데이터를 볼 수 있도록,
    여기에 실제 저장소 정보를 채워두면 됩니다. (Public 저장소여야 함) */
-const PUBLIC_VIEW = { owner: '2gomgom', repo: 'backuplist', branch: 'main' };
+/* 이 페이지 자신의 github.io 주소에서 owner/repo를 자동으로 알아낸다.
+   예: https://아이디.github.io/저장소이름/  ->  owner=아이디, repo=저장소이름
+   이렇게 하면 이 파일을 복사해서 다른 저장소에 그대로 올려도 코드 수정 없이 바로 작동한다. */
+function detectPublicView(){
+  try{
+    const host = location.hostname; // 예: 2gomgom.github.io
+    const owner = host.endsWith('.github.io') ? host.split('.')[0] : '';
+    const seg = location.pathname.split('/').filter(Boolean); // 예: ['backuplist']
+    const repo = seg[0] || '';
+    if(owner && repo) return { owner, repo, branch: 'main' };
+  }catch(e){}
+  return null;
+}
+const PUBLIC_VIEW = detectPublicView() || { owner: '2gomgom', repo: 'backuplist', branch: 'main' };
 function hasWriteAccess(){ return !!(settings && settings.token); }
 function requireWriteAccess(){
   if(hasWriteAccess()) return true;
@@ -570,7 +726,11 @@ let pendingHeaderRemove = false;
 let pendingBgFile = null;
 let selectedBgType = 'color';
 let selectedBgPattern = 'dots';
+let selectedBgColorMode = 'solid';
+let pendingBannerFile = null;
+let pendingBannerRemove = false;
 let extraItems = []; // {type:'pending', file, previewUrl, prompt} | {type:'existing', path, prompt}
+const ALL_BG_PATTERNS = ['dots','grid','diagonal','blob','sky','feather','wing','checker','gingham','leopard','zigzag','confetti','mesh'];
 
 function toast(msg){
   const t = document.getElementById('toast');
@@ -776,7 +936,7 @@ function b64EncodeUnicode(str){
 /* ============ DB ============ */
 async function loadDB(){
   const file = await ghGetFile('db.json');
-  if(!file){ db = {profile:{name:'',bio:'',avatarPath:'',bgColor:'',headerImagePath:'',bgType:'color',bgPattern:'dots',bgImagePath:'',heartColor:'#c9184a'}, images:[]}; dbSha = null; return; }
+  if(!file){ db = {profile:{name:'',bio:'',avatarPath:'',bgColor:'',headerImagePath:'',bgType:'color',bgPattern:'dots',bgImagePath:'',heartColor:'#c9184a',bgColorMode:'solid',bgColor2:'#f0e9ff',bgGradientAngle:135,bgImageBrightness:100,bgImageVignette:0,bgImageSize:100,bgImagePosX:50,bgImagePosY:50}, images:[]}; dbSha = null; return; }
   db = JSON.parse(b64DecodeUnicode(file.content));
   if(!db.profile) db.profile = {};
   if(db.profile.name===undefined) db.profile.name='';
@@ -788,6 +948,14 @@ async function loadDB(){
   if(db.profile.bgPattern===undefined) db.profile.bgPattern='dots';
   if(db.profile.bgImagePath===undefined) db.profile.bgImagePath='';
   if(db.profile.heartColor===undefined) db.profile.heartColor='#c9184a';
+  if(db.profile.bgColorMode===undefined) db.profile.bgColorMode='solid';
+  if(db.profile.bgColor2===undefined) db.profile.bgColor2='#f0e9ff';
+  if(db.profile.bgGradientAngle===undefined) db.profile.bgGradientAngle=135;
+  if(db.profile.bgImageBrightness===undefined) db.profile.bgImageBrightness=100;
+  if(db.profile.bgImageVignette===undefined) db.profile.bgImageVignette=0;
+  if(db.profile.bgImageSize===undefined) db.profile.bgImageSize=100;
+  if(db.profile.bgImagePosX===undefined) db.profile.bgImagePosX=50;
+  if(db.profile.bgImagePosY===undefined) db.profile.bgImagePosY=50;
   if(!db.images) db.images = [];
   db.images.forEach(img=>{
     if(!img.tags) img.tags = {appearance:[], outfit:[]};
@@ -799,6 +967,7 @@ async function loadDB(){
     if(img.ddayDate === undefined) img.ddayDate = '';
     if(img.heartColor === undefined) img.heartColor = '';
     if(img.profile === undefined) img.profile = '';
+    if(img.bannerImagePath === undefined) img.bannerImagePath = '';
     if(!img.extraImages) img.extraImages = [];
     img.extraImages = img.extraImages.map(e => (typeof e === 'string') ? {path:e, prompt:''} : {path:e.path, prompt:e.prompt||''});
   });
@@ -856,11 +1025,39 @@ async function saveSettings(){
 function closeModal(id){ document.getElementById(id).classList.remove('show'); }
 
 /* ============ 프로필(아카이브 주인장) + 테마 ============ */
+function syncHexFromPicker(colorId, hexId){
+  document.getElementById(hexId).value = document.getElementById(colorId).value.toUpperCase();
+}
+function syncPickerFromHex(hexId, colorId){
+  let v = document.getElementById(hexId).value.trim();
+  if(!v.startsWith('#')) v = '#' + v;
+  if(/^#[0-9A-Fa-f]{6}$/.test(v)){
+    document.getElementById(colorId).value = v;
+  }
+}
 function openProfile(){
   document.getElementById('inProfileName').value = db?.profile?.name || '';
   document.getElementById('inProfileBio').value = db?.profile?.bio || '';
   document.getElementById('inBgColor').value = db?.profile?.bgColor || '#ffffff';
+  document.getElementById('inBgColorHex').value = (db?.profile?.bgColor || '#ffffff').toUpperCase();
+  document.getElementById('inBgColor2').value = db?.profile?.bgColor2 || '#f0e9ff';
+  document.getElementById('inBgColor2Hex').value = (db?.profile?.bgColor2 || '#f0e9ff').toUpperCase();
+  document.getElementById('inBgGradientAngle').value = db?.profile?.bgGradientAngle ?? 135;
+  document.getElementById('bgAngleVal').textContent = (db?.profile?.bgGradientAngle ?? 135) + '°';
+  document.getElementById('inBgBrightness').value = db?.profile?.bgImageBrightness ?? 100;
+  document.getElementById('bgBrightVal').textContent = (db?.profile?.bgImageBrightness ?? 100) + '%';
+  document.getElementById('inBgVignette').value = db?.profile?.bgImageVignette ?? 0;
+  document.getElementById('bgVignetteVal').textContent = (db?.profile?.bgImageVignette ?? 0) + '%';
+  document.getElementById('inBgSize').value = db?.profile?.bgImageSize ?? 100;
+  document.getElementById('bgSizeVal').textContent = (db?.profile?.bgImageSize ?? 100) + '%';
+  document.getElementById('inBgPosX').value = db?.profile?.bgImagePosX ?? 50;
+  document.getElementById('bgPosXVal').textContent = (db?.profile?.bgImagePosX ?? 50) + '%';
+  document.getElementById('inBgPosY').value = db?.profile?.bgImagePosY ?? 50;
+  document.getElementById('bgPosYVal').textContent = (db?.profile?.bgImagePosY ?? 50) + '%';
   document.getElementById('inHeartColor').value = db?.profile?.heartColor || '#c9184a';
+  selectedBgColorMode = db?.profile?.bgColorMode || 'solid';
+  document.querySelectorAll('#bgColorModeChips .chip').forEach(c=>c.classList.toggle('active', c.dataset.val===selectedBgColorMode));
+  document.getElementById('bgGradientExtra').classList.toggle('hidden', selectedBgColorMode!=='gradient');
   const prev = document.getElementById('profilePreview');
   if(db?.profile?.avatarPath && blobCache[db.profile.avatarPath]){
     prev.src = blobCache[db.profile.avatarPath]; prev.classList.remove('hidden');
@@ -919,6 +1116,13 @@ function setupBgTypeChips(){
       selectedBgType = chip.dataset.val;
       document.querySelectorAll('#bgTypeChips .chip').forEach(c=>c.classList.toggle('active', c===chip));
       updateBgRowsVisibility();
+    };
+  });
+  document.querySelectorAll('#bgColorModeChips .chip').forEach(chip=>{
+    chip.onclick = ()=>{
+      selectedBgColorMode = chip.dataset.val;
+      document.querySelectorAll('#bgColorModeChips .chip').forEach(c=>c.classList.toggle('active', c===chip));
+      document.getElementById('bgGradientExtra').classList.toggle('hidden', selectedBgColorMode!=='gradient');
     };
   });
   document.querySelectorAll('#bgPatternPicker .patternSwatch').forEach(sw=>{
@@ -1006,6 +1210,14 @@ async function saveProfile(){
     db.profile.name = document.getElementById('inProfileName').value.trim();
     db.profile.bio = document.getElementById('inProfileBio').value.trim();
     db.profile.bgColor = document.getElementById('inBgColor').value || '#ffffff';
+    db.profile.bgColor2 = document.getElementById('inBgColor2').value || '#f0e9ff';
+    db.profile.bgGradientAngle = parseInt(document.getElementById('inBgGradientAngle').value, 10) || 0;
+    db.profile.bgColorMode = selectedBgColorMode;
+    db.profile.bgImageBrightness = parseInt(document.getElementById('inBgBrightness').value, 10) || 100;
+    db.profile.bgImageVignette = parseInt(document.getElementById('inBgVignette').value, 10) || 0;
+    db.profile.bgImageSize = parseInt(document.getElementById('inBgSize').value, 10) || 100;
+    db.profile.bgImagePosX = parseInt(document.getElementById('inBgPosX').value, 10) || 0;
+    db.profile.bgImagePosY = parseInt(document.getElementById('inBgPosY').value, 10) || 0;
     db.profile.heartColor = document.getElementById('inHeartColor').value || '#c9184a';
     db.profile.bgType = selectedBgType;
     db.profile.bgPattern = selectedBgPattern;
@@ -1032,29 +1244,43 @@ function renderProfile(){
 function applyTheme(){
   document.documentElement.style.setProperty('--heart', db.profile.heartColor || '#c9184a');
 
-  const body = document.body;
-  body.classList.remove('bg-pattern-dots','bg-pattern-grid','bg-pattern-diagonal','bg-pattern-blob','bg-pattern-sky','bg-pattern-feather','bg-pattern-wing');
-  body.style.backgroundColor = '';
-  body.style.backgroundImage = '';
-  body.style.backgroundSize = '';
-  body.style.backgroundPosition = '';
-  body.style.backgroundAttachment = '';
-  body.style.backgroundRepeat = '';
+  const layer = document.getElementById('bgLayer');
+  const vignette = document.getElementById('bgVignette');
+  layer.classList.remove(...ALL_BG_PATTERNS.map(p=>'bg-pattern-'+p));
+  layer.style.backgroundColor = '';
+  layer.style.backgroundImage = '';
+  layer.style.backgroundSize = '';
+  layer.style.backgroundPosition = '';
+  layer.style.backgroundRepeat = '';
+  layer.style.filter = '';
+  vignette.style.opacity = '0';
+  vignette.style.background = '';
 
   const bgType = db.profile.bgType || 'color';
   if(bgType === 'pattern'){
-    body.classList.add('bg-pattern-' + (db.profile.bgPattern || 'dots'));
+    layer.classList.add('bg-pattern-' + (db.profile.bgPattern || 'dots'));
   }else if(bgType === 'image' && db.profile.bgImagePath){
     const applyImg = (url)=>{
-      body.style.backgroundImage = `url(${url})`;
-      body.style.backgroundSize = 'cover';
-      body.style.backgroundPosition = 'center';
-      body.style.backgroundAttachment = 'fixed';
-      body.style.backgroundRepeat = 'no-repeat';
+      layer.style.backgroundImage = `url(${url})`;
+      const sizePct = db.profile.bgImageSize || 100;
+      layer.style.backgroundSize = (sizePct===100) ? 'cover' : `${sizePct}%`;
+      layer.style.backgroundPosition = `${db.profile.bgImagePosX ?? 50}% ${db.profile.bgImagePosY ?? 50}%`;
+      layer.style.backgroundRepeat = 'no-repeat';
+      layer.style.filter = `brightness(${db.profile.bgImageBrightness ?? 100}%)`;
+      const vig = db.profile.bgImageVignette ?? 0;
+      if(vig > 0){
+        vignette.style.opacity = '1';
+        vignette.style.background = `radial-gradient(ellipse at center, rgba(0,0,0,0) ${100-vig}%, rgba(0,0,0,${Math.min(0.85, vig/100*0.85).toFixed(2)}) 100%)`;
+      }
     };
     loadImageAsync(db.profile.bgImagePath, applyImg);
+  }else if((db.profile.bgColorMode || 'solid') === 'gradient'){
+    const c1 = db.profile.bgColor || '#ffffff';
+    const c2 = db.profile.bgColor2 || '#f0e9ff';
+    const angle = db.profile.bgGradientAngle ?? 135;
+    layer.style.backgroundImage = `linear-gradient(${angle}deg, ${c1}, ${c2})`;
   }else{
-    body.style.backgroundColor = db.profile.bgColor || '#ffffff';
+    layer.style.backgroundColor = db.profile.bgColor || '#ffffff';
   }
 
   const cover = document.getElementById('coverWrap');
@@ -1160,11 +1386,17 @@ function openEntryForm(id){
   if(!requireWriteAccess()) return;
   isEditingId = id || null;
   pendingUploadFile = null;
+  pendingBannerFile = null;
+  pendingBannerRemove = false;
   extraItems = [];
   document.getElementById('uploadFileInput').value = '';
+  document.getElementById('upBannerFileInput').value = '';
   const titleEl = document.getElementById('uploadModalTitle');
   const preview = document.getElementById('uploadPreview');
   const pickLabel = document.getElementById('uploadPickLabel');
+  const bannerPrev = document.getElementById('upBannerPreview');
+  const bannerPickLabel = document.getElementById('upBannerPickLabel');
+  const bannerRemoveBtn = document.getElementById('upBannerRemoveBtn');
 
   if(id){
     const img = db.images.find(i=>i.id===id);
@@ -1181,6 +1413,16 @@ function openEntryForm(id){
     document.getElementById('upOutfit').value = (img.tags.outfit||[]).join(', ');
     document.getElementById('upMemo').value = img.memo || '';
     document.getElementById('upProfile').value = img.profile || '';
+    if(img.bannerImagePath){
+      bannerPickLabel.textContent = '배너 이미지를 바꾸려면 탭하세요 (안 바꾸면 그대로 유지)';
+      bannerRemoveBtn.classList.remove('hidden');
+      if(blobCache[img.bannerImagePath]){ bannerPrev.src = blobCache[img.bannerImagePath]; bannerPrev.classList.remove('hidden'); }
+      else{ bannerPrev.classList.add('hidden'); }
+    }else{
+      bannerPrev.classList.add('hidden');
+      bannerPickLabel.textContent = '탭해서 배너 이미지 선택 (선택 사항)';
+      bannerRemoveBtn.classList.add('hidden');
+    }
     extraItems = (img.extraImages||[]).map(e=>({type:'existing', path:e.path, prompt:e.prompt||''}));
     document.getElementById('uploadSaveBtn').textContent = '수정 저장';
     const hc = img.heartColor || db?.profile?.heartColor || '#c9184a';
@@ -1191,6 +1433,9 @@ function openEntryForm(id){
     titleEl.textContent = '이미지 추가';
     preview.classList.add('hidden');
     pickLabel.textContent = '탭해서 이미지 선택 (카메라/앨범)';
+    bannerPrev.classList.add('hidden');
+    bannerPickLabel.textContent = '탭해서 배너 이미지 선택 (선택 사항)';
+    bannerRemoveBtn.classList.add('hidden');
     ['upTitle','upSubtitle','upDday','upCategory','upAppearance','upOutfit','upMemo','upProfile'].forEach(fid=>document.getElementById(fid).value='');
     document.getElementById('uploadSaveBtn').textContent = '저장하기';
     const hc = db?.profile?.heartColor || '#c9184a';
@@ -1212,6 +1457,27 @@ function onUploadFile(e){
     document.getElementById('uploadPickLabel').textContent = file.name;
   };
   reader.readAsDataURL(file);
+}
+function onUpBannerFile(e){
+  const file = e.target.files[0]; if(!file) return;
+  pendingBannerFile = file;
+  pendingBannerRemove = false;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    const prev = document.getElementById('upBannerPreview');
+    prev.src = reader.result; prev.classList.remove('hidden');
+    document.getElementById('upBannerPickLabel').textContent = file.name;
+  };
+  reader.readAsDataURL(file);
+  document.getElementById('upBannerRemoveBtn').classList.remove('hidden');
+}
+function removeUpBannerImage(){
+  pendingBannerFile = null;
+  pendingBannerRemove = true;
+  document.getElementById('upBannerFileInput').value = '';
+  document.getElementById('upBannerPreview').classList.add('hidden');
+  document.getElementById('upBannerPickLabel').textContent = '탭해서 배너 이미지 선택 (선택 사항)';
+  document.getElementById('upBannerRemoveBtn').classList.add('hidden');
 }
 function onExtraFiles(e){
   const files = Array.from(e.target.files || []);
@@ -1351,10 +1617,12 @@ async function submitEntry(){
     let mainPath;
     let createdAt = new Date().toISOString();
 
+    let bannerPath = '';
     if(isEditingId){
       const existing = db.images.find(i=>i.id===isEditingId);
       mainPath = existing.path;
       createdAt = existing.createdAt || createdAt;
+      bannerPath = existing.bannerImagePath || '';
       if(pendingUploadFile){
         const {base64:b64, ext} = await prepareImageForUpload(pendingUploadFile);
         mainPath = `images/${id}-${Date.now().toString(36)}.${ext}`;
@@ -1367,6 +1635,15 @@ async function submitEntry(){
       mainPath = `images/${id}.${ext}`;
       await ghPutFile(mainPath, b64, `이미지 추가: ${id}`);
       blobCache[mainPath] = URL.createObjectURL(pendingUploadFile);
+    }
+
+    if(pendingBannerFile){
+      const {base64:b64, ext} = await prepareImageForUpload(pendingBannerFile);
+      bannerPath = `images/${id}-banner-${Date.now().toString(36)}.${ext}`;
+      await ghPutFile(bannerPath, b64, `배너 이미지 업데이트: ${id}`);
+      blobCache[bannerPath] = URL.createObjectURL(pendingBannerFile);
+    }else if(pendingBannerRemove){
+      bannerPath = '';
     }
 
     const finalExtra = [];
@@ -1397,6 +1674,7 @@ async function submitEntry(){
       },
       memo: document.getElementById('upMemo').value.trim(),
       profile: document.getElementById('upProfile').value.trim(),
+      bannerImagePath: bannerPath,
       extraImages: finalExtra,
       createdAt
     };
@@ -1415,7 +1693,7 @@ async function submitEntry(){
     renderFilters(); renderGallery();
     toast(wasEditing ? '수정됐어요' : '백업 완료');
   }catch(e){ toast(e.message || '저장 실패'); }
-  finally{ btn.disabled = false; isEditingId = null; }
+  finally{ btn.disabled = false; isEditingId = null; pendingBannerFile = null; pendingBannerRemove = false; }
 }
 
 /* ============ 제목 검색 ============ */
@@ -1781,6 +2059,19 @@ async function openDetail(id){
   if(img.profile){ profileWrap.classList.remove('hidden'); document.getElementById('detailProfile').textContent = img.profile; }
   else profileWrap.classList.add('hidden');
 
+  const bannerWrap = document.getElementById('detailBannerWrap');
+  if(img.bannerImagePath){
+    bannerWrap.classList.remove('hidden');
+    const bannerImgWrap = document.getElementById('detailBannerImgWrap');
+    const bannerImg = document.getElementById('detailBannerImg');
+    bannerImgWrap.innerHTML = '';
+    bannerImgWrap.appendChild(bannerImg);
+    if(blobCache[img.bannerImagePath]) bannerImg.src = blobCache[img.bannerImagePath];
+    loadImageIntoHolder(img.bannerImagePath, bannerImgWrap, bannerImg);
+  }else{
+    bannerWrap.classList.add('hidden');
+  }
+
   document.getElementById('detailModal').classList.add('show');
 }
 async function deleteCurrentImage(){
@@ -1793,6 +2084,12 @@ async function deleteCurrentImage(){
     toast('삭제 중...');
     const file = await ghGetFile(img.path);
     if(file) await ghDeleteFile(img.path, `이미지 삭제: ${img.id}`, file.sha);
+    if(img.bannerImagePath){
+      try{
+        const bf = await ghGetFile(img.bannerImagePath);
+        if(bf) await ghDeleteFile(img.bannerImagePath, `배너 이미지 삭제: ${img.id}`, bf.sha);
+      }catch(e){ /* 저장소에 이미 없으면 무시 */ }
+    }
     for(const extra of (img.extraImages||[])){
       try{
         const ef = await ghGetFile(extra.path);
