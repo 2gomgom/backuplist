@@ -1,12 +1,12 @@
 {
   "profile": {
-    "name": "",
-    "bio": "",
-    "avatarPath": "",
-    "bgColor": "",
-    "headerImagePath": "",
-    "bgType": "color",
-    "bgPattern": "dots",
+    "name": "이상한곰",
+    "bio": "페르소나 프롬 백업",
+    "avatarPath": "images/profile-avatar.png",
+    "bgColor": "#ffffff",
+    "headerImagePath": "images/profile-header.jpg",
+    "bgType": "pattern",
+    "bgPattern": "wing",
     "bgImagePath": "",
     "heartColor": "#c9184a"
   },
