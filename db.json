@@ -28,7 +28,7 @@
       "heartColor": "#795da1",
       "catchphrase": "아홉 달의 빙하를 맥박 하나로 깨우고, 열두 달의 계절을 손끝 하나로 되돌려준 자. 코드네임 'CALYPSO'. 그의 섬에 닿은 겨울은, 다시는 잠들지 않는다.",
       "catchphraseEnabled": true,
-      "catchphraseItalic": false,
+      "catchphraseItalic": true,
       "category": [
         "CAVEDUCK",
         "ARCH"
