@@ -154,7 +154,8 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T10:25:23.703Z"
+      "createdAt": "2026-07-13T10:25:23.703Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrj7sfqyijh8u",
@@ -419,12 +420,11 @@
       "extraImages": [
         {
           "path": "images/mrj65okmmethk-extra-mrj6xtxa0.webp",
-          "prompt": "MOTH (백도담)\n\n1 boy, aged up, 0.3::mature male::, white skin, slender, 1.7::short hair, mullet, hair intakes::, white hair, long bangs, hair over eyes, eyes visible through hair, wavy hair, hair between eyes, Melting White Halo with blood, 1.5::red pupils, light gray eyes::, colored eyelashes, empty eyes, tareme, bags under eyes,\n\n1.2::torn clothes, Many blood stains on the clothes::, white oversized straitjacket, crop jacket, sleeves past wrists, popped collar, white straps on jacket,\nbandage on face, gauze on cheek, white pants,\n\n: 남캐짭짭이님 공식 프롬에서 옷 크롭으로 변경"
+          "prompt": "MOTH (백도담)\n\n1 boy, aged up, 0.3::mature male::, white skin, slender, 1.7::short hair, mullet, hair intakes::, white hair, long bangs, hair over eyes, eyes visible through hair, wavy hair, hair between eyes, Melting White Halo with blood, 1.5::red pupils, light gray eyes::, colored eyelashes, empty eyes, tareme, bags under eyes,\n\n(기본 버전)\n1.2::torn clothes, Many blood stains on the clothes::, white oversized straitjacket, long jacket, sleeves past wrists, popped collar, white straps on jacket, bandage on face, gauze on cheek, \n\n(크롭 버전)\n1.2::torn clothes, Many blood stains on the clothes::, white oversized straitjacket, crop jacket, sleeves past wrists, popped collar, white straps on jacket,\nbandage on face, gauze on cheek, white pants,"
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T11:58:53.350Z",
-      "categoryColor": "catPurple"
+      "createdAt": "2026-07-13T11:58:53.350Z"
     },
     {
       "id": "mrjbiv6y1ouvq",
