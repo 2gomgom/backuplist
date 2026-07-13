@@ -562,7 +562,7 @@
         ]
       },
       "memo": "#D4AF37 (Royal Gold)\n#D08A1A (Amber)",
-      "profile": "Scarab\n분류: 특급 이형\n현현 방식: 본체 직접 현현 불가 ㅡ 자율분신 '아크나텐' 으로 현세 개입 (스카라브=아크나텐)\n신격/계보: 아툼-라 (엔네아드) ㅡ 잊혀진 태양신\n기원: 메소포타미아-이집트 혼합 신화권, 엔네아드 체계 내 최상위 창조 신격\n\n자율분신(코드네임): AKHENATEN (아크나텐)\n국적: 이집트\n나이: 불명\n키: 180cm",
+      "profile": "Scarab\n분류: 특급 이형\n현현 방식: 본체 직접 현현 불가 ㅡ 자율분신 '아크나텐' 으로 현세 개입 (스카라브=아크나텐)\n신격/계보: 아툼-라 (엔네아드) ㅡ 잊혀진 태양신\n기원: 메소포타미아-이집트 혼합 신화권, 엔네아드 체계 내 최상위 창조 신격\n\n자율분신(코드네임): AKHENATEN (아크나텐)\n국적: 이집트\n나이: 불명 (아툼 신앙)\n키: 180cm",
       "bannerImagePath": "images/mrj65okmmethk-banner-mrj6syok.png",
       "extraImages": [
         {
@@ -571,8 +571,7 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T11:58:53.350Z",
-      "categoryColor": "catPurple"
+      "createdAt": "2026-07-13T11:58:53.350Z"
     }
   ]
 }
