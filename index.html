@@ -695,14 +695,16 @@ let imageLoadActive = 0;
 const MAX_CONCURRENT_IMAGE_LOADS = 2;
 function runImageLoadQueue(){
   while(imageLoadActive < MAX_CONCURRENT_IMAGE_LOADS && imageLoadQueue.length){
-    const task = imageLoadQueue.shift();
+    const job = imageLoadQueue.shift();
     imageLoadActive++;
-    task().finally(()=>{ imageLoadActive--; runImageLoadQueue(); });
+    job().finally(()=>{ imageLoadActive--; runImageLoadQueue(); });
   }
 }
 function queueImageLoad(task){
-  return new Promise((resolve)=>{
-    imageLoadQueue.push(()=> task().finally(resolve));
+  return new Promise((resolve, reject)=>{
+    // 주의: .finally(resolve)를 쓰면 실제 완료 값(URL)이 버려지고 항상 undefined로 넘어간다.
+    // (finally 콜백은 인자를 받지 않기 때문) 반드시 .then(resolve, reject)로 실제 값을 전달해야 한다.
+    imageLoadQueue.push(()=> task().then(resolve, reject));
     runImageLoadQueue();
   });
 }
