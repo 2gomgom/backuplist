@@ -93,10 +93,6 @@
           "prompt": "©만두걸"
         },
         {
-          "path": "images/mrigvlxp48y8w-extra-mrih3cy98.png",
-          "prompt": "©론"
-        },
-        {
           "path": "images/mrigvlxp48y8w-extra-mrih3ejy9.png",
           "prompt": "©두쿤"
         },
@@ -106,11 +102,15 @@
         },
         {
           "path": "images/mrigvlxp48y8w-extra-mrih3j6t11.png",
-          "prompt": ""
+          "prompt": "©큐지"
         },
         {
           "path": "images/mrigvlxp48y8w-extra-mrih3l0e12.png",
-          "prompt": ""
+          "prompt": "©세개"
+        },
+        {
+          "path": "images/mrigvlxp48y8w-extra-mrih5g0212.png",
+          "prompt": "©론"
         }
       ],
       "createdAt": "2026-07-13T00:11:12.972Z"
