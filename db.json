@@ -20,6 +20,76 @@
   },
   "images": [
     {
+      "id": "mrja6mkfpe0vq",
+      "path": "images/mrja6mkfpe0vq.png",
+      "title": "아누비스",
+      "subtitle": "카이날루",
+      "ddayDate": "",
+      "heartColor": "#80e8c9",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CAVEDUCK",
+        "ARCH"
+      ],
+      "categoryColors": {
+        "CAVEDUCK": "catGreen",
+        "ARCH": "catPurple"
+      },
+      "tags": {
+        "appearance": [
+          "1 boy",
+          "mature male",
+          "2::bishounen::",
+          "dark skin",
+          "toned male",
+          "2::white hair",
+          "hair between eyes",
+          "braided twintail hair",
+          "hime cut",
+          "multiple braids",
+          "half-closed eyes",
+          "black eyes",
+          "3::gold star-shaped pupils::",
+          "slender",
+          "narrow waist",
+          "= =",
+          "gray bags under eyes",
+          "(cheek mole:1.3)",
+          "a mole under eye",
+          "a mole in the middle on cheeks",
+          "abdomen mole",
+          "navel piercing",
+          "black nail",
+          "earrings",
+          "layered gold chain necklaces",
+          "gold rings",
+          "(bicep tattoo:1.4)",
+          "arm black and gold anubis's eye tattoo"
+        ],
+        "outfit": [
+          "black sleeveless crop top",
+          "midriff",
+          "navel",
+          "complex leather body harness layered over the torso",
+          "black arm bands",
+          "black tactical cargo pants tucked into combat boots"
+        ]
+      },
+      "memo": "",
+      "profile": "Anubis (inpw)\n코드네임: JACKAL (자칼)\n직급: A급 무 속성 가이드\n나이: 5175세",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrja6mkfpe0vq-extra-mrja6pm40.jpg",
+          "prompt": "KAI NALU (카이날루)\n\nboy, 0.6::mature male::, handsome face, sharp facial features, sharp jawline,expressionless, blank stare, 2::tanned skin::, shiny skin, light pale mint hair, short hair, light gray eyes,fine hair strands, smooth hair, hair between eyes, sharp eyes, multiple ear piercings, fang pendant necklace, muscular body, well-built, muscular chest, exposed chest, bare pecs, kakau tattoo, traditional hawaiian tribal tattoo, full body tattoo,\n\nshirtless under jacket, black military jacket, open jacket, gold buttons,\n\n가슴태그\nvery tall, large pectorals, Statuesque, muscular,"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-13T13:51:35.871Z"
+    },
+    {
       "id": "mrj7sfqyijh8u",
       "path": "images/mrj7sfqyijh8u.png",
       "title": "발레리오 비스콘티",
