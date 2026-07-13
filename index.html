@@ -524,7 +524,7 @@
       <div id="detailExtraWrap"></div>
     </div>
 
-    <div class="btnRow">
+    <div class="btnRow" id="detailEditButtons">
       <button class="btn btn-ghost" onclick="openEntryForm(currentDetailId)">수정</button>
       <button class="btn btn-danger" onclick="deleteCurrentImage()">삭제</button>
     </div>
@@ -544,6 +544,17 @@
 <script>
 /* ============ 상태 ============ */
 let settings = null;
+/* ============ 공개 열람 모드 설정 ============
+   방문자는 토큰 없이도 이 저장소의 공개 데이터를 볼 수 있도록,
+   여기에 실제 저장소 정보를 채워두면 됩니다. (Public 저장소여야 함) */
+const PUBLIC_VIEW = { owner: '2gomgom', repo: 'backuplist', branch: 'main' };
+function hasWriteAccess(){ return !!(settings && settings.token); }
+function requireWriteAccess(){
+  if(hasWriteAccess()) return true;
+  toast('편집하려면 먼저 깃허브 계정을 연결해주세요');
+  openSettings();
+  return false;
+}
 let db = null;
 let dbSha = null;
 let currentTagFilter = null;
@@ -600,9 +611,11 @@ function persistSettings(s){ localStorage.setItem('gh_archive_settings', JSON.st
 function encodePath(path){ return path.split('/').map(encodeURIComponent).join('/'); }
 async function ghRequest(path, opts={}){
   const url = `https://api.github.com/repos/${settings.owner}/${settings.repo}/contents/${encodePath(path)}`;
+  const headers = { 'Accept':'application/vnd.github+json', ...(opts.headers||{}) };
+  if(settings.token) headers['Authorization'] = `token ${settings.token}`;
   return fetch(url, {
     method: opts.method || 'GET',
-    headers: { 'Authorization': `token ${settings.token}`, 'Accept':'application/vnd.github+json', ...(opts.headers||{}) },
+    headers,
     body: opts.body
   });
 }
@@ -630,21 +643,30 @@ function rawContentUrl(path){
 }
 async function ghGetBlobBySha(sha){
   const url = `https://api.github.com/repos/${settings.owner}/${settings.repo}/git/blobs/${sha}`;
-  const res = await fetch(url, { headers: { 'Authorization': `token ${settings.token}`, 'Accept':'application/vnd.github+json' } });
+  const headers = { 'Accept':'application/vnd.github+json' };
+  if(settings.token) headers['Authorization'] = `token ${settings.token}`;
+  const res = await fetch(url, { headers });
   if(res.status === 403 || res.status === 429){ const e = new Error('요청이 너무 많아요 (rate limit)'); e.rateLimited = true; throw e; }
   if(!res.ok) throw new Error('blob ' + res.status);
   return res.json();
 }
 async function ghGetImageUrlFromRaw(path){
-  const res = await fetch(rawContentUrl(path), { headers: { 'Authorization': `token ${settings.token}` }, cache:'no-store' });
+  const rawHeaders = {};
+  if(settings.token) rawHeaders['Authorization'] = `token ${settings.token}`;
+  const res = await fetch(rawContentUrl(path), { headers: rawHeaders, cache:'no-store' });
   if(res.status === 403 || res.status === 429){ const e = new Error('요청이 너무 많아요 (rate limit)'); e.rateLimited = true; throw e; }
   if(!res.ok) throw new Error('raw ' + res.status);
   const blob = await res.blob();
   return URL.createObjectURL(blob);
 }
 async function ghGetImageUrl(path){
-  // raw.githubusercontent.com은 CDN 캐시라서 방금 올린 파일이 몇 초간 404로 보일 수 있다(새로고침해도 안 뜨는 원인).
-  // 반면 Contents/Git API는 커밋 즉시 반영되므로 이걸 우선 사용하고, raw는 최후의 보조 수단으로만 쓴다.
+  // 토큰 없는 공개 열람 모드에서는 GitHub API(분당 요청 제한이 훨씬 엄격함) 대신
+  // raw.githubusercontent.com(CDN, API 레이트리밋에 안 걸림)에서 바로 가져와서
+  // 새로고침 시 여러 이미지를 한꺼번에 불러와도 엑스박스가 뜨지 않게 한다.
+  if(!settings.token){
+    return await ghGetImageUrlFromRaw(path);
+  }
+  // 토큰이 있을 때(편집자)는 기존처럼 Contents/Git API를 우선 사용 (커밋 직후 즉시 반영되도록)
   let meta;
   try{ meta = await ghGetFile(path); }
   catch(e){ if(e.rateLimited) throw e; meta = undefined; }
@@ -780,14 +802,14 @@ async function saveDB(message){
 /* ============ 초기화 ============ */
 async function init(){
   settings = loadSettingsFromStorage();
-  if(!settings || !settings.owner || !settings.repo || !settings.token){
-    document.getElementById('lockScreen').classList.remove('hidden');
-    document.getElementById('app').classList.add('hidden');
-    return;
+  if(!settings || !settings.owner || !settings.repo){
+    // 저장된 연결 정보(토큰 포함)가 없으면 공개 열람 모드로 자동 진입
+    settings = { owner: PUBLIC_VIEW.owner, repo: PUBLIC_VIEW.repo, branch: PUBLIC_VIEW.branch, token: '' };
   }
   document.getElementById('lockScreen').classList.add('hidden');
   document.getElementById('app').classList.remove('hidden');
-  document.getElementById('fabBtn').classList.remove('hidden');
+  // 편집 권한(토큰)이 있을 때만 + 버튼 노출
+  document.getElementById('fabBtn').classList.toggle('hidden', !hasWriteAccess());
   await refreshAll();
 }
 async function refreshAll(){
@@ -935,6 +957,7 @@ async function putProfileImage(file, path, message){
   await ghPutFile(path, b64, message, sha);
 }
 async function saveProfile(){
+  if(!requireWriteAccess()) return;
   try{
     toast('저장 중...');
     if(pendingProfileFile){
@@ -1123,6 +1146,7 @@ function updateCombinedPreview(){
 }
 
 function openEntryForm(id){
+  if(!requireWriteAccess()) return;
   isEditingId = id || null;
   pendingUploadFile = null;
   extraItems = [];
@@ -1306,6 +1330,7 @@ function renderExtraImagesEditor(){
 }
 
 async function submitEntry(){
+  if(!requireWriteAccess()) return;
   if(!isEditingId && !pendingUploadFile){ toast('이미지를 선택해주세요'); return; }
   const btn = document.getElementById('uploadSaveBtn');
   btn.disabled = true;
@@ -1707,6 +1732,7 @@ async function openDetail(id){
   const img = db.images.find(i=>i.id===id);
   if(!img) return;
   currentDetailId = id;
+  document.getElementById('detailEditButtons').classList.toggle('hidden', !hasWriteAccess());
   document.getElementById('detailTitle').textContent = img.title || '(제목 없음)';
   renderSubtitleTags('detailSubtitleTags', img.subtitle);
 
@@ -1743,6 +1769,7 @@ async function openDetail(id){
   document.getElementById('detailModal').classList.add('show');
 }
 async function deleteCurrentImage(){
+  if(!requireWriteAccess()) return;
   if(!currentDetailId) return;
   if(!confirm('이 이미지를 완전히 삭제할까요? 되돌릴 수 없어요.')) return;
   const img = db.images.find(i=>i.id===currentDetailId);
