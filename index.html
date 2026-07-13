@@ -660,11 +660,11 @@ async function ghGetImageUrlFromRaw(path){
   return URL.createObjectURL(blob);
 }
 async function ghGetImageUrl(path){
-  // 토큰 없는 공개 열람 모드에서는 GitHub API(분당 요청 제한이 훨씬 엄격함) 대신
-  // raw.githubusercontent.com(CDN, API 레이트리밋에 안 걸림)에서 바로 가져와서
-  // 새로고침 시 여러 이미지를 한꺼번에 불러와도 엑스박스가 뜨지 않게 한다.
+  // 토큰 없는 공개 열람 모드에서는 fetch로 미리 받아 blob으로 바꾸는 과정 자체를 생략하고,
+  // raw.githubusercontent.com 주소를 그대로 돌려줘서 브라우저가 <img> 태그로 직접 불러오게 한다.
+  // (API 레이트리밋도 안 걸리고, fetch 단계에서 생길 수 있는 문제도 원천적으로 피할 수 있음)
   if(!settings.token){
-    return await ghGetImageUrlFromRaw(path);
+    return rawContentUrl(path);
   }
   // 토큰이 있을 때(편집자)는 기존처럼 Contents/Git API를 우선 사용 (커밋 직후 즉시 반영되도록)
   let meta;
@@ -745,6 +745,15 @@ function makeImageErrorBox(err, onRetry){
 }
 // holderEl 안에 이미지를 로드해서 넣고, 실패하면 에러 박스로 교체(탭하면 재시도)한다.
 function loadImageIntoHolder(path, holderEl, imgEl){
+  imgEl.onerror = ()=>{
+    delete blobCache[path];
+    holderEl.innerHTML = '';
+    holderEl.appendChild(makeImageErrorBox(new Error('이미지를 불러오지 못했어요. 저장소가 Public인지, 파일이 실제로 있는지 확인해주세요.'), ()=>{
+      holderEl.innerHTML = '';
+      holderEl.appendChild(imgEl);
+      loadImageIntoHolder(path, holderEl, imgEl);
+    }));
+  };
   loadImageAsync(path, url=>{ imgEl.src = url; }, err=>{
     holderEl.innerHTML = '';
     holderEl.appendChild(makeImageErrorBox(err, ()=>{
@@ -1613,19 +1622,7 @@ let rateLimitWarned = false;
 async function loadCardImage(cardEl){
   const path = cardEl.dataset.path;
   const thumb = cardEl.querySelector('.card-thumb');
-  try{
-    const url = blobCache[path] || await queueImageLoad(()=>ghGetImageUrlRetry(path));
-    blobCache[path] = url;
-    const ph = thumb.querySelector('.ph');
-    if(!ph) return;
-    const imgEl = document.createElement('img');
-    imgEl.src = url;
-    thumb.replaceChild(imgEl, ph);
-  }catch(e){
-    if(e.rateLimited && !rateLimitWarned){
-      rateLimitWarned = true;
-      toast('요청이 일시적으로 많아요. 잠시 후 새로고침해주세요');
-    }
+  const showErrorBox = (e)=>{
     const ph = thumb.querySelector('.ph');
     if(!ph) return;
     const errBox = makeImageErrorBox(e, (ev)=>{
@@ -1634,6 +1631,22 @@ async function loadCardImage(cardEl){
       loadCardImage(cardEl);
     });
     thumb.replaceChild(errBox, ph);
+  };
+  try{
+    const url = blobCache[path] || await queueImageLoad(()=>ghGetImageUrlRetry(path));
+    blobCache[path] = url;
+    const ph = thumb.querySelector('.ph');
+    if(!ph) return;
+    const imgEl = document.createElement('img');
+    imgEl.onerror = ()=>{ delete blobCache[path]; showErrorBox(new Error('이미지를 불러오지 못했어요. 저장소가 Public인지, 파일이 실제로 있는지 확인해주세요.')); };
+    imgEl.src = url;
+    thumb.replaceChild(imgEl, ph);
+  }catch(e){
+    if(e.rateLimited && !rateLimitWarned){
+      rateLimitWarned = true;
+      toast('요청이 일시적으로 많아요. 잠시 후 새로고침해주세요');
+    }
+    showErrorBox(e);
   }
 }
 
