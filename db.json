@@ -489,7 +489,7 @@
         ]
       },
       "memo": "",
-      "profile": "Anubis (inpw)\n코드네임: JACKAL (자칼)\n직급: A급 무 속성 가이드\n국적: 이집트\n나이: 5175세",
+      "profile": "Anubis (inpw)\n코드네임: JACKAL (자칼)\n직급: A급 무 속성 가이드\n국적: 이집트\n나이: 최소 5175세 (기원전 3150년경)",
       "bannerImagePath": "",
       "extraImages": [
         {
@@ -498,8 +498,7 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T13:51:35.871Z",
-      "categoryColor": "catPurple"
+      "createdAt": "2026-07-13T13:51:35.871Z"
     },
     {
       "id": "mrj65okmmethk",
