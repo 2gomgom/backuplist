@@ -64,6 +64,11 @@
   .moveBtn{ width:18px; height:18px; border-radius:50%; background:var(--primary); color:#fff; border:none; font-size:9px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0; }
   .moveBtn:disabled{ opacity:0.3; cursor:default; }
 
+  .reorderSaveFab{ position:fixed; right:18px; bottom:22px; z-index:50; padding:0 22px; height:50px; border-radius:25px; background:var(--purple-fg); color:#fff; display:flex; align-items:center; gap:6px; font-size:14.5px; font-weight:600; border:none; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25); }
+  .reorderSaveFab:active{ transform:scale(0.96); }
+
+  .pinBadge{ position:absolute; top:6px; left:6px; z-index:4; font-size:15px; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.45)); pointer-events:none; }
+
   .filterWrap{ padding:12px 16px 2px; }
   .searchRow{ display:flex; align-items:center; gap:8px; margin-bottom:12px; }
   .searchBar{ flex:1; min-width:0; display:flex; align-items:center; gap:7px; padding:9px 13px; border-radius:20px; background:rgba(255,255,255,0.38); border:none; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); transition:background .15s; }
@@ -350,6 +355,7 @@
 </div>
 
 <button class="fab hidden" id="fabBtn" onclick="openEntryForm(null)">＋ 추가</button>
+<button class="reorderSaveFab hidden" id="reorderSaveBtn" onclick="finishReorderMode()">✓ 순서 저장</button>
 
 <!-- 설정 모달 -->
 <div class="modalBg" id="settingsModal">
@@ -668,6 +674,7 @@
     </div>
 
     <div class="btnRow" id="detailEditButtons">
+      <button class="btn btn-ghost" id="detailPinBtn" onclick="toggleDetailPin()">♡ 상단 고정</button>
       <button class="btn btn-ghost" onclick="openEntryForm(currentDetailId)">수정</button>
       <button class="btn btn-danger" onclick="deleteCurrentImage()">삭제</button>
     </div>
@@ -968,6 +975,7 @@ async function loadDB(){
     if(img.heartColor === undefined) img.heartColor = '';
     if(img.profile === undefined) img.profile = '';
     if(img.bannerImagePath === undefined) img.bannerImagePath = '';
+    if(img.pinned === undefined) img.pinned = false;
     if(!img.extraImages) img.extraImages = [];
     img.extraImages = img.extraImages.map(e => (typeof e === 'string') ? {path:e, prompt:''} : {path:e.path, prompt:e.prompt||''});
   });
@@ -1660,6 +1668,7 @@ async function submitEntry(){
       }
     }
 
+    const prevPinned = isEditingId ? (db.images.find(i=>i.id===id)?.pinned || false) : false;
     const entryData = {
       id,
       path: mainPath,
@@ -1676,6 +1685,7 @@ async function submitEntry(){
       profile: document.getElementById('upProfile').value.trim(),
       bannerImagePath: bannerPath,
       extraImages: finalExtra,
+      pinned: prevPinned,
       createdAt
     };
 
@@ -1741,6 +1751,7 @@ function toggleReorderMode(){
     document.getElementById('reorderToggleBtn').classList.add('active-reorder');
     document.getElementById('filterWrap').classList.add('hidden');
     document.getElementById('fabBtn').classList.add('hidden');
+    document.getElementById('reorderSaveBtn').classList.remove('hidden');
     renderGallery();
   }else{
     finishReorderMode();
@@ -1751,6 +1762,7 @@ async function finishReorderMode(){
   document.getElementById('reorderToggleBtn').classList.remove('active-reorder');
   document.getElementById('filterWrap').classList.remove('hidden');
   document.getElementById('fabBtn').classList.remove('hidden');
+  document.getElementById('reorderSaveBtn').classList.add('hidden');
   try{
     toast('순서 저장 중...');
     await saveDB('갤러리 순서 변경');
@@ -1765,6 +1777,31 @@ function moveImage(idx, dir){
   db.images[idx] = db.images[target];
   db.images[target] = tmp;
   renderGallery();
+}
+
+/* ============ 게시글 고정 ============ */
+async function togglePin(id){
+  if(!requireWriteAccess()) return;
+  const img = db.images.find(i=>i.id===id);
+  if(!img) return;
+  img.pinned = !img.pinned;
+  renderGallery();
+  try{
+    toast(img.pinned ? '상단에 고정 중...' : '고정 해제 중...');
+    await saveDB(img.pinned ? '게시글 상단 고정' : '게시글 고정 해제');
+    toast(img.pinned ? '상단에 고정했어요' : '고정을 해제했어요');
+  }catch(e){ toast(e.message || '고정 저장 실패'); }
+}
+async function toggleDetailPin(){
+  if(!currentDetailId) return;
+  await togglePin(currentDetailId);
+  const img = db.images.find(i=>i.id===currentDetailId);
+  if(img) updateDetailPinBtn(img.pinned);
+}
+function updateDetailPinBtn(pinned){
+  const btn = document.getElementById('detailPinBtn');
+  if(!btn) return;
+  btn.textContent = pinned ? '♥ 고정 해제' : '♡ 상단 고정';
 }
 
 /* ============ 갤러리 ============ */
@@ -1792,6 +1829,7 @@ function renderGallery(){
       const q = currentSearchQuery.toLowerCase();
       list = list.filter(img => (img.title||'').toLowerCase().includes(q));
     }
+    list = list.slice().sort((a,b)=> (b.pinned?1:0) - (a.pinned?1:0));
   }
   const emptyHint = document.getElementById('emptyHint');
   if(db.images.length===0){
@@ -1807,7 +1845,7 @@ function renderGallery(){
   if(reorderMode){
     const hint = document.createElement('div');
     hint.className = 'reorderHint';
-    hint.textContent = '화살표로 순서를 바꾸고, 완료되면 상단 ⇅ 버튼을 눌러 저장하세요';
+    hint.textContent = '화살표로 순서를 바꾸고, 완료되면 오른쪽 아래 ✓ 순서 저장 버튼을 눌러 저장하세요';
     grid.parentNode.insertBefore(hint, grid);
   }else{
     const prevHint = grid.parentNode.querySelector('.reorderHint');
@@ -1829,6 +1867,13 @@ function renderGallery(){
     thumb.className = 'card-thumb';
     const ph = document.createElement('div'); ph.className = 'ph';
     thumb.appendChild(ph);
+    if(img.pinned && !reorderMode){
+      const pinBadge = document.createElement('div');
+      pinBadge.className = 'pinBadge';
+      pinBadge.textContent = '♥';
+      if(img.heartColor) pinBadge.style.color = img.heartColor;
+      thumb.appendChild(pinBadge);
+    }
     if(reorderMode){
       const btns = document.createElement('div');
       btns.className = 'reorderBtns';
@@ -2026,6 +2071,7 @@ async function openDetail(id){
   if(!img) return;
   currentDetailId = id;
   document.getElementById('detailEditButtons').classList.toggle('hidden', !hasWriteAccess());
+  updateDetailPinBtn(img.pinned);
   document.getElementById('detailTitle').textContent = img.title || '(제목 없음)';
   renderSubtitleTags('detailSubtitleTags', img.subtitle);
 
