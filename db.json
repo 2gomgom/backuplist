@@ -10,23 +10,5 @@
     "bgImagePath": "",
     "heartColor": "#c9184a"
   },
-  "images": [
-    {
-      "id": "mrj25pg64qtni",
-      "path": "images/mrj25pg64qtni.png",
-      "title": "리오",
-      "subtitle": "",
-      "ddayDate": "",
-      "heartColor": "#c9184a",
-      "category": [],
-      "tags": {
-        "appearance": [],
-        "outfit": []
-      },
-      "memo": "",
-      "profile": "",
-      "extraImages": [],
-      "createdAt": "2026-07-13T10:06:56.022Z"
-    }
-  ]
+  "images": []
 }
