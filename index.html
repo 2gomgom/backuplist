@@ -626,21 +626,41 @@ function rawContentUrl(path){
   const branch = settings.branch || 'main';
   return `https://raw.githubusercontent.com/${settings.owner}/${settings.repo}/${encodeURIComponent(branch)}/${encodePath(path)}`;
 }
+async function ghGetBlobBySha(sha){
+  const url = `https://api.github.com/repos/${settings.owner}/${settings.repo}/git/blobs/${sha}`;
+  const res = await fetch(url, { headers: { 'Authorization': `token ${settings.token}`, 'Accept':'application/vnd.github+json' } });
+  if(res.status === 403 || res.status === 429){ const e = new Error('요청이 너무 많아요 (rate limit)'); e.rateLimited = true; throw e; }
+  if(!res.ok) throw new Error('blob ' + res.status);
+  return res.json();
+}
+async function ghGetImageUrlFromRaw(path){
+  const res = await fetch(rawContentUrl(path), { headers: { 'Authorization': `token ${settings.token}` }, cache:'no-store' });
+  if(res.status === 403 || res.status === 429){ const e = new Error('요청이 너무 많아요 (rate limit)'); e.rateLimited = true; throw e; }
+  if(!res.ok) throw new Error('raw ' + res.status);
+  const blob = await res.blob();
+  return URL.createObjectURL(blob);
+}
 async function ghGetImageUrl(path){
-  // 1MB가 넘는 이미지는 Contents API가 base64를 안 내려주므로, raw.githubusercontent.com에서 직접 받아온다.
-  try{
-    const res = await fetch(rawContentUrl(path), { headers: { 'Authorization': `token ${settings.token}` }, cache:'no-store' });
-    if(res.status === 403 || res.status === 429){ const e = new Error('요청이 너무 많아요 (rate limit)'); e.rateLimited = true; throw e; }
-    if(!res.ok) throw new Error('raw ' + res.status);
-    const blob = await res.blob();
-    return URL.createObjectURL(blob);
-  }catch(e){
-    if(e.rateLimited) throw e;
-    // 폴백: Contents API (1MB 이하 파일에만 동작)
-    const file = await ghGetFile(path);
-    if(!file || !file.content) throw new Error('이미지를 불러올 수 없어요');
-    return base64ToBlobUrl(file.content, guessMime(path));
+  // raw.githubusercontent.com은 CDN 캐시라서 방금 올린 파일이 몇 초간 404로 보일 수 있다(새로고침해도 안 뜨는 원인).
+  // 반면 Contents/Git API는 커밋 즉시 반영되므로 이걸 우선 사용하고, raw는 최후의 보조 수단으로만 쓴다.
+  let meta;
+  try{ meta = await ghGetFile(path); }
+  catch(e){ if(e.rateLimited) throw e; meta = undefined; }
+  if(meta === null){
+    // Contents API가 없다고 응답 - 정말 없을 수도 있지만 혹시 몰라 raw도 한 번 확인
+    return await ghGetImageUrlFromRaw(path);
   }
+  if(meta && meta.content){
+    return base64ToBlobUrl(meta.content, guessMime(path));
+  }
+  if(meta && meta.sha){
+    try{
+      const blob = await ghGetBlobBySha(meta.sha);
+      if(blob && blob.content) return base64ToBlobUrl(blob.content, guessMime(path));
+    }catch(e){ if(e.rateLimited) throw e; }
+  }
+  // 알 수 없는 경우 raw로 폴백
+  return await ghGetImageUrlFromRaw(path);
 }
 function delay(ms){ return new Promise(res=>setTimeout(res, ms)); }
 // 한꺼번에 너무 많은 이미지를 동시에 불러오면 (특히 새로고침 직후) 요청이 몰려 실패하기 쉬우므로
