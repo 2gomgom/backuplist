@@ -20,6 +20,56 @@
   },
   "images": [
     {
+      "id": "mrjbvxh8457qz",
+      "path": "images/mrjbvxh8457qz.png",
+      "title": "M4R1N",
+      "subtitle": "",
+      "ddayDate": "",
+      "heartColor": "#c9184a",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [],
+      "categoryColors": {},
+      "tags": {
+        "appearance": [
+          "1boy",
+          "male focus",
+          "beautiful male",
+          "slender",
+          "slim",
+          "pale skin",
+          "cerulean blue gradient markings on skin",
+          "iridescent blue and white bicolor skin",
+          "silver white hair",
+          "long hair",
+          "wavy",
+          "twintails",
+          "full-bangs",
+          "blue eyes",
+          "almond-shaped eyes",
+          "tsurime",
+          "sharp elegant face"
+        ],
+        "outfit": [
+          "white sailor uniform",
+          "short-sleeve",
+          "short white pants",
+          "fluorescent blue accent",
+          "sailor collar",
+          "sailor hat",
+          "white loafers",
+          "white knee socks"
+        ]
+      },
+      "memo": "",
+      "profile": "M4R1N\n직급: 외교부 수장\n키: 174cm",
+      "bannerImagePath": "images/mrjbvxh8457qz-banner-mrjbw16y.png",
+      "extraImages": [],
+      "pinned": false,
+      "createdAt": "2026-07-13T14:39:16.028Z"
+    },
+    {
       "id": "mrjbiv6y1ouvq",
       "path": "images/mrjbiv6y1ouvq.png",
       "title": "네페르템",
