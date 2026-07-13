@@ -10,23 +10,5 @@
     "bgImagePath": "",
     "heartColor": "#c9184a"
   },
-  "images": [
-    {
-      "id": "mrj1qqsas9ebc",
-      "path": "images/mrj1qqsas9ebc.png",
-      "title": "hh",
-      "subtitle": "",
-      "ddayDate": "",
-      "heartColor": "#c9184a",
-      "category": [],
-      "tags": {
-        "appearance": [],
-        "outfit": []
-      },
-      "memo": "",
-      "profile": "",
-      "extraImages": [],
-      "createdAt": "2026-07-13T09:55:17.914Z"
-    }
-  ]
+  "images": []
 }
