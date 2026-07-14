@@ -503,7 +503,7 @@
       "title": "백서리",
       "subtitle": "유야",
       "ddayDate": "2026-06-19",
-      "heartColor": "#e5e5e5",
+      "heartColor": "#a3a3a3",
       "catchphrase": "",
       "catchphraseEnabled": false,
       "catchphraseItalic": false,
@@ -538,8 +538,7 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-14T20:37:57.827Z",
-      "categoryColor": "catPurple"
+      "createdAt": "2026-07-14T20:37:57.827Z"
     },
     {
       "id": "mrl4ywv7n2bgv",
@@ -890,7 +889,8 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-14T21:30:21.812Z"
+      "createdAt": "2026-07-14T21:30:21.812Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrjzght9ojhfo",
