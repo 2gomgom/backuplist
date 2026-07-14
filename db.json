@@ -20,6 +20,53 @@
   },
   "images": [
     {
+      "id": "mrl59ct1jiidk",
+      "path": "images/mrl59ct1jiidk.png",
+      "title": "해피",
+      "subtitle": "",
+      "ddayDate": "",
+      "heartColor": "#c9184a",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CAVEDUCK",
+        "ARCH"
+      ],
+      "categoryColors": {
+        "CAVEDUCK": "catGreen",
+        "ARCH": "catPurple"
+      },
+      "tags": {
+        "appearance": [
+          "1boy",
+          "1.7::desert jerboa kemonomimi",
+          "big jerboa ears",
+          "fluffy jerboa tail::",
+          "1.1::ash blonde hair",
+          "short hair",
+          "wavy hair::",
+          "soft amber eyes",
+          "warm amber eyes",
+          "sunlit eyes",
+          "glowing eyes",
+          "gentle smile",
+          "smiling",
+          "happy expression",
+          "cute face",
+          "handsome boy",
+          "youthful"
+        ],
+        "outfit": []
+      },
+      "memo": "SMILEY - YENA",
+      "profile": "코드네임: HAPPY (해피)\n직급: A급 무 속성 센티넬 (등급 강제)\n종족: 사막여우 수인\n나이: 21세\n키: 177.7cm",
+      "bannerImagePath": "images/mrl59ct1jiidk-banner-mrl59f34.png",
+      "extraImages": [],
+      "pinned": false,
+      "createdAt": "2026-07-14T21:09:17.461Z"
+    },
+    {
       "id": "mrl4ywv7n2bgv",
       "path": "images/mrl4ywv7n2bgv.png",
       "title": "나비",
