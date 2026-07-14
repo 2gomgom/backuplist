@@ -20,230 +20,6 @@
   },
   "images": [
     {
-      "id": "mrkwq7kyagtuj",
-      "path": "images/mrkwq7kyagtuj-mrkwrbca.png",
-      "title": "차신 (주님한놈갑니다)",
-      "subtitle": "",
-      "ddayDate": "",
-      "heartColor": "#c9184a",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [],
-      "categoryColors": {},
-      "tags": {
-        "appearance": [
-          "1 boy",
-          "male",
-          "toned male",
-          "beautiful male",
-          "slender",
-          "pale skin",
-          "half closed eyes",
-          "magenta eyes",
-          "neon red hair",
-          "dark roots",
-          "short hair"
-        ],
-        "outfit": [
-          "oversized open beige linen shirt",
-          "tucked inner t-shirt",
-          "wide leg light wash denim",
-          "relaxed",
-          "simple white sneakers",
-          "black cap pulled low",
-          "thin gold chain",
-          "tote bag",
-          "casual and unbothered"
-        ]
-      },
-      "memo": "",
-      "profile": "",
-      "bannerImagePath": "",
-      "extraImages": [],
-      "pinned": false,
-      "createdAt": "2026-07-14T17:10:27.298Z"
-    },
-    {
-      "id": "mrkwp3igzlpi0",
-      "path": "images/mrkwp3igzlpi0.png",
-      "title": "주님한놈갑니다 (차신)",
-      "subtitle": "",
-      "ddayDate": "",
-      "heartColor": "#c9184a",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [],
-      "categoryColors": {},
-      "tags": {
-        "appearance": [
-          "1 boy",
-          "male",
-          "toned male",
-          "beautiful male",
-          "slender",
-          "pale skin",
-          "half closed eyes",
-          "2::pure white hair",
-          "cool white hair::",
-          "3::high_ponytail::",
-          "long hair",
-          "full bangs",
-          "3::straight hair",
-          "hime_cut::",
-          "2::brilliant yellow eyes::",
-          "2::long sharp black Nails::"
-        ],
-        "outfit": [
-          "oversized pastel blue tech jacket",
-          "circuit pattern",
-          "white cropped turtleneck underneath",
-          "low rise white wide trousers",
-          "reflective trim",
-          "chunky holographic sneakers",
-          "translucent y2k visor",
-          "pushed up",
-          "layered pearl and chain necklace",
-          "star shaped LED earring",
-          "small gem sticker under eye",
-          "giant pixel purple and blue greatsword",
-          "claymore",
-          "two-handed sword",
-          "long straight blade",
-          "sharp tip",
-          "simple crossguard",
-          "wrapped hilt",
-          "pixel shading",
-          "chunky pixel outline",
-          "8bit retro style"
-        ]
-      },
-      "memo": "",
-      "profile": "",
-      "bannerImagePath": "",
-      "extraImages": [],
-      "pinned": false,
-      "createdAt": "2026-07-14T17:09:35.364Z"
-    },
-    {
-      "id": "mrjzs0iap3nfv",
-      "path": "images/mrjzs0iap3nfv.png",
-      "title": "사하야",
-      "subtitle": "마범석",
-      "ddayDate": "2026-06-06",
-      "heartColor": "#660099",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [
-        "CAVEDUCK"
-      ],
-      "categoryColors": {
-        "CAVEDUCK": "catGreen"
-      },
-      "tags": {
-        "appearance": [
-          "1 boy",
-          "male",
-          "1.8:: split color hair",
-          "white hair",
-          "dark Violet",
-          "french braid",
-          "medium hair",
-          "straight hair",
-          "blunt bangs::",
-          "narrow eyes",
-          "yellow eyes",
-          "fair skin",
-          "slim",
-          "slender",
-          "narrow waist",
-          "lean",
-          "lip piercings",
-          "cross drop earrings",
-          "enigmatic",
-          "sensual"
-        ],
-        "outfit": [
-          "holding a dark Violet color iron fan",
-          "white suit jacket",
-          "white crop vest",
-          "1.2::slightly loose dark violet collard shirt::",
-          "white suit pants",
-          "white formal shoes",
-          "black half gloves"
-        ]
-      },
-      "memo": "",
-      "profile": "司遐夜\n직급: ​흑야파 (黑夜派) 보스의 차남\n나이: 27세\n키: 175cm\n무기: 금속재질 자주색 부채",
-      "bannerImagePath": "",
-      "extraImages": [
-        {
-          "path": "images/mrjzs0iap3nfv-extra-mrjzs3kl0.png",
-          "prompt": "마범석"
-        }
-      ],
-      "pinned": false,
-      "createdAt": "2026-07-14T01:48:04.114Z",
-      "categoryColor": "catPurple"
-    },
-    {
-      "id": "mrjzght9ojhfo",
-      "path": "images/mrjzght9ojhfo.png",
-      "title": "포포",
-      "subtitle": "신",
-      "ddayDate": "2026-06-26",
-      "heartColor": "#ff69b4",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [
-        "CRACK",
-        "AFTERLIGHT"
-      ],
-      "categoryColors": {
-        "CRACK": "catGreen",
-        "AFTERLIGHT": "catPurple"
-      },
-      "tags": {
-        "appearance": [
-          "1boy",
-          "animal ears",
-          "raccoon ears",
-          "raccoon tail",
-          "animal ear fluff",
-          "mature male",
-          "pink hair",
-          "absurdly long hair",
-          "wavy hair",
-          "almond-shaped eyes",
-          "rose eyes",
-          "dark skin",
-          "slim"
-        ],
-        "outfit": [
-          "hoodie",
-          "pastel color",
-          "pleated skirt",
-          "thighhighs",
-          "flower tattoo on stomach"
-        ]
-      },
-      "memo": "#FF69B4 (Hot Pink)\n\n표정:\nwink, tongue out, hands behind head",
-      "profile": "P0P0\n종족: 너구리 수인\n나이: 불명\n키: 176cm",
-      "bannerImagePath": "",
-      "extraImages": [
-        {
-          "path": "images/mrjzght9ojhfo-extra-mrjzgko10.jpg",
-          "prompt": "S!N (신)"
-        }
-      ],
-      "pinned": false,
-      "createdAt": "2026-07-14T01:39:06.669Z",
-      "categoryColor": "catPurple"
-    },
-    {
       "id": "mrj2tg533opv2",
       "path": "images/mrj2tg533opv2-mrjdmee2.png",
       "title": "염사하",
@@ -722,57 +498,6 @@
       "categoryColor": "catPurple"
     },
     {
-      "id": "mrjbvxh8457qz",
-      "path": "images/mrjbvxh8457qz.png",
-      "title": "마린",
-      "subtitle": "",
-      "ddayDate": "",
-      "heartColor": "#c9184a",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [],
-      "categoryColors": {},
-      "tags": {
-        "appearance": [
-          "1boy",
-          "male focus",
-          "beautiful male",
-          "slender",
-          "slim",
-          "pale skin",
-          "cerulean blue gradient markings on skin",
-          "iridescent blue and white bicolor skin",
-          "silver white hair",
-          "long hair",
-          "wavy",
-          "twintails",
-          "full-bangs",
-          "blue eyes",
-          "almond-shaped eyes",
-          "tsurime",
-          "sharp elegant face"
-        ],
-        "outfit": [
-          "white sailor uniform",
-          "short-sleeve",
-          "short white pants",
-          "fluorescent blue accent",
-          "sailor collar",
-          "sailor hat",
-          "white loafers",
-          "white knee socks"
-        ]
-      },
-      "memo": "",
-      "profile": "M4R1N\n직급: 외교부 수장\n키: 174cm",
-      "bannerImagePath": "images/mrjbvxh8457qz-banner-mrjbw16y.png",
-      "extraImages": [],
-      "pinned": false,
-      "createdAt": "2026-07-13T14:39:16.028Z",
-      "categoryColor": "catPurple"
-    },
-    {
       "id": "mrjap4gin52dj",
       "path": "images/mrjap4gin52dj.png",
       "title": "리 란",
@@ -849,6 +574,281 @@
       "pinned": false,
       "createdAt": "2026-07-13T14:05:58.866Z",
       "categoryColor": "catPurple"
+    },
+    {
+      "id": "mrjbvxh8457qz",
+      "path": "images/mrjbvxh8457qz.png",
+      "title": "마린",
+      "subtitle": "",
+      "ddayDate": "",
+      "heartColor": "#c9184a",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [],
+      "categoryColors": {},
+      "tags": {
+        "appearance": [
+          "1boy",
+          "male focus",
+          "beautiful male",
+          "slender",
+          "slim",
+          "pale skin",
+          "cerulean blue gradient markings on skin",
+          "iridescent blue and white bicolor skin",
+          "silver white hair",
+          "long hair",
+          "wavy",
+          "twintails",
+          "full-bangs",
+          "blue eyes",
+          "almond-shaped eyes",
+          "tsurime",
+          "sharp elegant face"
+        ],
+        "outfit": [
+          "white sailor uniform",
+          "short-sleeve",
+          "short white pants",
+          "fluorescent blue accent",
+          "sailor collar",
+          "sailor hat",
+          "white loafers",
+          "white knee socks"
+        ]
+      },
+      "memo": "",
+      "profile": "M4R1N\n직급: 외교부 수장\n키: 174cm",
+      "bannerImagePath": "images/mrjbvxh8457qz-banner-mrjbw16y.png",
+      "extraImages": [],
+      "pinned": false,
+      "createdAt": "2026-07-13T14:39:16.028Z",
+      "categoryColor": "catPurple"
+    },
+    {
+      "id": "mrjzght9ojhfo",
+      "path": "images/mrjzght9ojhfo.png",
+      "title": "포포",
+      "subtitle": "신",
+      "ddayDate": "2026-06-26",
+      "heartColor": "#ff69b4",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CRACK",
+        "AFTERLIGHT"
+      ],
+      "categoryColors": {
+        "CRACK": "catGreen",
+        "AFTERLIGHT": "catPurple"
+      },
+      "tags": {
+        "appearance": [
+          "1boy",
+          "animal ears",
+          "raccoon ears",
+          "raccoon tail",
+          "animal ear fluff",
+          "mature male",
+          "pink hair",
+          "absurdly long hair",
+          "wavy hair",
+          "almond-shaped eyes",
+          "rose eyes",
+          "dark skin",
+          "slim"
+        ],
+        "outfit": [
+          "hoodie",
+          "pastel color",
+          "pleated skirt",
+          "thighhighs",
+          "flower tattoo on stomach"
+        ]
+      },
+      "memo": "#FF69B4 (Hot Pink)\n\n표정:\nwink, tongue out, hands behind head",
+      "profile": "P0P0\n종족: 너구리 수인\n나이: 불명\n키: 176cm",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrjzght9ojhfo-extra-mrjzgko10.jpg",
+          "prompt": "S!N (신)"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T01:39:06.669Z",
+      "categoryColor": "catPurple"
+    },
+    {
+      "id": "mrkwp3igzlpi0",
+      "path": "images/mrkwp3igzlpi0.png",
+      "title": "주님한놈갑니다 (차신)",
+      "subtitle": "",
+      "ddayDate": "",
+      "heartColor": "#c9184a",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [],
+      "categoryColors": {},
+      "tags": {
+        "appearance": [
+          "1 boy",
+          "male",
+          "toned male",
+          "beautiful male",
+          "slender",
+          "pale skin",
+          "half closed eyes",
+          "2::pure white hair",
+          "cool white hair::",
+          "3::high_ponytail::",
+          "long hair",
+          "full bangs",
+          "3::straight hair",
+          "hime_cut::",
+          "2::brilliant yellow eyes::",
+          "2::long sharp black Nails::"
+        ],
+        "outfit": [
+          "oversized pastel blue tech jacket",
+          "circuit pattern",
+          "white cropped turtleneck underneath",
+          "low rise white wide trousers",
+          "reflective trim",
+          "chunky holographic sneakers",
+          "translucent y2k visor",
+          "pushed up",
+          "layered pearl and chain necklace",
+          "star shaped LED earring",
+          "small gem sticker under eye",
+          "giant pixel purple and blue greatsword",
+          "claymore",
+          "two-handed sword",
+          "long straight blade",
+          "sharp tip",
+          "simple crossguard",
+          "wrapped hilt",
+          "pixel shading",
+          "chunky pixel outline",
+          "8bit retro style"
+        ]
+      },
+      "memo": "",
+      "profile": "",
+      "bannerImagePath": "",
+      "extraImages": [],
+      "pinned": false,
+      "createdAt": "2026-07-14T17:09:35.364Z"
+    },
+    {
+      "id": "mrjzs0iap3nfv",
+      "path": "images/mrjzs0iap3nfv.png",
+      "title": "사하야",
+      "subtitle": "마범석",
+      "ddayDate": "2026-06-06",
+      "heartColor": "#660099",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CAVEDUCK"
+      ],
+      "categoryColors": {
+        "CAVEDUCK": "catGreen"
+      },
+      "tags": {
+        "appearance": [
+          "1 boy",
+          "male",
+          "1.8:: split color hair",
+          "white hair",
+          "dark Violet",
+          "french braid",
+          "medium hair",
+          "straight hair",
+          "blunt bangs::",
+          "narrow eyes",
+          "yellow eyes",
+          "fair skin",
+          "slim",
+          "slender",
+          "narrow waist",
+          "lean",
+          "lip piercings",
+          "cross drop earrings",
+          "enigmatic",
+          "sensual"
+        ],
+        "outfit": [
+          "holding a dark Violet color iron fan",
+          "white suit jacket",
+          "white crop vest",
+          "1.2::slightly loose dark violet collard shirt::",
+          "white suit pants",
+          "white formal shoes",
+          "black half gloves"
+        ]
+      },
+      "memo": "",
+      "profile": "司遐夜\n직급: ​흑야파 (黑夜派) 보스의 차남\n나이: 27세\n키: 175cm\n무기: 금속재질 자주색 부채",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrjzs0iap3nfv-extra-mrjzs3kl0.png",
+          "prompt": "마범석"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T01:48:04.114Z",
+      "categoryColor": "catPurple"
+    },
+    {
+      "id": "mrkwq7kyagtuj",
+      "path": "images/mrkwq7kyagtuj-mrkwrbca.png",
+      "title": "차신 (주님한놈갑니다)",
+      "subtitle": "",
+      "ddayDate": "",
+      "heartColor": "#c9184a",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [],
+      "categoryColors": {},
+      "tags": {
+        "appearance": [
+          "1 boy",
+          "male",
+          "toned male",
+          "beautiful male",
+          "slender",
+          "pale skin",
+          "half closed eyes",
+          "magenta eyes",
+          "neon red hair",
+          "dark roots",
+          "short hair"
+        ],
+        "outfit": [
+          "oversized open beige linen shirt",
+          "tucked inner t-shirt",
+          "wide leg light wash denim",
+          "relaxed",
+          "simple white sneakers",
+          "black cap pulled low",
+          "thin gold chain",
+          "tote bag",
+          "casual and unbothered"
+        ]
+      },
+      "memo": "",
+      "profile": "",
+      "bannerImagePath": "",
+      "extraImages": [],
+      "pinned": false,
+      "createdAt": "2026-07-14T17:10:27.298Z"
     }
   ]
 }
