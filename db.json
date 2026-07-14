@@ -20,6 +20,67 @@
   },
   "images": [
     {
+      "id": "mrl4niomssbjk",
+      "path": "images/mrl4niomssbjk.png",
+      "title": "네베",
+      "subtitle": "고든",
+      "ddayDate": "2026-06-15",
+      "heartColor": "#36454f",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CRACK"
+      ],
+      "categoryColors": {
+        "CRACK": "catGreen"
+      },
+      "tags": {
+        "appearance": [
+          "1boy",
+          "solo",
+          "male",
+          "toned male",
+          "beautiful male",
+          "slender",
+          "pale skin",
+          "half closed eyes",
+          "2::blue eyes::",
+          "2::blue hair + white hair",
+          "gradient hair",
+          "long hair",
+          "straight hair::",
+          "hair bow bun at back of head",
+          "hair folded into bow shape at occipital",
+          "3::own hair shaped into large bow at back of head::",
+          "hair looped into ribbon shape at nape",
+          "hair bow hairstyle at back",
+          "3::no accessories::",
+          "1.5::very large wings sprouting from shoulder blades",
+          "a pair of wings",
+          "Indian Paradise Flycatcher wings",
+          "white ribbon-like elongated tail plumes as wings",
+          "long flowing white plumes trailing behind::"
+        ],
+        "outfit": [
+          "black suit jacket",
+          "no inner",
+          "black suit pants"
+        ]
+      },
+      "memo": "",
+      "profile": "Neve\n종족: 인도 긴꼬리딱새 (Indian Paradise Flycatcher)\n직업: 조류종 대표 모델\n나이: 32세\n키: 174cm",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrl4niomssbjk-extra-mrl4nl1c0.png",
+          "prompt": "GORDON (고든)"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T20:52:18.646Z"
+    },
+    {
       "id": "mrl452gzg2jlq",
       "path": "images/mrl452gzg2jlq-mrl4987g.png",
       "title": "백서리",
