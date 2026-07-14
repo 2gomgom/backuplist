@@ -20,6 +20,75 @@
   },
   "images": [
     {
+      "id": "mrl60gdw5fol2",
+      "path": "images/mrl60gdw5fol2.png",
+      "title": "나비",
+      "subtitle": "헬리오스",
+      "ddayDate": "2026-07-08",
+      "heartColor": "#e34234",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CAVEDUCK",
+        "ARCH"
+      ],
+      "categoryColors": {
+        "CAVEDUCK": "catGreen",
+        "ARCH": "catPurple"
+      },
+      "tags": {
+        "appearance": [
+          "1boy",
+          "male",
+          "toned male",
+          "slender",
+          "beautiful male",
+          "sharp eyes",
+          "yellow eyes",
+          "half-closed eyes",
+          "emo hair",
+          "pale skin",
+          "white and brown color hair",
+          "short hair",
+          "cone hair bun",
+          "butterfly hairpin",
+          "ear piercings",
+          "black Nails",
+          "black hair tie on wrist"
+        ],
+        "outfit": [
+          "oversized lab coat",
+          "long sleeves covering hands",
+          "black fitted turtleneck",
+          "high-waisted shorts",
+          "black tailored shorts",
+          "garter belt",
+          "sheer black thighhighs",
+          "damaged thighhighs",
+          "black platform boots",
+          "lace-up knee boots",
+          "stethoscope around neck",
+          "ID badge",
+          "hospital",
+          "fashion editorial",
+          "holding giant syringe",
+          "yellow liquid in syringe"
+        ]
+      },
+      "memo": "#E34234 (Vermilion)\n\n6cm 굽 있는 부츠 착용\n\n#태양의_궤도에_머무는_나비",
+      "profile": "Nabi 羅霏\n(현) 코드네임: ASCLEPIUS (아스클레피오스)\n(전) 코드네임 및 별명: PAPILLON (파피용)\n직급: S급 뇌 속성 가이드, 코어팀 의료 총괄\n나이: 30세\n키: 174cm",
+      "bannerImagePath": "images/mrl60gdw5fol2-banner-mrl60ja5.png",
+      "extraImages": [
+        {
+          "path": "images/mrl60gdw5fol2-extra-mrl60lhd0.jpg",
+          "prompt": "HELIOS (하선우)"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T21:30:21.812Z"
+    },
+    {
       "id": "mrl59ct1jiidk",
       "path": "images/mrl59ct1jiidk.png",
       "title": "해피",
@@ -64,7 +133,8 @@
       "bannerImagePath": "images/mrl59ct1jiidk-banner-mrl59f34.png",
       "extraImages": [],
       "pinned": false,
-      "createdAt": "2026-07-14T21:09:17.461Z"
+      "createdAt": "2026-07-14T21:09:17.461Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrl4ywv7n2bgv",
@@ -128,7 +198,8 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-14T21:01:10.243Z"
+      "createdAt": "2026-07-14T21:01:10.243Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrl4niomssbjk",
@@ -189,7 +260,8 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-14T20:52:18.646Z"
+      "createdAt": "2026-07-14T20:52:18.646Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrl452gzg2jlq",
@@ -232,7 +304,8 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-14T20:37:57.827Z"
+      "createdAt": "2026-07-14T20:37:57.827Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrl3i9ftc5s59",
@@ -308,7 +381,8 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-14T20:20:13.768Z"
+      "createdAt": "2026-07-14T20:20:13.768Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrj2tg533opv2",
@@ -445,7 +519,8 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T10:25:23.703Z"
+      "createdAt": "2026-07-13T10:25:23.703Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrj7sfqyijh8u",
@@ -569,7 +644,8 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T12:44:34.618Z"
+      "createdAt": "2026-07-13T12:44:34.618Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrja6mkfpe0vq",
@@ -712,7 +788,8 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T11:58:53.350Z"
+      "createdAt": "2026-07-13T11:58:53.350Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrjbiv6y1ouvq",
@@ -860,7 +937,8 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-13T14:05:58.866Z"
+      "createdAt": "2026-07-13T14:05:58.866Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrjbvxh8457qz",
@@ -965,7 +1043,8 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-14T01:39:06.669Z"
+      "createdAt": "2026-07-14T01:39:06.669Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrkwp3igzlpi0",
@@ -1027,7 +1106,8 @@
       "bannerImagePath": "",
       "extraImages": [],
       "pinned": false,
-      "createdAt": "2026-07-14T17:09:35.364Z"
+      "createdAt": "2026-07-14T17:09:35.364Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrjzs0iap3nfv",
@@ -1088,7 +1168,8 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-14T01:48:04.114Z"
+      "createdAt": "2026-07-14T01:48:04.114Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrkwq7kyagtuj",
@@ -1133,7 +1214,8 @@
       "bannerImagePath": "",
       "extraImages": [],
       "pinned": false,
-      "createdAt": "2026-07-14T17:10:27.298Z"
+      "createdAt": "2026-07-14T17:10:27.298Z",
+      "categoryColor": "catPurple"
     }
   ]
 }
