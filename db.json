@@ -20,6 +20,49 @@
   },
   "images": [
     {
+      "id": "mrl452gzg2jlq",
+      "path": "images/mrl452gzg2jlq.png",
+      "title": "백서리",
+      "subtitle": "유야",
+      "ddayDate": "2026-06-19",
+      "heartColor": "#ffffff",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CRACK"
+      ],
+      "categoryColors": {
+        "CRACK": "catGreen"
+      },
+      "tags": {
+        "appearance": [
+          "1 boy",
+          "male",
+          "toned male",
+          "beautiful male",
+          "slender",
+          "pale skin",
+          "half closed eyes",
+          "2::dark black eyes::",
+          "white hair + neon green hair",
+          "short hair"
+        ],
+        "outfit": []
+      },
+      "memo": "",
+      "profile": "Baek Seori (白서리)\n활동명: 백설\n직업: 모델\n국적: 한국\n나이: 22세\n키: 179cm\n별명: 백설공주\n팬클럽: 난쟁이",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrl452gzg2jlq-extra-mrl4557l0.png",
+          "prompt": "いけだ ゆうや (이케다 유야)"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T20:37:57.827Z"
+    },
+    {
       "id": "mrl3i9ftc5s59",
       "path": "images/mrl3i9ftc5s59.png",
       "title": "알타이르 나바로",
