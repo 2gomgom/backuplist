@@ -20,6 +20,82 @@
   },
   "images": [
     {
+      "id": "mrl3i9ftc5s59",
+      "path": "images/mrl3i9ftc5s59.png",
+      "title": "알타이르 나바로",
+      "subtitle": "카인",
+      "ddayDate": "2026-06-26",
+      "heartColor": "#2e7d32",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CRACK",
+        "RE:COVER"
+      ],
+      "categoryColors": {
+        "CRACK": "catGreen",
+        "RE:COVER": "catPurple"
+      },
+      "tags": {
+        "appearance": [
+          "1boy",
+          "male",
+          "beautiful male",
+          "toned male",
+          "mature male",
+          "slender",
+          "hispanic male",
+          "dark skin",
+          "2::short wavy dark hair",
+          "glossy black hair::",
+          "amber eyes",
+          "cat-like eyes",
+          "2::two small beauty marks under one eye",
+          "aligned horizontally in a row",
+          "following the eye line",
+          "two moles side by side beneath eye::",
+          "2::small mole on nose",
+          "single beauty mark on nose tip::",
+          "2::mole under mouth::",
+          "sharp jawline",
+          "no accessory"
+        ],
+        "outfit": [
+          "black tactical flight suit",
+          "sleek and fitted",
+          "chest rig over suit",
+          "magazine pouches",
+          "special operations patch on shoulder",
+          "balaclava pulled down around neck",
+          "tactical gloves",
+          "combat boots",
+          "night vision mount on helmet",
+          "upper body shot",
+          "slight low angle",
+          "leaning back",
+          "one arm resting loosely",
+          "warm golden backlight",
+          "soft rim light",
+          "shadow falling across one eye",
+          "cinematic",
+          "moody",
+          "effortlessly sensual"
+        ]
+      },
+      "memo": "#2E7D32 (Forest Green)\n\n점 위치(본인 기준):\n왼쪽 눈 아래 나란히 2개\n콧등 1개\n왼쪽 입가 아래 1개",
+      "profile": "Altair Navarro\n콜사인: Stallion (스탤리온)\n직급: 제160특수작전항공연대(Night Stalkers, SOAR\n)의 에이스 준위(CW2), AH-6M 리틀 버드 조종사\n국적: 히스패닉계 미국인 2세\n언어: 영어와 스페인어 혼용\n나이: 28세\n키: 178cm\n공용애칭: Ari (아리)\n친밀한 사이에게만 허락한 애칭: Canela (카넬라)",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrl3i9ftc5s59-extra-mrl3ibxd0.png",
+          "prompt": "CAIN RUTH (카인 루스)\n콜사인: Bambi (밤비)"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T20:20:13.768Z"
+    },
+    {
       "id": "mrj2tg533opv2",
       "path": "images/mrj2tg533opv2-mrjdmee2.png",
       "title": "염사하",
