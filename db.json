@@ -20,371 +20,6 @@
   },
   "images": [
     {
-      "id": "mrl60gdw5fol2",
-      "path": "images/mrl60gdw5fol2.png",
-      "title": "나비",
-      "subtitle": "헬리오스",
-      "ddayDate": "2026-07-08",
-      "heartColor": "#e34234",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [
-        "CAVEDUCK",
-        "ARCH"
-      ],
-      "categoryColors": {
-        "CAVEDUCK": "catGreen",
-        "ARCH": "catPurple"
-      },
-      "tags": {
-        "appearance": [
-          "1boy",
-          "male",
-          "toned male",
-          "slender",
-          "beautiful male",
-          "sharp eyes",
-          "yellow eyes",
-          "half-closed eyes",
-          "emo hair",
-          "pale skin",
-          "white and brown color hair",
-          "short hair",
-          "cone hair bun",
-          "butterfly hairpin",
-          "ear piercings",
-          "black Nails",
-          "black hair tie on wrist"
-        ],
-        "outfit": [
-          "oversized lab coat",
-          "long sleeves covering hands",
-          "black fitted turtleneck",
-          "high-waisted shorts",
-          "black tailored shorts",
-          "garter belt",
-          "sheer black thighhighs",
-          "damaged thighhighs",
-          "black platform boots",
-          "lace-up knee boots",
-          "stethoscope around neck",
-          "ID badge",
-          "hospital",
-          "fashion editorial",
-          "holding giant syringe",
-          "yellow liquid in syringe"
-        ]
-      },
-      "memo": "#E34234 (Vermilion)\n\n6cm 굽 있는 부츠 착용\n\n#태양의_궤도에_머무는_나비",
-      "profile": "Nabi 羅霏\n(현) 코드네임: ASCLEPIUS (아스클레피오스)\n(전) 코드네임 및 별명: PAPILLON (파피용)\n직급: S급 뇌 속성 가이드, 코어팀 의료 총괄\n나이: 30세\n키: 174cm",
-      "bannerImagePath": "images/mrl60gdw5fol2-banner-mrl60ja5.png",
-      "extraImages": [
-        {
-          "path": "images/mrl60gdw5fol2-extra-mrl60lhd0.jpg",
-          "prompt": "HELIOS (하선우)"
-        }
-      ],
-      "pinned": false,
-      "createdAt": "2026-07-14T21:30:21.812Z"
-    },
-    {
-      "id": "mrl59ct1jiidk",
-      "path": "images/mrl59ct1jiidk.png",
-      "title": "해피",
-      "subtitle": "",
-      "ddayDate": "",
-      "heartColor": "#c9184a",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [
-        "CAVEDUCK",
-        "ARCH"
-      ],
-      "categoryColors": {
-        "CAVEDUCK": "catGreen",
-        "ARCH": "catPurple"
-      },
-      "tags": {
-        "appearance": [
-          "1boy",
-          "1.7::desert jerboa kemonomimi",
-          "big jerboa ears",
-          "fluffy jerboa tail::",
-          "1.1::ash blonde hair",
-          "short hair",
-          "wavy hair::",
-          "soft amber eyes",
-          "warm amber eyes",
-          "sunlit eyes",
-          "glowing eyes",
-          "gentle smile",
-          "smiling",
-          "happy expression",
-          "cute face",
-          "handsome boy",
-          "youthful"
-        ],
-        "outfit": []
-      },
-      "memo": "SMILEY - YENA",
-      "profile": "코드네임: HAPPY (해피)\n직급: A급 무 속성 센티넬 (등급 강제)\n종족: 사막여우 수인\n나이: 21세\n키: 177.7cm",
-      "bannerImagePath": "images/mrl59ct1jiidk-banner-mrl59f34.png",
-      "extraImages": [],
-      "pinned": false,
-      "createdAt": "2026-07-14T21:09:17.461Z",
-      "categoryColor": "catPurple"
-    },
-    {
-      "id": "mrl4ywv7n2bgv",
-      "path": "images/mrl4ywv7n2bgv.png",
-      "title": "나비",
-      "subtitle": "안죽림",
-      "ddayDate": "2026-07-09",
-      "heartColor": "#789262",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [
-        "CRACK"
-      ],
-      "categoryColors": {
-        "CRACK": "catGreen"
-      },
-      "tags": {
-        "appearance": [
-          "1boy",
-          "male",
-          "toned male",
-          "slender",
-          "beautiful male",
-          "sharp eyes",
-          "yellow eyes",
-          "half-closed eyes",
-          "emo hair",
-          "pale skin",
-          "white and brown color hair",
-          "short hair",
-          "cone hair bun",
-          "butterfly hairpin",
-          "ear piercings",
-          "black Nails",
-          "black hair tie on wrist"
-        ],
-        "outfit": [
-          "oversized white hanfu robe",
-          "wide sleeves covering hands",
-          "layered inner robe",
-          "high-waisted shorts",
-          "ornamental waist belt",
-          "2::bandaged legs::",
-          "traditional chinese boots",
-          "jade pendant",
-          "gold ornaments",
-          "ancient chinese physician",
-          "bamboo medicine case",
-          "giant bronze syringe",
-          "yellow medicine in syringe"
-        ]
-      },
-      "memo": "#789262 (Bamboo Green)",
-      "profile": "Nabi 羅霏\n종족: 구미호\n직업: 떠돌이 의원\n국적: 중국\n나이: 불명 (기원전 중국)\n첫만남: 기원전 221년\n키: 174cm",
-      "bannerImagePath": "",
-      "extraImages": [
-        {
-          "path": "images/mrl4ywv7n2bgv-extra-mrl4yzvy0.jpg",
-          "prompt": "안죽림"
-        }
-      ],
-      "pinned": false,
-      "createdAt": "2026-07-14T21:01:10.243Z",
-      "categoryColor": "catPurple"
-    },
-    {
-      "id": "mrl4niomssbjk",
-      "path": "images/mrl4niomssbjk.png",
-      "title": "네베",
-      "subtitle": "고든",
-      "ddayDate": "2026-06-15",
-      "heartColor": "#36454f",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [
-        "CRACK"
-      ],
-      "categoryColors": {
-        "CRACK": "catGreen"
-      },
-      "tags": {
-        "appearance": [
-          "1boy",
-          "solo",
-          "male",
-          "toned male",
-          "beautiful male",
-          "slender",
-          "pale skin",
-          "half closed eyes",
-          "2::blue eyes::",
-          "2::blue hair + white hair",
-          "gradient hair",
-          "long hair",
-          "straight hair::",
-          "hair bow bun at back of head",
-          "hair folded into bow shape at occipital",
-          "3::own hair shaped into large bow at back of head::",
-          "hair looped into ribbon shape at nape",
-          "hair bow hairstyle at back",
-          "3::no accessories::",
-          "1.5::very large wings sprouting from shoulder blades",
-          "a pair of wings",
-          "Indian Paradise Flycatcher wings",
-          "white ribbon-like elongated tail plumes as wings",
-          "long flowing white plumes trailing behind::"
-        ],
-        "outfit": [
-          "black suit jacket",
-          "no inner",
-          "black suit pants"
-        ]
-      },
-      "memo": "",
-      "profile": "Neve\n종족: 인도 긴꼬리딱새 (Indian Paradise Flycatcher)\n직업: 조류종 대표 모델\n나이: 32세\n키: 174cm",
-      "bannerImagePath": "",
-      "extraImages": [
-        {
-          "path": "images/mrl4niomssbjk-extra-mrl4nl1c0.png",
-          "prompt": "GORDON (고든)"
-        }
-      ],
-      "pinned": false,
-      "createdAt": "2026-07-14T20:52:18.646Z",
-      "categoryColor": "catPurple"
-    },
-    {
-      "id": "mrl452gzg2jlq",
-      "path": "images/mrl452gzg2jlq-mrl4987g.png",
-      "title": "백서리",
-      "subtitle": "유야",
-      "ddayDate": "2026-06-19",
-      "heartColor": "#e5e5e5",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [
-        "CRACK"
-      ],
-      "categoryColors": {
-        "CRACK": "catGreen"
-      },
-      "tags": {
-        "appearance": [
-          "1 boy",
-          "male",
-          "toned male",
-          "beautiful male",
-          "slender",
-          "pale skin",
-          "half closed eyes",
-          "2::dark black eyes::",
-          "white hair + neon green hair",
-          "short hair"
-        ],
-        "outfit": []
-      },
-      "memo": "",
-      "profile": "Baek Seori (白서리)\n활동명: 백설\n직업: 모델\n국적: 한국\n나이: 22세\n키: 179cm\n별명: 백설공주\n팬클럽: 난쟁이",
-      "bannerImagePath": "",
-      "extraImages": [
-        {
-          "path": "images/mrl452gzg2jlq-extra-mrl4557l0.png",
-          "prompt": "いけだ ゆうや (이케다 유야)"
-        }
-      ],
-      "pinned": false,
-      "createdAt": "2026-07-14T20:37:57.827Z",
-      "categoryColor": "catPurple"
-    },
-    {
-      "id": "mrl3i9ftc5s59",
-      "path": "images/mrl3i9ftc5s59.png",
-      "title": "알타이르 나바로",
-      "subtitle": "카인",
-      "ddayDate": "2026-06-11",
-      "heartColor": "#2e7d32",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [
-        "CRACK",
-        "RE:COVER"
-      ],
-      "categoryColors": {
-        "CRACK": "catGreen",
-        "RE:COVER": "catPurple"
-      },
-      "tags": {
-        "appearance": [
-          "1boy",
-          "male",
-          "beautiful male",
-          "toned male",
-          "mature male",
-          "slender",
-          "hispanic male",
-          "dark skin",
-          "2::short wavy dark hair",
-          "glossy black hair::",
-          "amber eyes",
-          "cat-like eyes",
-          "2::two small beauty marks under one eye",
-          "aligned horizontally in a row",
-          "following the eye line",
-          "two moles side by side beneath eye::",
-          "2::small mole on nose",
-          "single beauty mark on nose tip::",
-          "2::mole under mouth::",
-          "sharp jawline",
-          "no accessory"
-        ],
-        "outfit": [
-          "black tactical flight suit",
-          "sleek and fitted",
-          "chest rig over suit",
-          "magazine pouches",
-          "special operations patch on shoulder",
-          "balaclava pulled down around neck",
-          "tactical gloves",
-          "combat boots",
-          "night vision mount on helmet",
-          "upper body shot",
-          "slight low angle",
-          "leaning back",
-          "one arm resting loosely",
-          "warm golden backlight",
-          "soft rim light",
-          "shadow falling across one eye",
-          "cinematic",
-          "moody",
-          "effortlessly sensual"
-        ]
-      },
-      "memo": "#2E7D32 (Forest Green)\n\n점 위치(본인 기준):\n왼쪽 눈 아래 나란히 2개\n콧등 1개\n왼쪽 입가 아래 1개",
-      "profile": "Altair Navarro\n콜사인: Stallion (스탤리온)\n직급: 제160특수작전항공연대(Night Stalkers, SOAR)의 에이스 준위(CW2), AH-6M 리틀 버드 조종사\n국적: 히스패닉계 미국인 2세\n언어: 영어와 스페인어 혼용\n나이: 28세\n키: 178cm\n공용애칭: Ari (아리)\n친밀한 사이에게만 허락한 애칭: Canela (카넬라)",
-      "bannerImagePath": "",
-      "extraImages": [
-        {
-          "path": "images/mrl3i9ftc5s59-extra-mrl3m0931.png",
-          "prompt": "CAIN RUTH (카인 루스)\n콜사인: Bambi (밤비)"
-        }
-      ],
-      "pinned": false,
-      "createdAt": "2026-07-14T20:20:13.768Z",
-      "categoryColor": "catPurple"
-    },
-    {
       "id": "mrj2tg533opv2",
       "path": "images/mrj2tg533opv2-mrjdmee2.png",
       "title": "염사하",
@@ -863,6 +498,192 @@
       "categoryColor": "catPurple"
     },
     {
+      "id": "mrl452gzg2jlq",
+      "path": "images/mrl452gzg2jlq-mrl4987g.png",
+      "title": "백서리",
+      "subtitle": "유야",
+      "ddayDate": "2026-06-19",
+      "heartColor": "#e5e5e5",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CRACK"
+      ],
+      "categoryColors": {
+        "CRACK": "catGreen"
+      },
+      "tags": {
+        "appearance": [
+          "1 boy",
+          "male",
+          "toned male",
+          "beautiful male",
+          "slender",
+          "pale skin",
+          "half closed eyes",
+          "2::dark black eyes::",
+          "white hair + neon green hair",
+          "short hair"
+        ],
+        "outfit": []
+      },
+      "memo": "",
+      "profile": "Baek Seori (白서리)\n활동명: 백설\n직업: 모델\n국적: 한국\n나이: 22세\n키: 179cm\n별명: 백설공주\n팬클럽: 난쟁이",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrl452gzg2jlq-extra-mrl4557l0.png",
+          "prompt": "いけだ ゆうや (이케다 유야)"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T20:37:57.827Z",
+      "categoryColor": "catPurple"
+    },
+    {
+      "id": "mrl4ywv7n2bgv",
+      "path": "images/mrl4ywv7n2bgv.png",
+      "title": "나비",
+      "subtitle": "안죽림",
+      "ddayDate": "2026-07-09",
+      "heartColor": "#789262",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CRACK"
+      ],
+      "categoryColors": {
+        "CRACK": "catGreen"
+      },
+      "tags": {
+        "appearance": [
+          "1boy",
+          "male",
+          "toned male",
+          "slender",
+          "beautiful male",
+          "sharp eyes",
+          "yellow eyes",
+          "half-closed eyes",
+          "emo hair",
+          "pale skin",
+          "white and brown color hair",
+          "short hair",
+          "cone hair bun",
+          "butterfly hairpin",
+          "ear piercings",
+          "black Nails",
+          "black hair tie on wrist"
+        ],
+        "outfit": [
+          "oversized white hanfu robe",
+          "wide sleeves covering hands",
+          "layered inner robe",
+          "high-waisted shorts",
+          "ornamental waist belt",
+          "2::bandaged legs::",
+          "traditional chinese boots",
+          "jade pendant",
+          "gold ornaments",
+          "ancient chinese physician",
+          "bamboo medicine case",
+          "giant bronze syringe",
+          "yellow medicine in syringe"
+        ]
+      },
+      "memo": "#789262 (Bamboo Green)",
+      "profile": "Nabi 羅霏\n종족: 구미호\n직업: 떠돌이 의원\n국적: 중국\n나이: 불명 (기원전 중국)\n첫만남: 기원전 221년\n키: 174cm",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrl4ywv7n2bgv-extra-mrl4yzvy0.jpg",
+          "prompt": "안죽림"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T21:01:10.243Z",
+      "categoryColor": "catPurple"
+    },
+    {
+      "id": "mrl3i9ftc5s59",
+      "path": "images/mrl3i9ftc5s59.png",
+      "title": "알타이르 나바로",
+      "subtitle": "카인",
+      "ddayDate": "2026-06-11",
+      "heartColor": "#2e7d32",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CRACK",
+        "RE:COVER"
+      ],
+      "categoryColors": {
+        "CRACK": "catGreen",
+        "RE:COVER": "catPurple"
+      },
+      "tags": {
+        "appearance": [
+          "1boy",
+          "male",
+          "beautiful male",
+          "toned male",
+          "mature male",
+          "slender",
+          "hispanic male",
+          "dark skin",
+          "2::short wavy dark hair",
+          "glossy black hair::",
+          "amber eyes",
+          "cat-like eyes",
+          "2::two small beauty marks under one eye",
+          "aligned horizontally in a row",
+          "following the eye line",
+          "two moles side by side beneath eye::",
+          "2::small mole on nose",
+          "single beauty mark on nose tip::",
+          "2::mole under mouth::",
+          "sharp jawline",
+          "no accessory"
+        ],
+        "outfit": [
+          "black tactical flight suit",
+          "sleek and fitted",
+          "chest rig over suit",
+          "magazine pouches",
+          "special operations patch on shoulder",
+          "balaclava pulled down around neck",
+          "tactical gloves",
+          "combat boots",
+          "night vision mount on helmet",
+          "upper body shot",
+          "slight low angle",
+          "leaning back",
+          "one arm resting loosely",
+          "warm golden backlight",
+          "soft rim light",
+          "shadow falling across one eye",
+          "cinematic",
+          "moody",
+          "effortlessly sensual"
+        ]
+      },
+      "memo": "#2E7D32 (Forest Green)\n\n점 위치(본인 기준):\n왼쪽 눈 아래 나란히 2개\n콧등 1개\n왼쪽 입가 아래 1개",
+      "profile": "Altair Navarro\n콜사인: Stallion (스탤리온)\n직급: 제160특수작전항공연대(Night Stalkers, SOAR)의 에이스 준위(CW2), AH-6M 리틀 버드 조종사\n국적: 히스패닉계 미국인 2세\n언어: 영어와 스페인어 혼용\n나이: 28세\n키: 178cm\n공용애칭: Ari (아리)\n친밀한 사이에게만 허락한 애칭: Canela (카넬라)",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrl3i9ftc5s59-extra-mrl3m0931.png",
+          "prompt": "CAIN RUTH (카인 루스)\n콜사인: Bambi (밤비)"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T20:20:13.768Z",
+      "categoryColor": "catPurple"
+    },
+    {
       "id": "mrjap4gin52dj",
       "path": "images/mrjap4gin52dj.png",
       "title": "리 란",
@@ -941,55 +762,135 @@
       "categoryColor": "catPurple"
     },
     {
-      "id": "mrjbvxh8457qz",
-      "path": "images/mrjbvxh8457qz.png",
-      "title": "마린",
-      "subtitle": "",
-      "ddayDate": "",
-      "heartColor": "#c9184a",
+      "id": "mrl4niomssbjk",
+      "path": "images/mrl4niomssbjk.png",
+      "title": "네베",
+      "subtitle": "고든",
+      "ddayDate": "2026-06-15",
+      "heartColor": "#36454f",
       "catchphrase": "",
       "catchphraseEnabled": false,
       "catchphraseItalic": false,
-      "category": [],
-      "categoryColors": {},
+      "category": [
+        "CRACK"
+      ],
+      "categoryColors": {
+        "CRACK": "catGreen"
+      },
       "tags": {
         "appearance": [
           "1boy",
-          "male focus",
+          "solo",
+          "male",
+          "toned male",
           "beautiful male",
           "slender",
-          "slim",
           "pale skin",
-          "cerulean blue gradient markings on skin",
-          "iridescent blue and white bicolor skin",
-          "silver white hair",
+          "half closed eyes",
+          "2::blue eyes::",
+          "2::blue hair + white hair",
+          "gradient hair",
           "long hair",
-          "wavy",
-          "twintails",
-          "full-bangs",
-          "blue eyes",
-          "almond-shaped eyes",
-          "tsurime",
-          "sharp elegant face"
+          "straight hair::",
+          "hair bow bun at back of head",
+          "hair folded into bow shape at occipital",
+          "3::own hair shaped into large bow at back of head::",
+          "hair looped into ribbon shape at nape",
+          "hair bow hairstyle at back",
+          "3::no accessories::",
+          "1.5::very large wings sprouting from shoulder blades",
+          "a pair of wings",
+          "Indian Paradise Flycatcher wings",
+          "white ribbon-like elongated tail plumes as wings",
+          "long flowing white plumes trailing behind::"
         ],
         "outfit": [
-          "white sailor uniform",
-          "short-sleeve",
-          "short white pants",
-          "fluorescent blue accent",
-          "sailor collar",
-          "sailor hat",
-          "white loafers",
-          "white knee socks"
+          "black suit jacket",
+          "no inner",
+          "black suit pants"
         ]
       },
       "memo": "",
-      "profile": "M4R1N\n직급: 외교부 수장\n키: 174cm",
-      "bannerImagePath": "images/mrjbvxh8457qz-banner-mrjbw16y.png",
-      "extraImages": [],
+      "profile": "Neve\n종족: 인도 긴꼬리딱새 (Indian Paradise Flycatcher)\n직업: 조류종 대표 모델\n나이: 32세\n키: 174cm",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrl4niomssbjk-extra-mrl4nl1c0.png",
+          "prompt": "GORDON (고든)"
+        }
+      ],
       "pinned": false,
-      "createdAt": "2026-07-13T14:39:16.028Z",
+      "createdAt": "2026-07-14T20:52:18.646Z",
       "categoryColor": "catPurple"
+    },
+    {
+      "id": "mrl60gdw5fol2",
+      "path": "images/mrl60gdw5fol2.png",
+      "title": "나비",
+      "subtitle": "헬리오스",
+      "ddayDate": "2026-07-08",
+      "heartColor": "#e34234",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CAVEDUCK",
+        "ARCH"
+      ],
+      "categoryColors": {
+        "CAVEDUCK": "catGreen",
+        "ARCH": "catPurple"
+      },
+      "tags": {
+        "appearance": [
+          "1boy",
+          "male",
+          "toned male",
+          "slender",
+          "beautiful male",
+          "sharp eyes",
+          "yellow eyes",
+          "half-closed eyes",
+          "emo hair",
+          "pale skin",
+          "white and brown color hair",
+          "short hair",
+          "cone hair bun",
+          "butterfly hairpin",
+          "ear piercings",
+          "black Nails",
+          "black hair tie on wrist"
+        ],
+        "outfit": [
+          "oversized lab coat",
+          "long sleeves covering hands",
+          "black fitted turtleneck",
+          "high-waisted shorts",
+          "black tailored shorts",
+          "garter belt",
+          "sheer black thighhighs",
+          "damaged thighhighs",
+          "black platform boots",
+          "lace-up knee boots",
+          "stethoscope around neck",
+          "ID badge",
+          "hospital",
+          "fashion editorial",
+          "holding giant syringe",
+          "yellow liquid in syringe"
+        ]
+      },
+      "memo": "#E34234 (Vermilion)\n\n6cm 굽 있는 부츠 착용\n\n#태양의_궤도에_머무는_나비",
+      "profile": "Nabi 羅霏\n(현) 코드네임: ASCLEPIUS (아스클레피오스)\n(전) 코드네임 및 별명: PAPILLON (파피용)\n직급: S급 뇌 속성 가이드, 코어팀 의료 총괄\n나이: 30세\n키: 174cm",
+      "bannerImagePath": "images/mrl60gdw5fol2-banner-mrl60ja5.png",
+      "extraImages": [
+        {
+          "path": "images/mrl60gdw5fol2-extra-mrl60lhd0.jpg",
+          "prompt": "HELIOS (하선우)"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T21:30:21.812Z"
     },
     {
       "id": "mrjzght9ojhfo",
@@ -1044,6 +945,167 @@
       ],
       "pinned": false,
       "createdAt": "2026-07-14T01:39:06.669Z",
+      "categoryColor": "catPurple"
+    },
+    {
+      "id": "mrjbvxh8457qz",
+      "path": "images/mrjbvxh8457qz.png",
+      "title": "마린",
+      "subtitle": "",
+      "ddayDate": "",
+      "heartColor": "#c9184a",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [],
+      "categoryColors": {},
+      "tags": {
+        "appearance": [
+          "1boy",
+          "male focus",
+          "beautiful male",
+          "slender",
+          "slim",
+          "pale skin",
+          "cerulean blue gradient markings on skin",
+          "iridescent blue and white bicolor skin",
+          "silver white hair",
+          "long hair",
+          "wavy",
+          "twintails",
+          "full-bangs",
+          "blue eyes",
+          "almond-shaped eyes",
+          "tsurime",
+          "sharp elegant face"
+        ],
+        "outfit": [
+          "white sailor uniform",
+          "short-sleeve",
+          "short white pants",
+          "fluorescent blue accent",
+          "sailor collar",
+          "sailor hat",
+          "white loafers",
+          "white knee socks"
+        ]
+      },
+      "memo": "",
+      "profile": "M4R1N\n직급: 외교부 수장\n키: 174cm",
+      "bannerImagePath": "images/mrjbvxh8457qz-banner-mrjbw16y.png",
+      "extraImages": [],
+      "pinned": false,
+      "createdAt": "2026-07-13T14:39:16.028Z",
+      "categoryColor": "catPurple"
+    },
+    {
+      "id": "mrl59ct1jiidk",
+      "path": "images/mrl59ct1jiidk.png",
+      "title": "해피",
+      "subtitle": "",
+      "ddayDate": "",
+      "heartColor": "#c9184a",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CAVEDUCK",
+        "ARCH"
+      ],
+      "categoryColors": {
+        "CAVEDUCK": "catGreen",
+        "ARCH": "catPurple"
+      },
+      "tags": {
+        "appearance": [
+          "1boy",
+          "1.7::desert jerboa kemonomimi",
+          "big jerboa ears",
+          "fluffy jerboa tail::",
+          "1.1::ash blonde hair",
+          "short hair",
+          "wavy hair::",
+          "soft amber eyes",
+          "warm amber eyes",
+          "sunlit eyes",
+          "glowing eyes",
+          "gentle smile",
+          "smiling",
+          "happy expression",
+          "cute face",
+          "handsome boy",
+          "youthful"
+        ],
+        "outfit": []
+      },
+      "memo": "SMILEY - YENA",
+      "profile": "코드네임: HAPPY (해피)\n직급: A급 무 속성 센티넬 (등급 강제)\n종족: 사막여우 수인\n나이: 21세\n키: 177.7cm",
+      "bannerImagePath": "images/mrl59ct1jiidk-banner-mrl59f34.png",
+      "extraImages": [],
+      "pinned": false,
+      "createdAt": "2026-07-14T21:09:17.461Z",
+      "categoryColor": "catPurple"
+    },
+    {
+      "id": "mrjzs0iap3nfv",
+      "path": "images/mrjzs0iap3nfv.png",
+      "title": "사하야",
+      "subtitle": "마범석",
+      "ddayDate": "2026-06-06",
+      "heartColor": "#660099",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CAVEDUCK"
+      ],
+      "categoryColors": {
+        "CAVEDUCK": "catGreen"
+      },
+      "tags": {
+        "appearance": [
+          "1 boy",
+          "male",
+          "1.8:: split color hair",
+          "white hair",
+          "dark Violet",
+          "french braid",
+          "medium hair",
+          "straight hair",
+          "blunt bangs::",
+          "narrow eyes",
+          "yellow eyes",
+          "fair skin",
+          "slim",
+          "slender",
+          "narrow waist",
+          "lean",
+          "lip piercings",
+          "cross drop earrings",
+          "enigmatic",
+          "sensual"
+        ],
+        "outfit": [
+          "holding a dark Violet color iron fan",
+          "white suit jacket",
+          "white crop vest",
+          "1.2::slightly loose dark violet collard shirt::",
+          "white suit pants",
+          "white formal shoes",
+          "black half gloves"
+        ]
+      },
+      "memo": "",
+      "profile": "Sa Haya 司遐夜\n코드네임: NOCTURNE (녹턴)\n직급: ​흑야파 (黑夜派) 보스의 차남\n국적: 한국\n나이: 27세\n키: 175cm\n무기: 금속재질 자주색 부채",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrjzs0iap3nfv-extra-mrjzs3kl0.png",
+          "prompt": "마범석"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T01:48:04.114Z",
       "categoryColor": "catPurple"
     },
     {
@@ -1107,68 +1169,6 @@
       "extraImages": [],
       "pinned": false,
       "createdAt": "2026-07-14T17:09:35.364Z",
-      "categoryColor": "catPurple"
-    },
-    {
-      "id": "mrjzs0iap3nfv",
-      "path": "images/mrjzs0iap3nfv.png",
-      "title": "사하야",
-      "subtitle": "마범석",
-      "ddayDate": "2026-06-06",
-      "heartColor": "#660099",
-      "catchphrase": "",
-      "catchphraseEnabled": false,
-      "catchphraseItalic": false,
-      "category": [
-        "CAVEDUCK"
-      ],
-      "categoryColors": {
-        "CAVEDUCK": "catGreen"
-      },
-      "tags": {
-        "appearance": [
-          "1 boy",
-          "male",
-          "1.8:: split color hair",
-          "white hair",
-          "dark Violet",
-          "french braid",
-          "medium hair",
-          "straight hair",
-          "blunt bangs::",
-          "narrow eyes",
-          "yellow eyes",
-          "fair skin",
-          "slim",
-          "slender",
-          "narrow waist",
-          "lean",
-          "lip piercings",
-          "cross drop earrings",
-          "enigmatic",
-          "sensual"
-        ],
-        "outfit": [
-          "holding a dark Violet color iron fan",
-          "white suit jacket",
-          "white crop vest",
-          "1.2::slightly loose dark violet collard shirt::",
-          "white suit pants",
-          "white formal shoes",
-          "black half gloves"
-        ]
-      },
-      "memo": "",
-      "profile": "Sa Haya 司遐夜\n코드네임: NOCTURNE (녹턴)\n직급: ​흑야파 (黑夜派) 보스의 차남\n국적: 한국\n나이: 27세\n키: 175cm\n무기: 금속재질 자주색 부채",
-      "bannerImagePath": "",
-      "extraImages": [
-        {
-          "path": "images/mrjzs0iap3nfv-extra-mrjzs3kl0.png",
-          "prompt": "마범석"
-        }
-      ],
-      "pinned": false,
-      "createdAt": "2026-07-14T01:48:04.114Z",
       "categoryColor": "catPurple"
     },
     {
