@@ -20,6 +20,67 @@
   },
   "images": [
     {
+      "id": "mrjzs0iap3nfv",
+      "path": "images/mrjzs0iap3nfv.png",
+      "title": "사하야",
+      "subtitle": "마범석",
+      "ddayDate": "2026-06-06",
+      "heartColor": "#660099",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [
+        "CAVEDUCK"
+      ],
+      "categoryColors": {
+        "CAVEDUCK": "catGreen"
+      },
+      "tags": {
+        "appearance": [
+          "1 boy",
+          "male",
+          "1.8:: split color hair",
+          "white hair",
+          "dark Violet",
+          "french braid",
+          "medium hair",
+          "straight hair",
+          "blunt bangs::",
+          "narrow eyes",
+          "yellow eyes",
+          "fair skin",
+          "slim",
+          "slender",
+          "narrow waist",
+          "lean",
+          "lip piercings",
+          "cross drop earrings",
+          "enigmatic",
+          "sensual"
+        ],
+        "outfit": [
+          "holding a dark Violet color iron fan",
+          "white suit jacket",
+          "white crop vest",
+          "1.2::slightly loose dark violet collard shirt::",
+          "white suit pants",
+          "white formal shoes",
+          "black half gloves"
+        ]
+      },
+      "memo": "",
+      "profile": "",
+      "bannerImagePath": "",
+      "extraImages": [
+        {
+          "path": "images/mrjzs0iap3nfv-extra-mrjzs3kl0.png",
+          "prompt": "마범석"
+        }
+      ],
+      "pinned": false,
+      "createdAt": "2026-07-14T01:48:04.114Z"
+    },
+    {
       "id": "mrjzght9ojhfo",
       "path": "images/mrjzght9ojhfo.png",
       "title": "포포",
