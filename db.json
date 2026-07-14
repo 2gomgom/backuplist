@@ -20,6 +20,51 @@
   },
   "images": [
     {
+      "id": "mrkwq7kyagtuj",
+      "path": "images/mrkwq7kyagtuj.png",
+      "title": "차신 (주님한놈갑니다)",
+      "subtitle": "",
+      "ddayDate": "",
+      "heartColor": "#c9184a",
+      "catchphrase": "",
+      "catchphraseEnabled": false,
+      "catchphraseItalic": false,
+      "category": [],
+      "categoryColors": {},
+      "tags": {
+        "appearance": [
+          "1 boy",
+          "male",
+          "toned male",
+          "beautiful male",
+          "slender",
+          "pale skin",
+          "half closed eyes",
+          "magenta eyes",
+          "neon red hair",
+          "dark roots",
+          "short hair"
+        ],
+        "outfit": [
+          "oversized open beige linen shirt",
+          "tucked inner t-shirt",
+          "wide leg light wash denim",
+          "relaxed",
+          "simple white sneakers",
+          "black cap pulled low",
+          "thin gold chain",
+          "tote bag",
+          "casual and unbothered"
+        ]
+      },
+      "memo": "",
+      "profile": "",
+      "bannerImagePath": "",
+      "extraImages": [],
+      "pinned": false,
+      "createdAt": "2026-07-14T17:10:27.298Z"
+    },
+    {
       "id": "mrkwp3igzlpi0",
       "path": "images/mrkwp3igzlpi0.png",
       "title": "주님한놈갑니다 (차신)",
