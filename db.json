@@ -365,11 +365,13 @@
       "catchphraseItalic": true,
       "category": [
         "CRACK",
-        "THEMIS"
+        "THEMIS",
+        "SUB"
       ],
       "categoryColors": {
         "CRACK": "catGreen",
-        "THEMIS": "catPurple"
+        "THEMIS": "catPurple",
+        "SUB": "catBlue"
       },
       "tags": {
         "appearance": [
@@ -423,8 +425,7 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T11:58:53.350Z",
-      "categoryColor": "catPurple"
+      "createdAt": "2026-07-13T11:58:53.350Z"
     },
     {
       "id": "mrjbiv6y1ouvq",
@@ -538,7 +539,8 @@
         }
       ],
       "pinned": false,
-      "createdAt": "2026-07-14T20:37:57.827Z"
+      "createdAt": "2026-07-14T20:37:57.827Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrl4ywv7n2bgv",
