@@ -426,7 +426,8 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T11:58:53.350Z"
+      "createdAt": "2026-07-13T11:58:53.350Z",
+      "categoryColor": "catPurple"
     },
     {
       "id": "mrjbiv6y1ouvq",
@@ -993,13 +994,12 @@
           "white knee socks"
         ]
       },
-      "memo": "",
-      "profile": "M4R1N\n직급: 외교부 수장\n키: 174cm",
+      "memo": "☆ 발광하는 피부색",
+      "profile": "M4R1N\n종족: 파란갯민숭달팽이 수인\n직급: 외교부 수장\n키: 174cm",
       "bannerImagePath": "images/mrjbvxh8457qz-banner-mrjbw16y.png",
       "extraImages": [],
       "pinned": false,
-      "createdAt": "2026-07-13T14:39:16.028Z",
-      "categoryColor": "catPurple"
+      "createdAt": "2026-07-13T14:39:16.028Z"
     },
     {
       "id": "mrl59ct1jiidk",
