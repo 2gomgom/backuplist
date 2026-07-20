@@ -629,12 +629,12 @@
     <div class="cropField">
       <div class="cropFieldLabelRow"><span class="t">📱 모바일 미리보기</span><button type="button" onclick="resetHeaderCropPos('mobile')">가운데로</button></div>
       <div class="cropBox mobileAspect" id="cropBoxMobile"></div>
-      <div class="cropHint">모바일 화면 상단에 이렇게 보여요</div>
+      <div class="cropHint" id="cropHintMobile">모바일 화면 상단에 이렇게 보여요</div>
     </div>
     <div class="cropField">
       <div class="cropFieldLabelRow"><span class="t">💻 PC 미리보기</span><button type="button" onclick="resetHeaderCropPos('desktop')">가운데로</button></div>
       <div class="cropBox desktopAspect" id="cropBoxDesktop"></div>
-      <div class="cropHint">넓은 화면(PC) 상단에 이렇게 보여요</div>
+      <div class="cropHint" id="cropHintDesktop">넓은 화면(PC) 상단에 이렇게 보여요</div>
     </div>
     <div class="btnRow"><button class="btn btn-primary" onclick="closeModal('headerCropModal')">완료</button></div>
   </div>
@@ -1801,6 +1801,26 @@ function removeHeaderImage(){
   document.getElementById('headerCropBtn').classList.add('hidden');
   toast('저장하면 헤더 이미지가 삭제돼요');
 }
+function computeCropBoxAspect(){
+  // 실제 헤더는 화면 전체 너비(반응형)로 렌더링되므로, 미리보기 박스의 비율도
+  // "지금 이 화면"의 실제 너비를 기준으로 맞춰야 실제 적용 결과와 일치한다.
+  // 편집 중인 화면이 데스크톱 폭이면 PC 박스는 실제 창 너비를 그대로 쓰고,
+  // 모바일 박스는 대표값(390px)을 가정한다. 반대로 편집 화면이 모바일 폭이면
+  // 모바일 박스는 실제 창 너비를 쓰고, PC 박스는 대표값(1280px)을 가정한다.
+  const DEFAULT_MOBILE_W = 390;
+  const DEFAULT_DESKTOP_W = 1280;
+  const isDesktopNow = window.innerWidth >= 640;
+  const mobileW = isDesktopNow ? DEFAULT_MOBILE_W : window.innerWidth;
+  const desktopW = isDesktopNow ? window.innerWidth : DEFAULT_DESKTOP_W;
+  document.getElementById('cropBoxMobile').style.aspectRatio = `${mobileW} / 175`;
+  document.getElementById('cropBoxDesktop').style.aspectRatio = `${desktopW} / 220`;
+  document.getElementById('cropHintDesktop').textContent = isDesktopNow
+    ? `지금 화면 너비(${window.innerWidth}px) 기준 실제 보이는 범위예요`
+    : '대략적인 넓은 화면 기준 미리보기예요 (실제 방문자 화면 너비에 따라 조금 달라질 수 있어요)';
+  document.getElementById('cropHintMobile').textContent = isDesktopNow
+    ? '대략적인 모바일 화면 기준 미리보기예요 (실제 방문자 화면 너비에 따라 조금 달라질 수 있어요)'
+    : `지금 화면 너비(${window.innerWidth}px) 기준 실제 보이는 범위예요`;
+}
 function openHeaderCropModal(){
   const src = document.getElementById('headerPreview').src;
   if(!src){ toast('먼저 헤더 이미지를 선택해주세요'); return; }
@@ -1808,12 +1828,16 @@ function openHeaderCropModal(){
   const dBox = document.getElementById('cropBoxDesktop');
   mBox.style.backgroundImage = `url(${src})`;
   dBox.style.backgroundImage = `url(${src})`;
+  computeCropBoxAspect();
   updateHeaderCropVisual('mobile');
   updateHeaderCropVisual('desktop');
   if(!headerCropDragBound){
     attachHeaderCropDrag(mBox, 'mobile');
     attachHeaderCropDrag(dBox, 'desktop');
     headerCropDragBound = true;
+    window.addEventListener('resize', ()=>{
+      if(document.getElementById('headerCropModal').classList.contains('show')) computeCropBoxAspect();
+    });
   }
   document.getElementById('headerCropModal').classList.add('show');
 }
