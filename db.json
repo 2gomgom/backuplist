@@ -26,9 +26,31 @@
       "subtitle": "페더 #思寒 #Sahan",
       "ddayDate": "2026-05-07",
       "heartColor": "#84e1f0",
-      "catchphrase": "가장 차가운 지옥에서 피어난, 가장 뜨거운 자기혐오. 코드네임 ‘게헤나’. 그는 스스로를 태우는 불꽃이자, 그 누구도 구원할 수 없는 성스러운 폐허다.",
-      "catchphraseEnabled": true,
-      "catchphraseItalic": true,
+      "catchphrases": [
+        {
+          "id": "mrt0gieunqr8q",
+          "text": "가장 차가운 지옥에서 피어난, 가장 뜨거운 자기혐오. 코드네임 ‘게헤나’. 그는 스스로를 태우는 불꽃이자, 그 누구도 구원할 수 없는 성스러운 폐허다.",
+          "enabled": true,
+          "italic": true
+        }
+      ],
+      "hashtags": [
+        {
+          "id": "mrt0hc4cnpuv5",
+          "text": "Tilted_Summer",
+          "enabled": true
+        },
+        {
+          "id": "mrt0hg7is4474",
+          "text": "나의_안식_너의_여름",
+          "enabled": true
+        },
+        {
+          "id": "mrt0hs0qcu5jv",
+          "text": "깃털이_타는_온도",
+          "enabled": true
+        }
+      ],
       "category": [
         "CAVEDUCK",
         "ARCH",
@@ -88,9 +110,15 @@
           "black chunky boots"
         ]
       },
-      "memo": "복부 문신 안 나올 경우:\n1) giant tattoo on stomach, tattoo on iliac crest, dark blue tattoo,\n2) 2::giant tatoos on iliac crest, both sides::,\n\n염사하 테마곡:\nhttps://youtu.be/jQDtrMhJJh4?si=-zigVdR5XZo7vXRv\n\n#Tilted_Summer\n#나의_안식_너의_여름\n#깃털이_타는_온도",
+      "memo": "복부 문신 안 나올 경우:\n1) giant tattoo on stomach, tattoo on iliac crest, dark blue tattoo,\n2) 2::giant tatoos on iliac crest, both sides::,\n\n염사하 테마곡:\nhttps://youtu.be/jQDtrMhJJh4?si=-zigVdR5XZo7vXRv",
       "profile": "Yeom Sa-ha 廉嗣夏\n코드네임: GEHENNA (게헤나)\n직급: S->A급 불 센티넬 (강등)\n국적: 한국\n나이: 26세\n키: 179cm",
-      "bannerImagePath": "images/mrj2tg533opv2-banner-mrjc6k6w.jpg",
+      "banners": [
+        {
+          "id": "mrt0gieuutpix",
+          "path": "images/mrj2tg533opv2-banner-mrjc6k6w.jpg",
+          "enabled": true
+        }
+      ],
       "extraImages": [
         {
           "path": "images/mrj2tg533opv2-extra-mrj36v6u0.jpg",
@@ -154,8 +182,7 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T10:25:23.703Z",
-      "categoryColor": "catPurple"
+      "createdAt": "2026-07-13T10:25:23.703Z"
     },
     {
       "id": "mrj7sfqyijh8u",
@@ -280,7 +307,23 @@
       ],
       "pinned": true,
       "createdAt": "2026-07-13T12:44:34.618Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [
+        {
+          "id": "mrt0gieup50gn",
+          "text": "아홉 달의 빙하를 맥박 하나로 깨우고, 열두 달의 계절을 손끝 하나로 되돌려준 자. 코드네임 'CALYPSO'. 그의 섬에 닿은 겨울은, 다시는 잠들지 않는다.",
+          "enabled": true,
+          "italic": true
+        }
+      ],
+      "hashtags": [],
+      "banners": [
+        {
+          "id": "mrt0gieuphpc5",
+          "path": "images/mrj7sfqyijh8u-banner-mrj7shz0.png",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": "mrja6mkfpe0vq",
@@ -351,7 +394,16 @@
       ],
       "pinned": true,
       "createdAt": "2026-07-13T13:51:35.871Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": [
+        {
+          "id": "mrt0gieuqe2j4",
+          "path": "images/mrja6mkfpe0vq-banner-mrjc5aln.png",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": "mrj65okmmethk",
@@ -427,7 +479,23 @@
       ],
       "pinned": true,
       "createdAt": "2026-07-13T11:58:53.350Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [
+        {
+          "id": "mrt0gieuwrqox",
+          "text": "빛은 내가 내렸거늘, 너희는 감히 스스로 빛을 내려 하는구나. 좋다. 그 빛이 꺼진 자리에서 영원히 절망하게 해주마.",
+          "enabled": true,
+          "italic": true
+        }
+      ],
+      "hashtags": [],
+      "banners": [
+        {
+          "id": "mrt0gieu2wjh1",
+          "path": "images/mrj65okmmethk-banner-mrj6syok.png",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": "mrjbiv6y1ouvq",
@@ -498,7 +566,16 @@
       "extraImages": [],
       "pinned": true,
       "createdAt": "2026-07-13T14:29:06.538Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": [
+        {
+          "id": "mrt0gieuzbnm3",
+          "path": "images/mrjbiv6y1ouvq-banner-mrjcbt8t.png",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": "mrl452gzg2jlq",
@@ -542,7 +619,10 @@
       ],
       "pinned": false,
       "createdAt": "2026-07-14T20:37:57.827Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": []
     },
     {
       "id": "mrl4ywv7n2bgv",
@@ -607,7 +687,10 @@
       ],
       "pinned": false,
       "createdAt": "2026-07-14T21:01:10.243Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": []
     },
     {
       "id": "mrl3i9ftc5s59",
@@ -684,7 +767,10 @@
       ],
       "pinned": false,
       "createdAt": "2026-07-14T20:20:13.768Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": []
     },
     {
       "id": "mrjap4gin52dj",
@@ -762,7 +848,16 @@
       ],
       "pinned": false,
       "createdAt": "2026-07-13T14:05:58.866Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": [
+        {
+          "id": "mrt0gieu23ezf",
+          "path": "images/mrjap4gin52dj-banner-mrjap7cw.jpg",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": "mrl4niomssbjk",
@@ -824,7 +919,10 @@
       ],
       "pinned": false,
       "createdAt": "2026-07-14T20:52:18.646Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": []
     },
     {
       "id": "mrl60gdw5fol2",
@@ -894,7 +992,16 @@
       ],
       "pinned": false,
       "createdAt": "2026-07-14T21:30:21.812Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": [
+        {
+          "id": "mrt0gieuqe6fn",
+          "path": "images/mrl60gdw5fol2-banner-mrl60ja5.png",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": "mrjzght9ojhfo",
@@ -949,7 +1056,10 @@
       ],
       "pinned": false,
       "createdAt": "2026-07-14T01:39:06.669Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": []
     },
     {
       "id": "mrjbvxh8457qz",
@@ -999,7 +1109,17 @@
       "bannerImagePath": "images/mrjbvxh8457qz-banner-mrjbw16y.png",
       "extraImages": [],
       "pinned": false,
-      "createdAt": "2026-07-13T14:39:16.028Z"
+      "createdAt": "2026-07-13T14:39:16.028Z",
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": [
+        {
+          "id": "mrt0gieup5jv7",
+          "path": "images/mrjbvxh8457qz-banner-mrjbw16y.png",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": "mrl59ct1jiidk",
@@ -1047,7 +1167,16 @@
       "extraImages": [],
       "pinned": false,
       "createdAt": "2026-07-14T21:09:17.461Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": [
+        {
+          "id": "mrt0gieuo24ns",
+          "path": "images/mrl59ct1jiidk-banner-mrl59f34.png",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": "mrjzs0iap3nfv",
@@ -1109,7 +1238,10 @@
       ],
       "pinned": false,
       "createdAt": "2026-07-14T01:48:04.114Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": []
     },
     {
       "id": "mrkwp3igzlpi0",
@@ -1172,7 +1304,10 @@
       "extraImages": [],
       "pinned": false,
       "createdAt": "2026-07-14T17:09:35.364Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": []
     },
     {
       "id": "mrkwq7kyagtuj",
@@ -1218,7 +1353,10 @@
       "extraImages": [],
       "pinned": false,
       "createdAt": "2026-07-14T17:10:27.298Z",
-      "categoryColor": "catPurple"
+      "categoryColor": "catPurple",
+      "catchphrases": [],
+      "hashtags": [],
+      "banners": []
     }
   ]
 }
