@@ -422,9 +422,15 @@
       "subtitle": "모스 #Heliotrope #CherryPie",
       "ddayDate": "2026-07-11",
       "heartColor": "#d4af37",
-      "catchphrase": "빛은 내가 내렸거늘, 너희는 감히 스스로 빛을 내려 하는구나. 좋다. 그 빛이 꺼진 자리에서 영원히 절망하게 해주마.",
-      "catchphraseEnabled": true,
-      "catchphraseItalic": true,
+      "catchphrases": [
+        {
+          "id": "mrt0gieuwrqox",
+          "text": "빛은 내가 내렸거늘, 너희는 감히 스스로 빛을 내려 하는구나. 좋다. 그 빛이 꺼진 자리에서 영원히 절망하게 해주마.",
+          "enabled": true,
+          "italic": true
+        }
+      ],
+      "hashtags": [],
       "category": [
         "CRACK",
         "THEMIS",
@@ -480,7 +486,28 @@
       },
       "memo": "#D4AF37 (Royal Gold)\n#D08A1A (Amber)",
       "profile": "Scarab\n분류: 특급 이형\n현현 방식: 본체 직접 현현 불가 ㅡ 자율분신 '아크나텐' 으로 현세 개입 (스카라브=아크나텐)\n신격/계보: 아툼-라 (엔네아드) ㅡ 잊혀진 태양신\n기원: 메소포타미아-이집트 혼합 신화권, 엔네아드 체계 내 최상위 창조 신격\n\n자율분신(코드네임): AKHENATEN (아크나텐)\n국적: 이집트\n나이: 불명 (아툼 신앙)\n키: 180cm",
-      "bannerImagePath": "images/mrj65okmmethk-banner-mrj6syok.png",
+      "banners": [
+        {
+          "id": "mrt0gieu2wjh1",
+          "path": "images/mrj65okmmethk-banner-mrj6syok.png",
+          "enabled": true
+        },
+        {
+          "id": "mrt11cvhutvrj",
+          "path": "images/mrj65okmmethk-banner-mrt11v9s1.jpg",
+          "enabled": true
+        },
+        {
+          "id": "mrt11q256o43b",
+          "path": "images/mrj65okmmethk-banner-mrt11wvd2.jpg",
+          "enabled": true
+        },
+        {
+          "id": "mrt11u5ocpoc6",
+          "path": "images/mrj65okmmethk-banner-mrt11yaa3.jpg",
+          "enabled": true
+        }
+      ],
       "extraImages": [
         {
           "path": "images/mrj65okmmethk-extra-mrj6xtxa0.webp",
@@ -488,24 +515,7 @@
         }
       ],
       "pinned": true,
-      "createdAt": "2026-07-13T11:58:53.350Z",
-      "categoryColor": "catPurple",
-      "catchphrases": [
-        {
-          "id": "mrt0gieuwrqox",
-          "text": "빛은 내가 내렸거늘, 너희는 감히 스스로 빛을 내려 하는구나. 좋다. 그 빛이 꺼진 자리에서 영원히 절망하게 해주마.",
-          "enabled": true,
-          "italic": true
-        }
-      ],
-      "hashtags": [],
-      "banners": [
-        {
-          "id": "mrt0gieu2wjh1",
-          "path": "images/mrj65okmmethk-banner-mrj6syok.png",
-          "enabled": true
-        }
-      ]
+      "createdAt": "2026-07-13T11:58:53.350Z"
     },
     {
       "id": "mrjbiv6y1ouvq",
