@@ -1881,25 +1881,25 @@ function attachHeaderCropDrag(boxEl, which){
   boxEl.addEventListener('pointerleave', ()=>{ if(dragging) endDrag(); });
 }
 async function putProfileImage(file, pathBase){
-  const { base64: b64, ext } = await prepareImageForUpload(file);
+  const { base64: b64, ext, blob: cleanBlob } = await prepareImageForUpload(file);
   const path = `${pathBase}.${ext}`;
   await putImageFile(path, b64, ext==='png' ? 'image/png' : 'image/jpeg');
-  return path;
+  return { path, cleanBlob };
 }
 async function saveProfile(){
   if(!requireWriteAccess()) return;
   try{
     toast('저장 중...');
     if(pendingProfileFile){
-      const path = await putProfileImage(pendingProfileFile, 'images/profile-avatar');
+      const { path, cleanBlob } = await putProfileImage(pendingProfileFile, 'images/profile-avatar');
       db.profile.avatarPath = path;
-      blobCache[path] = URL.createObjectURL(pendingProfileFile);
+      blobCache[path] = URL.createObjectURL(cleanBlob);
       pendingProfileFile = null;
     }
     if(pendingHeaderFile){
-      const path = await putProfileImage(pendingHeaderFile, 'images/profile-header');
+      const { path, cleanBlob } = await putProfileImage(pendingHeaderFile, 'images/profile-header');
       db.profile.headerImagePath = path;
-      blobCache[path] = URL.createObjectURL(pendingHeaderFile);
+      blobCache[path] = URL.createObjectURL(cleanBlob);
       pendingHeaderFile = null;
     }else if(pendingHeaderRemove && db.profile.headerImagePath){
       await deleteImageFile(db.profile.headerImagePath);
@@ -1908,9 +1908,9 @@ async function saveProfile(){
       pendingHeaderRemove = false;
     }
     if(pendingBgFile){
-      const path = await putProfileImage(pendingBgFile, 'images/profile-bg');
+      const { path, cleanBlob } = await putProfileImage(pendingBgFile, 'images/profile-bg');
       db.profile.bgImagePath = path;
-      blobCache[path] = URL.createObjectURL(pendingBgFile);
+      blobCache[path] = URL.createObjectURL(cleanBlob);
       pendingBgFile = null;
     }
     db.profile.name = document.getElementById('inProfileName').value.trim();
@@ -2073,10 +2073,11 @@ async function prepareImageForUpload(file){
     ctx.drawImage(img, 0, 0, outW, outH);
     const outMime = isPng ? 'image/png' : 'image/jpeg';
     const dataUrl = canvas.toDataURL(outMime, QUALITY);
-    return { base64: dataUrl.split(',')[1], ext: isPng ? 'png' : 'jpg' };
+    const cleanBlob = await new Promise(resolve => canvas.toBlob(resolve, outMime, QUALITY));
+    return { base64: dataUrl.split(',')[1], ext: isPng ? 'png' : 'jpg', blob: cleanBlob };
   }catch(e){
     // 캔버스 처리에 실패한 경우에만 원본 그대로 업로드(메타데이터가 남을 수 있음)
-    return { base64: await fileToBase64(file), ext: safeExt(file.name) };
+    return { base64: await fileToBase64(file), ext: safeExt(file.name), blob: file };
   }
 }
 function loadImageFromBlob(blob){
@@ -2340,17 +2341,17 @@ async function submitEntry(){
       mainPath = existing.path;
       createdAt = existing.createdAt || createdAt;
       if(pendingUploadFile){
-        const {base64:b64, ext} = await prepareImageForUpload(pendingUploadFile);
+        const {base64:b64, ext, blob:cleanBlob} = await prepareImageForUpload(pendingUploadFile);
         mainPath = `images/${id}-${Date.now().toString(36)}.${ext}`;
         await putImageFile(mainPath, b64, ext==='png' ? 'image/png' : 'image/jpeg');
-        blobCache[mainPath] = URL.createObjectURL(pendingUploadFile);
+        blobCache[mainPath] = URL.createObjectURL(cleanBlob);
       }
     }else{
       id = Date.now().toString(36) + Math.random().toString(36).slice(2,7);
-      const {base64:b64, ext} = await prepareImageForUpload(pendingUploadFile);
+      const {base64:b64, ext, blob:cleanBlob} = await prepareImageForUpload(pendingUploadFile);
       mainPath = `images/${id}.${ext}`;
       await putImageFile(mainPath, b64, ext==='png' ? 'image/png' : 'image/jpeg');
-      blobCache[mainPath] = URL.createObjectURL(pendingUploadFile);
+      blobCache[mainPath] = URL.createObjectURL(cleanBlob);
     }
 
     const finalCatchphrases = upCatchphraseItems
@@ -2366,10 +2367,10 @@ async function submitEntry(){
       if(item.type === 'existing'){
         finalBanners.push({id:item.id, path:item.path, enabled:!!item.enabled});
       }else{
-        const {base64:b64, ext} = await prepareImageForUpload(item.file);
+        const {base64:b64, ext, blob:cleanBlob} = await prepareImageForUpload(item.file);
         const p = `images/${id}-banner-${Date.now().toString(36)}${i}.${ext}`;
         await putImageFile(p, b64, ext==='png' ? 'image/png' : 'image/jpeg');
-        blobCache[p] = item.previewUrl;
+        blobCache[p] = URL.createObjectURL(cleanBlob);
         finalBanners.push({id:item.id, path:p, enabled:!!item.enabled});
       }
     }
@@ -2380,10 +2381,10 @@ async function submitEntry(){
       if(item.type === 'existing'){
         finalExtra.push({path:item.path, prompt:item.prompt||''});
       }else{
-        const {base64:b64, ext} = await prepareImageForUpload(item.file);
+        const {base64:b64, ext, blob:cleanBlob} = await prepareImageForUpload(item.file);
         const p = `images/${id}-extra-${Date.now().toString(36)}${i}.${ext}`;
         await putImageFile(p, b64, ext==='png' ? 'image/png' : 'image/jpeg');
-        blobCache[p] = item.previewUrl;
+        blobCache[p] = URL.createObjectURL(cleanBlob);
         finalExtra.push({path:p, prompt:item.prompt||''});
       }
     }
