@@ -998,7 +998,7 @@ async function putImageFile(path, base64, mime){
   if(!currentUser) throw new Error('로그인이 필요해요');
   const key = storageKeyFor(currentUser.id, path);
   const blob = base64ToBlob(base64, mime || guessMime(path));
-  const { error } = await sb.storage.from(BUCKET).upload(key, blob, { upsert:true, contentType: blob.type });
+  const { error } = await sb.storage.from(BUCKET).upload(key, blob, { upsert:true, contentType: blob.type, cacheControl:'31536000' });
   if(error) throw new Error(error.message || '이미지 업로드 실패');
   return path;
 }
@@ -1240,7 +1240,7 @@ async function onBackupFileSelected(event){
         try{
           const blob = await entry.async('blob');
           const key = storageKeyFor(currentUser.id, p);
-          const { error } = await sb.storage.from(BUCKET).upload(key, blob, { upsert:true, contentType: blob.type || guessMime(p) });
+          const { error } = await sb.storage.from(BUCKET).upload(key, blob, { upsert:true, contentType: blob.type || guessMime(p), cacheControl:'31536000' });
           if(error) throw error;
         }catch(e){ failed++; }
       }
@@ -1441,7 +1441,7 @@ async function importLegacyBackup(){
         // EXIF 등 메타데이터를 제거한 뒤에 업로드한다.
         const blob = await stripMetadataFromBlob(rawBlob, p);
         const key = storageKeyFor(currentUser.id, p);
-        await sb.storage.from(BUCKET).upload(key, blob, { upsert:true, contentType: blob.type || guessMime(p) });
+        await sb.storage.from(BUCKET).upload(key, blob, { upsert:true, contentType: blob.type || guessMime(p), cacheControl:'31536000' });
       }catch(e){ /* 파일 하나 실패해도 나머지는 계속 진행 */ }
     }
     db = legacy;
@@ -1488,7 +1488,7 @@ async function stripMetadataForAllImages(){
       const rawBlob = await r.blob();
       const blob = await stripMetadataFromBlob(rawBlob, p);
       const key = storageKeyFor(currentUser.id, p);
-      const { error } = await sb.storage.from(BUCKET).upload(key, blob, { upsert:true, contentType: blob.type || guessMime(p) });
+      const { error } = await sb.storage.from(BUCKET).upload(key, blob, { upsert:true, contentType: blob.type || guessMime(p), cacheControl:'31536000' });
       if(error) throw error;
     }catch(e){ failed++; }
   }
@@ -1544,7 +1544,7 @@ async function convertAllImagesToJpg(){
       const jpgBlob = await stripMetadataFromBlob(rawBlob, oldPath); // 이제 항상 JPEG를 반환
       const newPath = oldPath.replace(/\.[a-zA-Z0-9]+$/, '') + '.jpg';
       const newKey = storageKeyFor(currentUser.id, newPath);
-      const { error } = await sb.storage.from(BUCKET).upload(newKey, jpgBlob, { upsert:true, contentType:'image/jpeg' });
+      const { error } = await sb.storage.from(BUCKET).upload(newKey, jpgBlob, { upsert:true, contentType:'image/jpeg', cacheControl:'31536000' });
       if(error) throw error;
       await deleteImageFile(oldPath); // 옛 경로(png 등) 파일 삭제
       renameMap[oldPath] = newPath;
