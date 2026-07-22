@@ -435,11 +435,7 @@
     <div class="sub" id="acctSub">구글 계정으로 로그인하면 나만의 아카이브를 만들 수 있어요.<br>문의 @2han_bear</div>
 
     <div id="acctLoggedOut">
-      <div class="btnRow"><button class="btn btn-primary" onclick="showLoginGate()">Google로 로그인</button></div>
-      <div id="loginGateWrap" class="hidden" style="margin-top:12px;">
-        <input type="password" id="loginGatePw" placeholder="초대 비밀번호" style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; font-size:14px; margin-bottom:8px; box-sizing:border-box;">
-        <div class="btnRow"><button class="btn btn-primary" onclick="submitLoginGate()">확인</button></div>
-      </div>
+      <div class="btnRow"><button class="btn btn-primary" onclick="loginWithGoogle()">Google로 로그인</button></div>
     </div>
 
     <div id="acctLoggedIn" class="hidden">
@@ -1284,38 +1280,30 @@ async function refreshAll(){
   catch(e){ toast(e.message || '불러오기 중 오류가 발생했어요'); }
   updateAccountUI();
 }
+/* 신규 가입자에게만 물어보는 초대 비밀번호. 기존에 이미 갤러리를 만든
+   사람은 이 검사를 건너뛰고 바로 들어가요. */
+const SIGNUP_GATE_PASSWORD = 'qR7xK2mZ9pL';
+
 async function onAuthChange(){
   document.getElementById('fabBtn').classList.toggle('hidden', !hasWriteAccess());
   updateAccountUI();
   if(currentUser){
     const { data: mySite } = await sb.from('sites').select('slug').eq('user_id', currentUser.id).maybeSingle();
     myOwnSlug = mySite ? mySite.slug : null;
-    if(!mySite) openOnboardModal();
+    if(!mySite){
+      const val = window.prompt('처음 오셨네요! 초대 비밀번호를 입력해주세요.');
+      if(val === SIGNUP_GATE_PASSWORD){
+        openOnboardModal();
+      }else{
+        toast('비밀번호가 올바르지 않아 로그아웃할게요');
+        await sb.auth.signOut();
+        currentUser = null;
+        myOwnSlug = null;
+        updateAccountUI();
+      }
+    }
   }else{
     myOwnSlug = null;
-  }
-}
-
-/* ============ 계정(로그인) 게이트 ============ */
-/* [임시: 클라이언트 사이드 버전] 지인 대상 캐주얼한 차단용이에요.
-   개발자도구로 아래 비밀번호 값이 보일 수 있어요.
-   나중에 서버사이드(Edge Function)로 바꾸려면:
-   1) check-invite-password 함수를 배포하고
-   2) 아래 submitLoginGate 함수를 fetch 버전으로 교체하면 돼요. */
-const LOGIN_GATE_PASSWORD = 'qR7xK2mZ9pL';
-
-function showLoginGate(){
-  document.getElementById('loginGateWrap').classList.remove('hidden');
-  const pwInput = document.getElementById('loginGatePw');
-  pwInput.focus();
-  pwInput.onkeydown = (e)=>{ if(e.key === 'Enter') submitLoginGate(); };
-}
-function submitLoginGate(){
-  const val = document.getElementById('loginGatePw').value;
-  if(val === LOGIN_GATE_PASSWORD){
-    loginWithGoogle();
-  }else{
-    toast('비밀번호가 올바르지 않아요');
   }
 }
 
@@ -1374,15 +1362,7 @@ function openSettings(){
   updateAccountUI();
   document.getElementById('settingsModal').classList.add('show');
 }
-function closeModal(id){
-  document.getElementById(id).classList.remove('show');
-  if(id === 'settingsModal'){
-    const gateWrap = document.getElementById('loginGateWrap');
-    const gatePw = document.getElementById('loginGatePw');
-    if(gateWrap) gateWrap.classList.add('hidden');
-    if(gatePw) gatePw.value = '';
-  }
-}
+function closeModal(id){ document.getElementById(id).classList.remove('show'); }
 
 /* ============ 온보딩(첫 로그인 시 내 갤러리 만들기) ============ */
 function openOnboardModal(){
