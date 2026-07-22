@@ -435,7 +435,11 @@
     <div class="sub" id="acctSub">구글 계정으로 로그인하면 나만의 아카이브를 만들 수 있어요.<br>문의 @2han_bear</div>
 
     <div id="acctLoggedOut">
-      <div class="btnRow"><button class="btn btn-primary" onclick="loginWithGoogle()">Google로 로그인</button></div>
+      <div class="btnRow"><button class="btn btn-primary" onclick="showLoginGate()">Google로 로그인</button></div>
+      <div id="loginGateWrap" class="hidden" style="margin-top:12px;">
+        <input type="password" id="loginGatePw" placeholder="초대 비밀번호" style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; font-size:14px; margin-bottom:8px; box-sizing:border-box;">
+        <div class="btnRow"><button class="btn btn-primary" onclick="submitLoginGate()">확인</button></div>
+      </div>
     </div>
 
     <div id="acctLoggedIn" class="hidden">
@@ -1292,6 +1296,29 @@ async function onAuthChange(){
   }
 }
 
+/* ============ 계정(로그인) 게이트 ============ */
+/* [임시: 클라이언트 사이드 버전] 지인 대상 캐주얼한 차단용이에요.
+   개발자도구로 아래 비밀번호 값이 보일 수 있어요.
+   나중에 서버사이드(Edge Function)로 바꾸려면:
+   1) check-invite-password 함수를 배포하고
+   2) 아래 submitLoginGate 함수를 fetch 버전으로 교체하면 돼요. */
+const LOGIN_GATE_PASSWORD = 'qR7xK2mZ9pL';
+
+function showLoginGate(){
+  document.getElementById('loginGateWrap').classList.remove('hidden');
+  const pwInput = document.getElementById('loginGatePw');
+  pwInput.focus();
+  pwInput.onkeydown = (e)=>{ if(e.key === 'Enter') submitLoginGate(); };
+}
+function submitLoginGate(){
+  const val = document.getElementById('loginGatePw').value;
+  if(val === LOGIN_GATE_PASSWORD){
+    loginWithGoogle();
+  }else{
+    toast('비밀번호가 올바르지 않아요');
+  }
+}
+
 /* ============ 계정(로그인) ============ */
 async function loginWithGoogle(){
   const { error } = await sb.auth.signInWithOAuth({ provider:'google', options:{ redirectTo: location.href } });
@@ -1347,7 +1374,15 @@ function openSettings(){
   updateAccountUI();
   document.getElementById('settingsModal').classList.add('show');
 }
-function closeModal(id){ document.getElementById(id).classList.remove('show'); }
+function closeModal(id){
+  document.getElementById(id).classList.remove('show');
+  if(id === 'settingsModal'){
+    const gateWrap = document.getElementById('loginGateWrap');
+    const gatePw = document.getElementById('loginGatePw');
+    if(gateWrap) gateWrap.classList.add('hidden');
+    if(gatePw) gatePw.value = '';
+  }
+}
 
 /* ============ 온보딩(첫 로그인 시 내 갤러리 만들기) ============ */
 function openOnboardModal(){
